@@ -7,22 +7,20 @@
 
 **2. Modelo entrenado y evaluado**
 
+Ejecuta predicciones sobre el conjunto de prueba e imprime las métricas clave de regresión para confirmar que el modelo rinde correctamente antes del registro.
+
 ```python
 predictions = model.predict(X_test)
 print(f"MAE: {mae:.2f}  RMSE: {rmse:.2f}  R²: {r2:.2f}")
 ```
 
-![Métricas de evaluación](https://github.com/user-attachments/assets/6aa19680-cadb-4fe4-a419-a626942e15f9)
-
 **3. Modelo registrado**
+
+Serializa el modelo entrenado en disco y regrístralo en el workspace de Azure ML con un nombre versionado. Esto lo hace disponible para despliegue y recuperable de forma reproducible por nombre.
 
 ```python
 Model.register(workspace=ws, model_path="model.pkl", model_name="my_model_RegressionModel")
 ```
-
-<video width="100%" controls>
-  <source src="https://github.com/user-attachments/assets/a82ff03e-437c-41bc-85fa-8b9903384a5b" type="video/mp4">
-</video>
 
 **4. Endpoint desplegado y respondiendo**
 
