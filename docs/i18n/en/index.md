@@ -17,8 +17,3 @@ This hub focuses on production implementation patterns for Azure ML and Fabric i
   <a class="home-card" href="modules/10-training-automl/"><span class="card-badge">10</span><h3>Capstone Architecture and Governance</h3><p>End-to-end reference architecture and operating model.</p></a>
 </div>
 
-## Azure Portal Snapshots
-
-![Azure portal snapshot 1](assets/img/azure-portal-photo-1.jpg)
-![Azure portal snapshot 2](assets/img/azure-portal-photo-2.jpg)
-![Azure portal snapshot 3](assets/img/azure-portal-photo-3.jpg)

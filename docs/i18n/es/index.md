@@ -21,8 +21,3 @@ Este centro se enfoca en patrones avanzados de implementación para Azure ML e i
   <a class="home-card" href="modules/14-deployment-debug-k8s/"><span class="card-badge">14</span><h3>Depuración en Kubernetes y Respuesta a Incidentes</h3><p>Diagnóstico avanzado y resolución de fallas en producción.</p></a>
 </div>
 
-## Capturas del Portal de Azure
-
-![Captura del portal Azure 1](assets/img/azure-portal-photo-1.jpg)
-![Captura del portal Azure 2](assets/img/azure-portal-photo-2.jpg)
-![Captura del portal Azure 3](assets/img/azure-portal-photo-3.jpg)
