@@ -1,16 +1,72 @@
 ﻿# 08. Validación End-to-End y Entrega
 
-## Validación Final
+## Validación de la Ruta Azure ML
 
-- Ruta de modelo Azure ML completada
-- Ruta LLM Fabric completada
-- Endpoint validado
-- Artefactos versionados
-- Controles operativos documentados
+**1. Dataset registrado**
+- Dataset `employee_data` registrado como Tabular desde `sample_data.csv` en Azure ML.
+
+**2. Modelo entrenado y evaluado**
+
+```python
+predictions = model.predict(X_test)
+print(f"MAE: {mae:.2f}  RMSE: {rmse:.2f}  R²: {r2:.2f}")
+```
+
+![Métricas de evaluación](https://github.com/user-attachments/assets/6aa19680-cadb-4fe4-a419-a626942e15f9)
+
+**3. Modelo registrado**
+
+```python
+Model.register(workspace=ws, model_path="model.pkl", model_name="my_model_RegressionModel")
+```
+
+![Modelo registrado](https://github.com/user-attachments/assets/a82ff03e-437c-41bc-85fa-8b9903384a5b)
+
+**4. Endpoint desplegado y respondiendo**
+
+```python
+service.wait_for_deployment(show_output=True)
+print(f"Scoring URI: {service.scoring_uri}")
+```
+
+## Validación de la Ruta LLM en Fabric
+
+**5. Capacidad de Fabric activa y clúster creado**
+
+![Crear capacidad Fabric](https://github.com/user-attachments/assets/a860911c-0ab8-469e-82d9-d0495268bd3b)
+
+**6. SynapseML y LangChain instalados**
+
+```python
+%pip install openai langchain_community
+%pip show synapseml
+```
+
+**7. Azure OpenAI conectado y respondiendo**
+
+```python
+ai_msg = llm.invoke(messages)
+print(ai_msg)
+```
+
+**8. LangChain Transformer generando definiciones**
+
+```python
+result.select("technology", "definition").show(truncate=False)
+```
+
+**9. Modelo MLflow registrado en Fabric**
+
+```python
+print(f"Model Name: {model_version.name}")
+print(f"Model Version: {model_version.version}")
+```
 
 ## Paquete de Entrega
 
-1. Model card y métricas
-2. Ejemplos de contrato de scoring
-3. Salidas del notebook de Fabric
-4. Runbook de respuesta a incidentes
+1. `model.pkl` — modelo de regresión serializado desde Azure ML.
+2. `score.py` — script de scoring con validación de entrada y logs.
+3. `env.yaml` — definición de entorno con versiones fijadas.
+4. Notebook de Fabric (`fabric-llms-overview_sample.ipynb`) con salida completa del flujo LLM.
+5. Run ID de MLflow y versión del modelo registrado para trazabilidad.
+6. Scoring URI documentado para integración por parte del consumidor.
