@@ -1,5 +1,5 @@
-site_name: "Machine Learning 103"
-site_description: Advanced Azure Machine Learning implementation training.
+﻿site_name: "Machine Learning 103"
+site_description: Practical setup and model build guide for Azure ML Studio and Fabric.
 site_url: https://cloud2br-tec.github.io/ai-academy-103-ml/
 docs_dir: docs/i18n
 copyright: Copyright &copy; 2026 <a href="https://github.com/Cloud2BR-TEC" target="_blank" rel="noopener">Cloud2BR TEC</a>
@@ -37,20 +37,14 @@ plugins:
           build: true
           nav_translations:
             Home: Inicio
-            01. Platform and Azure Setup: "01. Plataforma y Configuración de Azure"
-            02. Model Creation Pipeline: "02. Pipeline de Creación de Modelos"
-            03. Fabric and Azure ML Integration: "03. Integración de Fabric y Azure ML"
-            04. Azure ML Environment Strategy: "04. Estrategia de Entornos en Azure ML"
-            05. Advanced Data Preparation: "05. Preparación Avanzada de Datos"
-            06. Training and Experimentation at Scale: "06. Entrenamiento y Experimentación a Escala"
-            07. Terraform for Azure ML: "07. Terraform para Azure ML"
-            08. Terraform for Fabric: "08. Terraform para Fabric"
-            09. Deployment Reliability and SRE: "09. Confiabilidad de Despliegue y SRE"
-            10. Capstone Architecture and Governance: "10. Arquitectura Final y Gobernanza"
-            11. Advanced Metrics and Drift: "11. Métricas Avanzadas y Drift"
-            12. Explainability and Validation in Production: "12. Explicabilidad y Validación en Producción"
-            13. Endpoint Deployment Patterns: "13. Patrones de Despliegue de Endpoints"
-            14. Kubernetes Debugging and Incident Response: "14. Depuración en Kubernetes y Respuesta a Incidentes"
+            01. Environment and Access Setup: "01. Setup de Entorno y Acceso"
+            02. Build One Model in Azure ML Studio: "02. Crear un Modelo en Azure ML Studio"
+            03. Register and Deploy Endpoint in Azure ML: "03. Registrar y Desplegar Endpoint en Azure ML"
+            04. Configure Microsoft Fabric for AI Workloads: "04. Configurar Microsoft Fabric para Cargas de IA"
+            05. Build One LLM Flow in Fabric Notebooks: "05. Crear un Flujo LLM en Notebooks de Fabric"
+            06. SynapseML and LangChain Integration Pattern: "06. Patrón de Integración con SynapseML y LangChain"
+            07. Operational Checklist (Security, Cost, Reliability): "07. Checklist Operativo (Seguridad, Costo, Confiabilidad)"
+            08. End-to-End Validation and Handover: "08. Validación End-to-End y Entrega"
             Reference: Referencia
             Overview: "Visión General"
             Mathematical Model Deep Dive: "Análisis Matemático Profundo de Modelos"
@@ -91,20 +85,14 @@ extra:
 
 nav:
   - Home: index.md
-  - 01. Platform and Azure Setup: modules/01-math-prerequisites.md
-  - 02. Model Creation Pipeline: modules/02-e2e-overview.md
-  - 03. Fabric and Azure ML Integration: modules/03-introduction.md
-  - 04. Azure ML Environment Strategy: modules/04-ml-foundations.md
-  - 05. Advanced Data Preparation: modules/05-neural-networks.md
-  - 06. Training and Experimentation at Scale: modules/06-azure-ml-environment.md
-  - 07. Terraform for Azure ML: modules/07-environment-setup.md
-  - 08. Terraform for Fabric: modules/08-data-preparation.md
-  - 09. Deployment Reliability and SRE: modules/09-model-types.md
-  - 10. Capstone Architecture and Governance: modules/10-training-automl.md
-  - 11. Advanced Metrics and Drift: modules/11-performance-metrics.md
-  - 12. Explainability and Validation in Production: modules/12-results-explainability.md
-  - 13. Endpoint Deployment Patterns: modules/13-deployment.md
-  - 14. Kubernetes Debugging and Incident Response: modules/14-deployment-debug-k8s.md
+  - 01. Environment and Access Setup: modules/01-environment-access-setup.md
+  - 02. Build One Model in Azure ML Studio: modules/02-build-one-model-azure-ml-studio.md
+  - 03. Register and Deploy Endpoint in Azure ML: modules/03-register-deploy-endpoint-azure-ml.md
+  - 04. Configure Microsoft Fabric for AI Workloads: modules/04-configure-fabric-ai-workloads.md
+  - 05. Build One LLM Flow in Fabric Notebooks: modules/05-build-one-llm-flow-fabric.md
+  - 06. SynapseML and LangChain Integration Pattern: modules/06-synapseml-langchain-pattern.md
+  - 07. Operational Checklist (Security, Cost, Reliability): modules/07-operational-checklist.md
+  - 08. End-to-End Validation and Handover: modules/08-end-to-end-validation-handover.md
   - Reference:
       - Overview: reference/index.md
       - Mathematical Model Deep Dive: reference/model-math-deep-dive.md
