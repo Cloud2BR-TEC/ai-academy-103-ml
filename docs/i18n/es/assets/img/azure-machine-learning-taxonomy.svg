@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="540" viewBox="0 0 1040 540" role="img" aria-labelledby="title desc">
+  <title id="title">Taxonomía del área de trabajo de Azure ML</title>
+  <desc id="desc">El área de trabajo de Azure ML es un límite de gobernanza que contiene activos secundarios: cómputo, activos de datos, modelos, endpoints y entornos.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .cardhead { font-family: Segoe UI, Arial, sans-serif; font-size: 18px; font-weight: 700; }
+      .node { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; font-weight: 700; fill: #ffffff; }
+      .label { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #1f2937; }
+      .desc2 { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #475569; }
+      .sub { fill: #f1f5f9; stroke: #cbd5e1; stroke-width: 1; }
+      .subt { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; font-weight: 700; fill: #0f172a; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="540"/>
+  <text class="title" x="60" y="52">Taxonomía del área de trabajo de Azure ML</text>
+  <text class="subtitle" x="60" y="80">El área de trabajo es el límite de gobernanza — cada activo inferior está dentro de su ámbito</text>
+
+  <rect class="card" x="60" y="120" width="920" height="330" rx="12"/>
+  <text class="cardhead" x="84" y="156" fill="#004a99">Área de trabajo de Azure ML</text>
+  <text class="desc2" x="84" y="178">Límite de seguridad, control de acceso y gobernanza. RBAC, cuotas y linaje aplican a todos los activos.</text>
+  <line x1="84" y1="192" x2="956" y2="192" stroke="#cbd5e1" stroke-width="1.5"/>
+
+  <!-- Computo -->
+  <rect class="card" x="84" y="210" width="160" height="210" rx="10"/>
+  <rect x="84" y="210" width="160" height="46" rx="10" fill="#004a99"/>
+  <text class="node" x="164" y="240" text-anchor="middle">Cómputo</text>
+  <rect class="sub" x="96" y="280" width="136" height="58" rx="6"/>
+  <text class="subt" x="164" y="305" text-anchor="middle">Instancia</text>
+  <text class="desc2" x="164" y="324" text-anchor="middle">Estación de dev.</text>
+  <rect class="sub" x="96" y="350" width="136" height="58" rx="6"/>
+  <text class="subt" x="164" y="375" text-anchor="middle">Clúster</text>
+  <text class="desc2" x="164" y="394" text-anchor="middle">Entrenam. escalable</text>
+
+  <!-- Activos de datos -->
+  <rect class="card" x="262" y="210" width="160" height="210" rx="10"/>
+  <rect x="262" y="210" width="160" height="46" rx="10" fill="#0e7490"/>
+  <text class="node" x="342" y="240" text-anchor="middle">Activos de datos</text>
+  <text class="label" x="278" y="290">• Datos versionados</text>
+  <text class="label" x="278" y="318">• URI archivo/carpeta</text>
+  <text class="label" x="278" y="346">• Tablas MLTable</text>
+  <text class="desc2" x="278" y="378">Entradas</text>
+  <text class="desc2" x="278" y="396">reproducibles</text>
+
+  <!-- Modelos -->
+  <rect class="card" x="440" y="210" width="160" height="210" rx="10"/>
+  <rect x="440" y="210" width="160" height="46" rx="10" fill="#b45309"/>
+  <text class="node" x="520" y="240" text-anchor="middle">Modelos</text>
+  <text class="label" x="456" y="290">• Registro</text>
+  <text class="label" x="456" y="318">• Versionados</text>
+  <text class="label" x="456" y="346">• Linaje</text>
+  <text class="desc2" x="456" y="378">Artefactos</text>
+  <text class="desc2" x="456" y="396">registrados</text>
+
+  <!-- Endpoints -->
+  <rect class="card" x="618" y="210" width="160" height="210" rx="10"/>
+  <rect x="618" y="210" width="160" height="46" rx="10" fill="#15803d"/>
+  <text class="node" x="698" y="240" text-anchor="middle">Endpoints</text>
+  <text class="label" x="634" y="290">• En línea (tiempo real)</text>
+  <text class="label" x="634" y="318">• Por lotes</text>
+  <text class="label" x="634" y="346">• Implementaciones</text>
+  <text class="desc2" x="634" y="378">Superficie</text>
+  <text class="desc2" x="634" y="396">de servicio</text>
+
+  <!-- Entornos -->
+  <rect class="card" x="796" y="210" width="160" height="210" rx="10"/>
+  <rect x="796" y="210" width="160" height="46" rx="10" fill="#64748b"/>
+  <text class="node" x="876" y="240" text-anchor="middle">Entornos</text>
+  <text class="label" x="812" y="290">• Imagen base</text>
+  <text class="label" x="812" y="318">• Dependencias</text>
+  <text class="label" x="812" y="346">• Versionados</text>
+  <text class="desc2" x="812" y="378">Runtime</text>
+  <text class="desc2" x="812" y="396">reutilizable</text>
+</svg>

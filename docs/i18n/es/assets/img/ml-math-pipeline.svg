@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="520" viewBox="0 0 1040 520" role="img" aria-labelledby="title desc">
+  <title id="title">Los cinco componentes matemáticos de un modelo</title>
+  <desc id="desc">Un modelo es una función cuyos parámetros elige un optimizador para minimizar una pérdida, mantenida en línea por la regularización y convertida en decisiones mediante probabilidades y umbrales.</desc>
+
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .box { fill: #ffffff; stroke: #004a99; stroke-width: 2.5; rx: 12; }
+      .boxalt { fill: #eaf2fb; stroke: #004a99; stroke-width: 2.5; rx: 12; }
+      .htxt { fill: #004a99; font-family: Segoe UI, Arial, sans-serif; font-size: 17px; font-weight: 700; }
+      .btxt { fill: #1f2937; font-family: Segoe UI, Arial, sans-serif; font-size: 13px; }
+      .vtxt { fill: #15803d; font-family: Segoe UI, Arial, sans-serif; font-size: 12.5px; font-weight: 700; }
+      .flow { stroke: #475569; stroke-width: 3; fill: none; }
+      .feedback { stroke: #b45309; stroke-width: 2.5; stroke-dasharray: 7 5; fill: none; }
+      .fbtxt { fill: #b45309; font-family: Segoe UI, Arial, sans-serif; font-size: 13px; font-weight: 700; }
+    </style>
+    <marker id="fa" markerWidth="10" markerHeight="10" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#475569"/>
+    </marker>
+    <marker id="fb" markerWidth="10" markerHeight="10" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1040" height="520"/>
+  <text class="title" x="60" y="52">Cómo encajan las cinco piezas</text>
+  <text class="subtitle" x="60" y="80">Cada modelo de esta página es una elección específica de estos cinco bloques de construcción.</text>
+
+  <!-- Box 1: function -->
+  <rect class="box" x="40" y="150" width="170" height="150" rx="12"/>
+  <text class="htxt" x="125" y="180" text-anchor="middle">1. Función</text>
+  <text class="btxt" x="125" y="206" text-anchor="middle">f(x) con pesos</text>
+  <text class="btxt" x="125" y="224" text-anchor="middle">mapea entrada a salida</text>
+  <text class="vtxt" x="125" y="276" text-anchor="middle">Valor: almacena</text>
+  <text class="vtxt" x="125" y="292" text-anchor="middle">lo que se aprendió</text>
+
+  <!-- Box 2: loss -->
+  <rect class="box" x="240" y="150" width="170" height="150" rx="12"/>
+  <text class="htxt" x="325" y="180" text-anchor="middle">2. Pérdida</text>
+  <text class="btxt" x="325" y="206" text-anchor="middle">define "incorrecto"</text>
+  <text class="btxt" x="325" y="224" text-anchor="middle">un número de error</text>
+  <text class="vtxt" x="325" y="276" text-anchor="middle">Valor: define</text>
+  <text class="vtxt" x="325" y="292" text-anchor="middle">qué importa más</text>
+
+  <!-- Box 3: optimizer -->
+  <rect class="box" x="440" y="150" width="170" height="150" rx="12"/>
+  <text class="htxt" x="525" y="180" text-anchor="middle">3. Optimizador</text>
+  <text class="btxt" x="525" y="206" text-anchor="middle">avanza cuesta abajo</text>
+  <text class="btxt" x="525" y="224" text-anchor="middle">ajusta los pesos</text>
+  <text class="vtxt" x="525" y="276" text-anchor="middle">Valor: hace</text>
+  <text class="vtxt" x="525" y="292" text-anchor="middle">posible el aprendizaje</text>
+
+  <!-- Box 4: regularization -->
+  <rect class="box" x="640" y="150" width="170" height="150" rx="12"/>
+  <text class="htxt" x="725" y="180" text-anchor="middle">4. Regularizar</text>
+  <text class="btxt" x="725" y="206" text-anchor="middle">mantenerlo simple</text>
+  <text class="btxt" x="725" y="224" text-anchor="middle">evitar que memorice</text>
+  <text class="vtxt" x="725" y="276" text-anchor="middle">Valor: funciona en</text>
+  <text class="vtxt" x="725" y="292" text-anchor="middle">datos nuevos también</text>
+
+  <!-- Box 5: decision -->
+  <rect class="boxalt" x="840" y="150" width="170" height="150" rx="12"/>
+  <text class="htxt" x="925" y="180" text-anchor="middle">5. Decidir</text>
+  <text class="btxt" x="925" y="206" text-anchor="middle">probabilidad + umbral</text>
+  <text class="btxt" x="925" y="224" text-anchor="middle">puntaje a acción</text>
+  <text class="vtxt" x="925" y="276" text-anchor="middle">Valor: decisiones</text>
+  <text class="vtxt" x="925" y="292" text-anchor="middle">sí/no más inteligentes</text>
+
+  <!-- flow arrows -->
+  <line class="flow" x1="210" y1="225" x2="238" y2="225" marker-end="url(#fa)"/>
+  <line class="flow" x1="410" y1="225" x2="438" y2="225" marker-end="url(#fa)"/>
+  <line class="flow" x1="610" y1="225" x2="638" y2="225" marker-end="url(#fa)"/>
+  <line class="flow" x1="810" y1="225" x2="838" y2="225" marker-end="url(#fa)"/>
+
+  <!-- feedback loop optimizer -> function -->
+  <path class="feedback" d="M525,300 L525,360 L125,360 L125,302" marker-end="url(#fb)"/>
+  <text class="fbtxt" x="325" y="382" text-anchor="middle">repetir: actualizar pesos para reducir la pérdida (bucle de entrenamiento)</text>
+
+  <text class="btxt" x="60" y="450" fill="#475569">Los cuadros 1 a 4 ocurren en el entrenamiento. El cuadro 5 ocurre en la predicción, donde la matemática se vuelve una decisión real.</text>
+</svg>

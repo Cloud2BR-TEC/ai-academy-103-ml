@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="540" viewBox="0 0 1040 540" role="img" aria-labelledby="title desc">
+  <title id="title">Neural network layers</title>
+  <desc id="desc">A multilayer perceptron with an input layer, two hidden layers, and an output layer, fully connected, with weighted sums passed through nonlinear activations.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .edge { stroke: #94a3b8; stroke-width: 1; opacity: 0.7; }
+      .nIn { fill: #0e7490; stroke: #0f172a; stroke-width: 1.5; }
+      .nH { fill: #004a99; stroke: #0f172a; stroke-width: 1.5; }
+      .nOut { fill: #b45309; stroke: #0f172a; stroke-width: 1.5; }
+      .lbl { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; }
+      .note { fill: #475569; font-family: Segoe UI, Arial, sans-serif; font-size: 14px; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="540"/>
+  <text class="title" x="60" y="52">Neural network: layers of weighted sums + activations</text>
+  <text class="subtitle" x="60" y="80">Each connection has a weight; each node sums its inputs and applies a nonlinearity, stacking simple steps into complex functions.</text>
+  <!-- edges input(4) x=200 -> hidden1(5) x=440 -->
+  <g class="edge">
+    <line x1="200" y1="180" x2="440" y2="150"/><line x1="200" y1="180" x2="440" y2="230"/><line x1="200" y1="180" x2="440" y2="310"/><line x1="200" y1="180" x2="440" y2="390"/><line x1="200" y1="180" x2="440" y2="470"/>
+    <line x1="200" y1="270" x2="440" y2="150"/><line x1="200" y1="270" x2="440" y2="230"/><line x1="200" y1="270" x2="440" y2="310"/><line x1="200" y1="270" x2="440" y2="390"/><line x1="200" y1="270" x2="440" y2="470"/>
+    <line x1="200" y1="360" x2="440" y2="150"/><line x1="200" y1="360" x2="440" y2="230"/><line x1="200" y1="360" x2="440" y2="310"/><line x1="200" y1="360" x2="440" y2="390"/><line x1="200" y1="360" x2="440" y2="470"/>
+    <line x1="200" y1="450" x2="440" y2="150"/><line x1="200" y1="450" x2="440" y2="230"/><line x1="200" y1="450" x2="440" y2="310"/><line x1="200" y1="450" x2="440" y2="390"/><line x1="200" y1="450" x2="440" y2="470"/>
+  </g>
+  <!-- edges hidden1(5) x=440 -> hidden2(5) x=680 -->
+  <g class="edge">
+    <line x1="440" y1="150" x2="680" y2="150"/><line x1="440" y1="150" x2="680" y2="230"/><line x1="440" y1="150" x2="680" y2="310"/><line x1="440" y1="150" x2="680" y2="390"/><line x1="440" y1="150" x2="680" y2="470"/>
+    <line x1="440" y1="230" x2="680" y2="150"/><line x1="440" y1="230" x2="680" y2="230"/><line x1="440" y1="230" x2="680" y2="310"/><line x1="440" y1="230" x2="680" y2="390"/><line x1="440" y1="230" x2="680" y2="470"/>
+    <line x1="440" y1="310" x2="680" y2="150"/><line x1="440" y1="310" x2="680" y2="230"/><line x1="440" y1="310" x2="680" y2="310"/><line x1="440" y1="310" x2="680" y2="390"/><line x1="440" y1="310" x2="680" y2="470"/>
+    <line x1="440" y1="390" x2="680" y2="150"/><line x1="440" y1="390" x2="680" y2="230"/><line x1="440" y1="390" x2="680" y2="310"/><line x1="440" y1="390" x2="680" y2="390"/><line x1="440" y1="390" x2="680" y2="470"/>
+    <line x1="440" y1="470" x2="680" y2="150"/><line x1="440" y1="470" x2="680" y2="230"/><line x1="440" y1="470" x2="680" y2="310"/><line x1="440" y1="470" x2="680" y2="390"/><line x1="440" y1="470" x2="680" y2="470"/>
+  </g>
+  <!-- edges hidden2(5) x=680 -> output(2) x=900 -->
+  <g class="edge">
+    <line x1="680" y1="150" x2="900" y2="270"/><line x1="680" y1="150" x2="900" y2="360"/>
+    <line x1="680" y1="230" x2="900" y2="270"/><line x1="680" y1="230" x2="900" y2="360"/>
+    <line x1="680" y1="310" x2="900" y2="270"/><line x1="680" y1="310" x2="900" y2="360"/>
+    <line x1="680" y1="390" x2="900" y2="270"/><line x1="680" y1="390" x2="900" y2="360"/>
+    <line x1="680" y1="470" x2="900" y2="270"/><line x1="680" y1="470" x2="900" y2="360"/>
+  </g>
+  <!-- input nodes -->
+  <circle class="nIn" cx="200" cy="180" r="18"/><circle class="nIn" cx="200" cy="270" r="18"/><circle class="nIn" cx="200" cy="360" r="18"/><circle class="nIn" cx="200" cy="450" r="18"/>
+  <!-- hidden1 -->
+  <circle class="nH" cx="440" cy="150" r="18"/><circle class="nH" cx="440" cy="230" r="18"/><circle class="nH" cx="440" cy="310" r="18"/><circle class="nH" cx="440" cy="390" r="18"/><circle class="nH" cx="440" cy="470" r="18"/>
+  <!-- hidden2 -->
+  <circle class="nH" cx="680" cy="150" r="18"/><circle class="nH" cx="680" cy="230" r="18"/><circle class="nH" cx="680" cy="310" r="18"/><circle class="nH" cx="680" cy="390" r="18"/><circle class="nH" cx="680" cy="470" r="18"/>
+  <!-- output -->
+  <circle class="nOut" cx="900" cy="270" r="18"/><circle class="nOut" cx="900" cy="360" r="18"/>
+  <!-- labels -->
+  <text class="lbl" x="200" y="510" text-anchor="middle">inputs</text>
+  <text class="lbl" x="560" y="510" text-anchor="middle">hidden layers (width × depth)</text>
+  <text class="lbl" x="900" y="510" text-anchor="middle">output</text>
+  <text class="note" x="60" y="120" font-weight="700" fill="#004a99">More layers/width = more capacity = more data needed and harder to interpret.</text>
+</svg>

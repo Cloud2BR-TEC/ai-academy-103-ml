@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="520" viewBox="0 0 1040 520" role="img" aria-labelledby="title desc">
+  <title id="title">Etapas del flujo de trabajo de ML con bucle de retroalimentación</title>
+  <desc id="desc">El flujo de trabajo de aprendizaje automático va del planteamiento del problema al monitoreo, que retroalimenta los datos y el entrenamiento.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .head { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; font-weight: 700; fill: #ffffff; text-anchor: middle; }
+      .sub { font-family: Segoe UI, Arial, sans-serif; font-size: 12px; fill: #475569; text-anchor: middle; }
+      .arrow { stroke: #475569; stroke-width: 2.5; fill: none; }
+      .loop { stroke: #b45309; stroke-width: 2.5; fill: none; stroke-dasharray: 7 5; }
+      .looplbl { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #b45309; font-weight: 700; text-anchor: middle; }
+    </style>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#475569"/>
+    </marker>
+    <marker id="ao" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#b45309"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="520"/>
+  <text class="title" x="60" y="52">Etapas del Flujo de Trabajo de ML</text>
+  <text class="subtitle" x="60" y="80">Un ciclo iterativo: el monitoreo retroalimenta los datos y el entrenamiento</text>
+
+  <!-- 1 -->
+  <rect class="card" x="40" y="180" width="140" height="100" rx="10"/>
+  <rect x="40" y="180" width="140" height="34" rx="10" fill="#004a99"/>
+  <text class="head" x="110" y="202">Problema</text>
+  <text class="sub" x="110" y="244">Definir meta</text>
+  <text class="sub" x="110" y="262">y métricas</text>
+
+  <!-- 2 -->
+  <rect class="card" x="204" y="180" width="140" height="100" rx="10"/>
+  <rect x="204" y="180" width="140" height="34" rx="10" fill="#0e7490"/>
+  <text class="head" x="274" y="202">Datos</text>
+  <text class="sub" x="274" y="244">Recopilar y</text>
+  <text class="sub" x="274" y="262">preparar</text>
+
+  <!-- 3 -->
+  <rect class="card" x="368" y="180" width="140" height="100" rx="10"/>
+  <rect x="368" y="180" width="140" height="34" rx="10" fill="#b45309"/>
+  <text class="head" x="438" y="202">Entrenamiento</text>
+  <text class="sub" x="438" y="244">Ajustar y</text>
+  <text class="sub" x="438" y="262">evaluar</text>
+
+  <!-- 4 -->
+  <rect class="card" x="532" y="180" width="140" height="100" rx="10"/>
+  <rect x="532" y="180" width="140" height="34" rx="10" fill="#15803d"/>
+  <text class="head" x="602" y="202">Registro</text>
+  <text class="sub" x="602" y="244">Versionar y</text>
+  <text class="sub" x="602" y="262">guardar modelo</text>
+
+  <!-- 5 -->
+  <rect class="card" x="696" y="180" width="140" height="100" rx="10"/>
+  <rect x="696" y="180" width="140" height="34" rx="10" fill="#64748b"/>
+  <text class="head" x="766" y="202">Despliegue</text>
+  <text class="sub" x="766" y="244">Servir como</text>
+  <text class="sub" x="766" y="262">endpoint</text>
+
+  <!-- 6 -->
+  <rect class="card" x="860" y="180" width="140" height="100" rx="10"/>
+  <rect x="860" y="180" width="140" height="34" rx="10" fill="#004a99"/>
+  <text class="head" x="930" y="202">Monitoreo</text>
+  <text class="sub" x="930" y="244">Deriva y</text>
+  <text class="sub" x="930" y="262">calidad</text>
+
+  <!-- forward arrows -->
+  <line class="arrow" x1="180" y1="230" x2="200" y2="230" marker-end="url(#ah)"/>
+  <line class="arrow" x1="344" y1="230" x2="364" y2="230" marker-end="url(#ah)"/>
+  <line class="arrow" x1="508" y1="230" x2="528" y2="230" marker-end="url(#ah)"/>
+  <line class="arrow" x1="672" y1="230" x2="692" y2="230" marker-end="url(#ah)"/>
+  <line class="arrow" x1="836" y1="230" x2="856" y2="230" marker-end="url(#ah)"/>
+
+  <!-- feedback loop -->
+  <path class="loop" d="M930 280 L930 400 L274 400 L274 284" marker-end="url(#ao)"/>
+  <path class="loop" d="M620 400 L438 400 L438 284" marker-end="url(#ao)"/>
+  <text class="looplbl" x="600" y="430">Bucle de retroalimentación: el monitoreo impulsa nuevos datos y reentrenamiento</text>
+</svg>

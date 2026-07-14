@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="520" viewBox="0 0 1040 520" role="img" aria-labelledby="title desc">
+  <title id="title">Tabla comparativa de API frente a servicio web</title>
+  <desc id="desc">Una tabla de dos columnas que compara una API y un servicio web según su definición, lo que describe cada uno y un ejemplo.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .rowlabel { font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #0f172a; }
+      .colhead { font-family: Segoe UI, Arial, sans-serif; font-size: 18px; font-weight: 700; fill: #ffffff; text-anchor: middle; }
+      .cell { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; fill: #1f2937; }
+      .grid { stroke: #cbd5e1; stroke-width: 1.5; fill: none; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="520"/>
+  <text class="title" x="60" y="52">API vs Servicio Web</text>
+  <text class="subtitle" x="60" y="80">Una comparación lado a lado</text>
+
+  <!-- header row -->
+  <rect x="40" y="120" width="240" height="60" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="280" y="120" width="360" height="60" fill="#004a99"/>
+  <rect x="640" y="120" width="360" height="60" fill="#15803d"/>
+  <text class="colhead" x="460" y="157">API</text>
+  <text class="colhead" x="820" y="157">Servicio Web</text>
+
+  <!-- Row 1 -->
+  <rect x="40" y="180" width="240" height="100" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="280" y="180" width="360" height="100" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="640" y="180" width="360" height="100" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text class="rowlabel" x="60" y="234">Definición</text>
+  <text class="cell" x="300" y="220">El contrato que define cómo</text>
+  <text class="cell" x="300" y="242">interactuar: qué enviar y qué</text>
+  <text class="cell" x="300" y="264">esperar de respuesta.</text>
+  <text class="cell" x="660" y="220">La implementación alojada y</text>
+  <text class="cell" x="660" y="242">en ejecución que cumple</text>
+  <text class="cell" x="660" y="264">con el contrato.</text>
+
+  <!-- Row 2 -->
+  <rect x="40" y="280" width="240" height="110" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="280" y="280" width="360" height="110" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="640" y="280" width="360" height="110" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text class="rowlabel" x="60" y="328">Qué</text>
+  <text class="rowlabel" x="60" y="350">describe</text>
+  <text class="cell" x="300" y="316">Esquema de solicitud/respuesta,</text>
+  <text class="cell" x="300" y="340">autenticación, tipos de datos</text>
+  <text class="cell" x="300" y="364">y reglas de versionado.</text>
+  <text class="cell" x="660" y="316">Un despliegue en ejecución con</text>
+  <text class="cell" x="660" y="340">cómputo, réplicas y el código</text>
+  <text class="cell" x="660" y="364">que ejecuta la lógica.</text>
+
+  <!-- Row 3 -->
+  <rect x="40" y="390" width="240" height="100" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="280" y="390" width="360" height="100" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="640" y="390" width="360" height="100" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text class="rowlabel" x="60" y="444">Ejemplo</text>
+  <text class="cell" x="300" y="430">«POST /score espera JSON de</text>
+  <text class="cell" x="300" y="454">características y devuelve una</text>
+  <text class="cell" x="300" y="478">etiqueta y probabilidad.»</text>
+  <text class="cell" x="660" y="430">El endpoint en línea de Azure</text>
+  <text class="cell" x="660" y="454">ML que realmente aloja y</text>
+  <text class="cell" x="660" y="478">sirve ese modelo.</text>
+</svg>

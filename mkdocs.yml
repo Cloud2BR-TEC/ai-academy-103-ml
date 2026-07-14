@@ -1,0 +1,104 @@
+site_name: "Machine Learning 103"
+site_description: Advanced Azure Machine Learning implementation training.
+site_url: https://cloud2br-tec.github.io/ai-academy-103-ml/
+docs_dir: docs/i18n
+copyright: Copyright &copy; 2026 <a href="https://github.com/Cloud2BR-TEC" target="_blank" rel="noopener">Cloud2BR TEC</a>
+
+theme:
+  name: material
+  language: en
+  logo: assets/img/org-logo.png
+  favicon: assets/img/org-logo.png
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+  palette:
+    scheme: default
+    primary: blue
+    accent: blue
+
+plugins:
+  - search
+  - i18n:
+      docs_structure: folder
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: es
+          name: "Español"
+          build: true
+          nav_translations:
+            Home: Inicio
+            01. Platform and Azure Setup: "01. Plataforma y Configuración de Azure"
+            02. Model Creation Pipeline: "02. Pipeline de Creación de Modelos"
+            03. Fabric and Azure ML Integration: "03. Integración de Fabric y Azure ML"
+            04. Azure ML Environment Strategy: "04. Estrategia de Entornos en Azure ML"
+            05. Advanced Data Preparation: "05. Preparación Avanzada de Datos"
+            06. Training and Experimentation at Scale: "06. Entrenamiento y Experimentación a Escala"
+            07. Terraform for Azure ML: "07. Terraform para Azure ML"
+            08. Terraform for Fabric: "08. Terraform para Fabric"
+            09. Deployment Reliability and SRE: "09. Confiabilidad de Despliegue y SRE"
+            10. Capstone Architecture and Governance: "10. Arquitectura Final y Gobernanza"
+            Reference: Referencia
+            Overview: "Visión General"
+            Mathematical Model Deep Dive: "Análisis Matemático Profundo de Modelos"
+            CLI Commands: "Comandos CLI"
+            Glossary: Glosario
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: false
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js
+  - assets/js/mermaid-init.js
+  - assets/js/org-link.js
+
+extra_css:
+  - assets/css/custom.css
+
+extra:
+  generator: false
+
+nav:
+  - Home: index.md
+  - 01. Platform and Azure Setup: modules/01-math-prerequisites.md
+  - 02. Model Creation Pipeline: modules/02-e2e-overview.md
+  - 03. Fabric and Azure ML Integration: modules/03-introduction.md
+  - 04. Azure ML Environment Strategy: modules/04-ml-foundations.md
+  - 05. Advanced Data Preparation: modules/05-neural-networks.md
+  - 06. Training and Experimentation at Scale: modules/06-azure-ml-environment.md
+  - 07. Terraform for Azure ML: modules/07-environment-setup.md
+  - 08. Terraform for Fabric: modules/08-data-preparation.md
+  - 09. Deployment Reliability and SRE: modules/09-model-types.md
+  - 10. Capstone Architecture and Governance: modules/10-training-automl.md
+  - Reference:
+      - Overview: reference/index.md
+      - Mathematical Model Deep Dive: reference/model-math-deep-dive.md
+      - CLI Commands: reference/cli-commands.md
+      - Glossary: reference/glossary.md

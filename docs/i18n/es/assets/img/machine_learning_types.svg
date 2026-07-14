@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="520" viewBox="0 0 1040 520" role="img" aria-labelledby="title desc">
+  <title id="title">Tipos de aprendizaje automático</title>
+  <desc id="desc">Aprendizaje supervisado, no supervisado y por refuerzo lado a lado, cada uno distinguido por su señal de retroalimentación.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .head { font-family: Segoe UI, Arial, sans-serif; font-size: 19px; font-weight: 700; fill: #ffffff; text-anchor: middle; }
+      .item { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; fill: #1f2937; }
+      .siglbl { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; font-weight: 700; fill: #0f172a; }
+      .sigval { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; fill: #b45309; font-weight: 700; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="520"/>
+  <text class="title" x="60" y="52">Tipos de Aprendizaje Automático</text>
+  <text class="subtitle" x="60" y="80">Cada tipo se distingue por la señal de retroalimentación de la que aprende</text>
+
+  <!-- Supervisado -->
+  <rect class="card" x="50" y="120" width="290" height="340" rx="10" stroke="#004a99" stroke-width="2"/>
+  <rect x="50" y="120" width="290" height="44" rx="10" fill="#004a99"/>
+  <text class="head" x="195" y="149">Supervisado</text>
+  <text class="item" x="70" y="200">Aprende de datos que ya</text>
+  <text class="item" x="70" y="224">están etiquetados con las</text>
+  <text class="item" x="70" y="248">respuestas correctas.</text>
+  <text class="item" x="70" y="290">Ejemplos:</text>
+  <text class="item" x="70" y="314">• Spam vs no spam</text>
+  <text class="item" x="70" y="338">• Predicción de precio</text>
+  <rect x="70" y="370" width="250" height="64" rx="8" fill="#eff6ff" stroke="#004a99" stroke-width="1.5"/>
+  <text class="siglbl" x="84" y="396">Señal de retroalimentación:</text>
+  <text class="sigval" x="84" y="420">Respuestas etiquetadas</text>
+
+  <!-- No supervisado -->
+  <rect class="card" x="375" y="120" width="290" height="340" rx="10" stroke="#0e7490" stroke-width="2"/>
+  <rect x="375" y="120" width="290" height="44" rx="10" fill="#0e7490"/>
+  <text class="head" x="520" y="149">No supervisado</text>
+  <text class="item" x="395" y="200">Encuentra estructura en</text>
+  <text class="item" x="395" y="224">datos sin etiquetas: solo</text>
+  <text class="item" x="395" y="248">grupos y patrones.</text>
+  <text class="item" x="395" y="290">Ejemplos:</text>
+  <text class="item" x="395" y="314">• Segmentos de clientes</text>
+  <text class="item" x="395" y="338">• Detección de anomalías</text>
+  <rect x="395" y="370" width="250" height="64" rx="8" fill="#ecfeff" stroke="#0e7490" stroke-width="1.5"/>
+  <text class="siglbl" x="409" y="396">Señal de retroalimentación:</text>
+  <text class="sigval" x="409" y="420">Solo estructura</text>
+
+  <!-- Refuerzo -->
+  <rect class="card" x="700" y="120" width="290" height="340" rx="10" stroke="#15803d" stroke-width="2"/>
+  <rect x="700" y="120" width="290" height="44" rx="10" fill="#15803d"/>
+  <text class="head" x="845" y="149">Por refuerzo</text>
+  <text class="item" x="720" y="200">Aprende interactuando con</text>
+  <text class="item" x="720" y="224">un entorno y recibiendo</text>
+  <text class="item" x="720" y="248">recompensas o penalizaciones.</text>
+  <text class="item" x="720" y="290">Ejemplos:</text>
+  <text class="item" x="720" y="314">• Juegos</text>
+  <text class="item" x="720" y="338">• Control de robótica</text>
+  <rect x="720" y="370" width="250" height="64" rx="8" fill="#f0fdf4" stroke="#15803d" stroke-width="1.5"/>
+  <text class="siglbl" x="734" y="396">Señal de retroalimentación:</text>
+  <text class="sigval" x="734" y="420">Recompensa por acciones</text>
+</svg>

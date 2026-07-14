@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="540" viewBox="0 0 1040 540" role="img" aria-labelledby="title desc">
+  <title id="title">Naive Bayes: prior times likelihoods</title>
+  <desc id="desc">Bayes rule shown as multiplication: a class prior is multiplied by per-feature likelihoods to produce a score for each class, and the highest score wins.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .box { fill: #ffffff; stroke: #004a99; stroke-width: 2.5; rx: 10; }
+      .boxw { fill: #fff7ed; stroke: #b45309; stroke-width: 2.5; rx: 10; }
+      .lbl { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; }
+      .sub { fill: #475569; font-family: Segoe UI, Arial, sans-serif; font-size: 13px; }
+      .op { fill: #004a99; font-family: Segoe UI, Arial, sans-serif; font-size: 30px; font-weight: 700; }
+      .win { fill: #15803d; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; }
+      .arrow { stroke: #475569; stroke-width: 2.5; }
+      .note { fill: #475569; font-family: Segoe UI, Arial, sans-serif; font-size: 14px; }
+    </style>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#475569"/></marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="540"/>
+  <text class="title" x="60" y="52">Naive Bayes: multiply independent clues</text>
+  <text class="subtitle" x="60" y="80">Assume features are independent, multiply their likelihoods by the class prior, pick the biggest.</text>
+  <!-- row -->
+  <rect class="box" x="80" y="160" width="150" height="80" rx="10"/>
+  <text class="lbl" x="155" y="195" text-anchor="middle">P(class)</text>
+  <text class="sub" x="155" y="218" text-anchor="middle">prior</text>
+  <text class="op" x="252" y="210" text-anchor="middle">×</text>
+  <rect class="box" x="285" y="160" width="150" height="80" rx="10"/>
+  <text class="lbl" x="360" y="195" text-anchor="middle">P(word₁|class)</text>
+  <text class="sub" x="360" y="218" text-anchor="middle">likelihood</text>
+  <text class="op" x="457" y="210" text-anchor="middle">×</text>
+  <rect class="box" x="490" y="160" width="150" height="80" rx="10"/>
+  <text class="lbl" x="565" y="195" text-anchor="middle">P(word₂|class)</text>
+  <text class="sub" x="565" y="218" text-anchor="middle">likelihood</text>
+  <text class="op" x="662" y="210" text-anchor="middle">×</text>
+  <text class="op" x="700" y="208" text-anchor="middle">…</text>
+  <text class="op" x="740" y="210" text-anchor="middle">=</text>
+  <rect class="boxw" x="775" y="160" width="180" height="80" rx="10"/>
+  <text class="lbl" x="865" y="195" text-anchor="middle">score(class)</text>
+  <text class="sub" x="865" y="218" text-anchor="middle">unnormalized posterior</text>
+  <!-- arg max -->
+  <line class="arrow" x1="865" y1="240" x2="865" y2="320" marker-end="url(#ar)"/>
+  <rect class="box" x="720" y="320" width="290" height="70" rx="10"/>
+  <text class="win" x="865" y="362" text-anchor="middle">arg max over classes → prediction</text>
+  <!-- notes -->
+  <text class="note" x="80" y="320" font-weight="700" fill="#b45309">Work in log-space:</text>
+  <text class="note" x="80" y="345">multiplying thousands of tiny probabilities underflows,</text>
+  <text class="note" x="80" y="368">so we add logs instead of multiplying.</text>
+  <text class="note" x="80" y="410" font-weight="700" fill="#004a99">Smoothing (α) keeps an unseen word</text>
+  <text class="note" x="80" y="433">from zeroing out the whole product.</text>
+</svg>

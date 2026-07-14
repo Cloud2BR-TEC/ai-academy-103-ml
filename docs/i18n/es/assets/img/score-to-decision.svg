@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="560" viewBox="0 0 1040 560" role="img" aria-labelledby="title desc">
+  <title id="title">Del puntaje a la probabilidad a la decisión</title>
+  <desc id="desc">La función sigmoide convierte un puntaje bruto del modelo en una probabilidad entre 0 y 1. Un umbral luego convierte esa probabilidad en una decisión de sí o no.</desc>
+
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .axis { stroke: #0f172a; stroke-width: 3; }
+      .axis-label { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; }
+      .curve { fill: none; stroke: #004a99; stroke-width: 5; }
+      .grid { stroke: #cbd5e1; stroke-width: 1.5; }
+      .thr { stroke: #b45309; stroke-width: 3; stroke-dasharray: 7 5; }
+      .label { fill: #1f2937; font-family: Segoe UI, Arial, sans-serif; font-size: 14px; }
+      .note { fill: #475569; font-family: Segoe UI, Arial, sans-serif; font-size: 13px; }
+      .zone0 { fill: #fde7d3; opacity: 0.55; }
+      .zone1 { fill: #d6e8d0; opacity: 0.55; }
+      .ztxt { font-family: Segoe UI, Arial, sans-serif; font-size: 16px; font-weight: 700; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1040" height="560"/>
+  <text class="title" x="60" y="52">Convertir un puntaje en una decisión</text>
+  <text class="subtitle" x="60" y="80">La curva en S convierte cualquier puntaje en una probabilidad de 0 a 100%; una línea de corte la convierte en un Sí o un No.</text>
+
+  <!-- decision zones -->
+  <rect class="zone0" x="120" y="120" width="420" height="380"/>
+  <rect class="zone1" x="540" y="120" width="420" height="380"/>
+
+  <!-- axes -->
+  <line class="axis" x1="120" y1="500" x2="960" y2="500"/>
+  <line class="axis" x1="540" y1="500" x2="540" y2="120"/>
+  <text class="axis-label" x="540" y="540" text-anchor="middle">Puntaje del modelo (salida bruta)  -  bajo a la izquierda, alto a la derecha</text>
+  <text class="axis-label" x="60" y="310" transform="rotate(-90 60 310)" text-anchor="middle">Probabilidad de que sea un Sí</text>
+
+  <!-- p=0, p=0.5, p=1 gridlines -->
+  <line class="grid" x1="120" y1="500" x2="960" y2="500"/>
+  <line class="grid" x1="120" y1="310" x2="960" y2="310"/>
+  <line class="grid" x1="120" y1="120" x2="960" y2="120"/>
+  <text class="note" x="100" y="505" text-anchor="end">0.0</text>
+  <text class="note" x="100" y="315" text-anchor="end">0.5</text>
+  <text class="note" x="100" y="125" text-anchor="end">1.0</text>
+
+  <!-- sigmoid curve -->
+  <path class="curve" d="M130,492 C320,486 430,470 500,400 C540,360 540,260 580,220 C650,150 760,134 950,128"/>
+
+  <!-- threshold line at p=0.5 -->
+  <line class="thr" x1="120" y1="310" x2="960" y2="310"/>
+  <text class="note" x="930" y="300" text-anchor="end" fill="#b45309" font-weight="700">línea de corte (predeterminado 50%)</text>
+
+  <!-- zone labels -->
+  <text class="ztxt" x="330" y="160" text-anchor="middle" fill="#9a4a12">Por debajo del umbral</text>
+  <text class="ztxt" x="330" y="184" text-anchor="middle" fill="#9a4a12">predecir clase 0 (No)</text>
+  <text class="ztxt" x="750" y="460" text-anchor="middle" fill="#256029">Por encima del umbral</text>
+  <text class="ztxt" x="750" y="484" text-anchor="middle" fill="#256029">predecir clase 1 (Sí)</text>
+
+  <!-- callouts -->
+  <text class="note" x="150" y="430">Los puntajes brutos pueden ser cualquier número;</text>
+  <text class="note" x="150" y="448">la curva en S los comprime de 0 a 100%.</text>
+  <text class="note" x="600" y="500">Desliza el corte a izquierda o derecha para captar</text>
+  <text class="note" x="600" y="518" fill="#475569">más casos o generar menos falsas alarmas.</text>
+</svg>

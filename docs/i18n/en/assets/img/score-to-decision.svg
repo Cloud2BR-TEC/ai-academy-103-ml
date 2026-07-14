@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="560" viewBox="0 0 1040 560" role="img" aria-labelledby="title desc">
+  <title id="title">From score to probability to decision</title>
+  <desc id="desc">The sigmoid function turns a raw model score into a probability between 0 and 1. A threshold then converts that probability into a yes or no decision.</desc>
+
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .axis { stroke: #0f172a; stroke-width: 3; }
+      .axis-label { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; }
+      .curve { fill: none; stroke: #004a99; stroke-width: 5; }
+      .grid { stroke: #cbd5e1; stroke-width: 1.5; }
+      .thr { stroke: #b45309; stroke-width: 3; stroke-dasharray: 7 5; }
+      .label { fill: #1f2937; font-family: Segoe UI, Arial, sans-serif; font-size: 14px; }
+      .note { fill: #475569; font-family: Segoe UI, Arial, sans-serif; font-size: 13px; }
+      .zone0 { fill: #fde7d3; opacity: 0.55; }
+      .zone1 { fill: #d6e8d0; opacity: 0.55; }
+      .ztxt { font-family: Segoe UI, Arial, sans-serif; font-size: 16px; font-weight: 700; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1040" height="560"/>
+  <text class="title" x="60" y="52">Turning a score into a decision</text>
+  <text class="subtitle" x="60" y="80">The S-curve turns any score into a 0-to-100% chance; a cut-off line turns that into a Yes or No.</text>
+
+  <!-- decision zones -->
+  <rect class="zone0" x="120" y="120" width="420" height="380"/>
+  <rect class="zone1" x="540" y="120" width="420" height="380"/>
+
+  <!-- axes -->
+  <line class="axis" x1="120" y1="500" x2="960" y2="500"/>
+  <line class="axis" x1="540" y1="500" x2="540" y2="120"/>
+  <text class="axis-label" x="540" y="540" text-anchor="middle">Model score (raw output)  -  low on left, high on right</text>
+  <text class="axis-label" x="60" y="310" transform="rotate(-90 60 310)" text-anchor="middle">Chance it is a Yes</text>
+
+  <!-- p=0, p=0.5, p=1 gridlines -->
+  <line class="grid" x1="120" y1="500" x2="960" y2="500"/>
+  <line class="grid" x1="120" y1="310" x2="960" y2="310"/>
+  <line class="grid" x1="120" y1="120" x2="960" y2="120"/>
+  <text class="note" x="100" y="505" text-anchor="end">0.0</text>
+  <text class="note" x="100" y="315" text-anchor="end">0.5</text>
+  <text class="note" x="100" y="125" text-anchor="end">1.0</text>
+
+  <!-- sigmoid curve -->
+  <path class="curve" d="M130,492 C320,486 430,470 500,400 C540,360 540,260 580,220 C650,150 760,134 950,128"/>
+
+  <!-- threshold line at p=0.5 -->
+  <line class="thr" x1="120" y1="310" x2="960" y2="310"/>
+  <text class="note" x="930" y="300" text-anchor="end" fill="#b45309" font-weight="700">cut-off line (default 50%)</text>
+
+  <!-- zone labels -->
+  <text class="ztxt" x="330" y="160" text-anchor="middle" fill="#9a4a12">Below threshold</text>
+  <text class="ztxt" x="330" y="184" text-anchor="middle" fill="#9a4a12">predict class 0 (No)</text>
+  <text class="ztxt" x="750" y="460" text-anchor="middle" fill="#256029">Above threshold</text>
+  <text class="ztxt" x="750" y="484" text-anchor="middle" fill="#256029">predict class 1 (Yes)</text>
+
+  <!-- callouts -->
+  <text class="note" x="150" y="430">Raw scores can be any number;</text>
+  <text class="note" x="150" y="448">the S-curve squeezes them into 0 to 100%.</text>
+  <text class="note" x="600" y="500">Slide the cut-off left or right to catch</text>
+  <text class="note" x="600" y="518" fill="#475569">more cases or raise fewer false alarms.</text>
+</svg>

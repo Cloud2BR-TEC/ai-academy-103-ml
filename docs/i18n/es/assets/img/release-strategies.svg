@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="720" viewBox="0 0 1040 720" role="img" aria-labelledby="title desc">
+  <title id="title">Estrategias de publicación de despliegue</title>
+  <desc id="desc">Comparación de las estrategias de despliegue azul-verde, canario y sombra para publicar una nueva versión de modelo de forma segura.</desc>
+
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 30px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 16px; }
+      .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .cardhead { font-family: Segoe UI, Arial, sans-serif; font-size: 20px; font-weight: 700; }
+      .node { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; font-weight: 700; fill: #ffffff; }
+      .label { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #1f2937; }
+      .desc { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #475569; }
+      .v1 { fill: #0e7490; }
+      .v2 { fill: #004a99; }
+      .users { fill: #64748b; }
+      .arrow { stroke: #475569; stroke-width: 2.5; fill: none; }
+      .arrowfaint { stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 5 5; fill: none; }
+    </style>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#475569"/>
+    </marker>
+    <marker id="ahf" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1040" height="720"/>
+  <text class="title" x="60" y="56">Estrategias de publicación de despliegue</text>
+  <text class="subtitle" x="60" y="84">Tres formas de publicar una nueva versión de modelo (v2) sin arriesgar la versión en producción (v1)</text>
+
+  <!-- ===== Blue-Green ===== -->
+  <rect class="card" x="60" y="120" width="920" height="170" rx="12"/>
+  <text class="cardhead" x="84" y="152" fill="#004a99">Azul/Verde</text>
+  <text class="desc" x="84" y="174">Dos entornos completos. Cambia el 100% del tráfico de v1 a v2 al instante; vuelve a cambiar para revertir.</text>
+
+  <rect class="users" x="84" y="200" width="120" height="48" rx="8"/>
+  <text class="node" x="144" y="229" text-anchor="middle">Todos los usuarios</text>
+
+  <rect class="v1" x="560" y="190" width="160" height="40" rx="8"/>
+  <text class="node" x="640" y="215" text-anchor="middle">v1 (Azul)</text>
+  <rect class="v2" x="560" y="244" width="160" height="40" rx="8"/>
+  <text class="node" x="640" y="269" text-anchor="middle">v2 (Verde)</text>
+
+  <path class="arrow" d="M204,224 L555,210" marker-end="url(#ah)"/>
+  <path class="arrowfaint" d="M204,228 L555,262" marker-end="url(#ahf)"/>
+  <text class="label" x="380" y="200">100% ahora</text>
+  <text class="desc" x="760" y="230">El cambio es instantáneo.</text>
+  <text class="desc" x="760" y="252">Reversión = volver a cambiar.</text>
+
+  <!-- ===== Canary ===== -->
+  <rect class="card" x="60" y="310" width="920" height="170" rx="12"/>
+  <text class="cardhead" x="84" y="342" fill="#004a99">Canario</text>
+  <text class="desc" x="84" y="364">Dirige una porción pequeña (p. ej. 5%) a v2, observa las métricas y luego aumenta gradualmente al 100%.</text>
+
+  <rect class="users" x="84" y="390" width="120" height="48" rx="8"/>
+  <text class="node" x="144" y="419" text-anchor="middle">Todos los usuarios</text>
+
+  <rect class="v1" x="560" y="380" width="160" height="40" rx="8"/>
+  <text class="node" x="640" y="405" text-anchor="middle">v1 (95%)</text>
+  <rect class="v2" x="560" y="434" width="160" height="40" rx="8"/>
+  <text class="node" x="640" y="459" text-anchor="middle">v2 (5%)</text>
+
+  <path class="arrow" d="M204,410 L555,400" marker-end="url(#ah)"/>
+  <path class="arrow" d="M204,418 L555,452" marker-end="url(#ah)"/>
+  <text class="label" x="380" y="392">95%</text>
+  <text class="label" x="380" y="468">5% canario</text>
+  <text class="desc" x="760" y="420">Aumenta de 5 a 100%</text>
+  <text class="desc" x="760" y="442">si las métricas siguen en verde.</text>
+
+  <!-- ===== Shadow ===== -->
+  <rect class="card" x="60" y="500" width="920" height="180" rx="12"/>
+  <text class="cardhead" x="84" y="532" fill="#004a99">Sombra (Espejo)</text>
+  <text class="desc" x="84" y="554">Envía una copia del tráfico en vivo a v2 pero descarta sus respuestas. Prueba v2 con carga real sin impacto en los usuarios.</text>
+
+  <rect class="users" x="84" y="582" width="120" height="48" rx="8"/>
+  <text class="node" x="144" y="611" text-anchor="middle">Todos los usuarios</text>
+
+  <rect class="v1" x="560" y="572" width="160" height="40" rx="8"/>
+  <text class="node" x="640" y="597" text-anchor="middle">v1 (atiende)</text>
+  <rect class="v2" x="560" y="626" width="160" height="40" rx="8"/>
+  <text class="node" x="640" y="651" text-anchor="middle">v2 (sombra)</text>
+
+  <path class="arrow" d="M204,600 L555,592" marker-end="url(#ah)"/>
+  <path class="arrowfaint" d="M204,608 L555,644" marker-end="url(#ahf)"/>
+  <text class="label" x="360" y="584">100% atendido</text>
+  <text class="label" x="360" y="660">copia reflejada</text>
+  <text class="desc" x="760" y="612">Las respuestas de v2 se</text>
+  <text class="desc" x="760" y="634">registran, no se devuelven.</text>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="540" viewBox="0 0 1040 540" role="img" aria-labelledby="title desc">
+  <title id="title">ML tasks organized by objective</title>
+  <desc id="desc">A grid of machine learning tasks by objective: predict a class, predict a number, group records, and reduce dimensions.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .head { font-family: Segoe UI, Arial, sans-serif; font-size: 19px; font-weight: 700; fill: #ffffff; }
+      .task { font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #0f172a; }
+      .item { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; fill: #1f2937; }
+      .ex { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #475569; font-style: italic; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="540"/>
+  <text class="title" x="60" y="52">ML Tasks by Objective</text>
+  <text class="subtitle" x="60" y="80">What you are trying to produce determines the task family</text>
+
+  <!-- Predict a Class -->
+  <rect class="card" x="60" y="120" width="440" height="180" rx="10" stroke="#004a99" stroke-width="2"/>
+  <rect x="60" y="120" width="440" height="44" rx="10" fill="#004a99"/>
+  <text class="head" x="80" y="149">Predict a Class</text>
+  <text class="task" x="80" y="196">Classification</text>
+  <text class="item" x="80" y="224">Assign each record to one of a set</text>
+  <text class="item" x="80" y="248">of discrete categories.</text>
+  <text class="ex" x="80" y="282">Example: is this email spam or not spam?</text>
+
+  <!-- Predict a Number -->
+  <rect class="card" x="540" y="120" width="440" height="180" rx="10" stroke="#0e7490" stroke-width="2"/>
+  <rect x="540" y="120" width="440" height="44" rx="10" fill="#0e7490"/>
+  <text class="head" x="560" y="149">Predict a Number</text>
+  <text class="task" x="560" y="196">Regression</text>
+  <text class="item" x="560" y="224">Estimate a continuous numeric</text>
+  <text class="item" x="560" y="248">value from the inputs.</text>
+  <text class="ex" x="560" y="282">Example: predict tomorrow's house price.</text>
+
+  <!-- Group Records -->
+  <rect class="card" x="60" y="320" width="440" height="180" rx="10" stroke="#b45309" stroke-width="2"/>
+  <rect x="60" y="320" width="440" height="44" rx="10" fill="#b45309"/>
+  <text class="head" x="80" y="349">Group Records</text>
+  <text class="task" x="80" y="396">Clustering</text>
+  <text class="item" x="80" y="424">Group similar records together</text>
+  <text class="item" x="80" y="448">without predefined labels.</text>
+  <text class="ex" x="80" y="482">Example: segment customers by behaviour.</text>
+
+  <!-- Reduce Dimensions -->
+  <rect class="card" x="540" y="320" width="440" height="180" rx="10" stroke="#15803d" stroke-width="2"/>
+  <rect x="540" y="320" width="440" height="44" rx="10" fill="#15803d"/>
+  <text class="head" x="560" y="349">Reduce Dimensions</text>
+  <text class="task" x="560" y="396">Dimensionality Reduction</text>
+  <text class="item" x="560" y="424">Compress many features into a few</text>
+  <text class="item" x="560" y="448">while keeping the signal.</text>
+  <text class="ex" x="560" y="482">Example: PCA to visualize high-dim data.</text>
+</svg>

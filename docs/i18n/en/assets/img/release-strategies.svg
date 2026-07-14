@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="720" viewBox="0 0 1040 720" role="img" aria-labelledby="title desc">
+  <title id="title">Deployment Release Strategies</title>
+  <desc id="desc">Comparison of blue-green, canary, and shadow deployment strategies for releasing a new model version safely.</desc>
+
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 30px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 16px; }
+      .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .cardhead { font-family: Segoe UI, Arial, sans-serif; font-size: 20px; font-weight: 700; }
+      .node { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; font-weight: 700; fill: #ffffff; }
+      .label { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #1f2937; }
+      .desc { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #475569; }
+      .v1 { fill: #0e7490; }
+      .v2 { fill: #004a99; }
+      .users { fill: #64748b; }
+      .arrow { stroke: #475569; stroke-width: 2.5; fill: none; }
+      .arrowfaint { stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 5 5; fill: none; }
+    </style>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#475569"/>
+    </marker>
+    <marker id="ahf" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1040" height="720"/>
+  <text class="title" x="60" y="56">Deployment Release Strategies</text>
+  <text class="subtitle" x="60" y="84">Three ways to ship a new model version (v2) without risking the live one (v1)</text>
+
+  <!-- ===== Blue-Green ===== -->
+  <rect class="card" x="60" y="120" width="920" height="170" rx="12"/>
+  <text class="cardhead" x="84" y="152" fill="#004a99">Blue-Green</text>
+  <text class="desc" x="84" y="174">Two full environments. Flip 100% of traffic from v1 to v2 instantly; flip back to roll back.</text>
+
+  <rect class="users" x="84" y="200" width="120" height="48" rx="8"/>
+  <text class="node" x="144" y="229" text-anchor="middle">All users</text>
+
+  <rect class="v1" x="560" y="190" width="160" height="40" rx="8"/>
+  <text class="node" x="640" y="215" text-anchor="middle">v1 (Blue)</text>
+  <rect class="v2" x="560" y="244" width="160" height="40" rx="8"/>
+  <text class="node" x="640" y="269" text-anchor="middle">v2 (Green)</text>
+
+  <path class="arrow" d="M204,224 L555,210" marker-end="url(#ah)"/>
+  <path class="arrowfaint" d="M204,228 L555,262" marker-end="url(#ahf)"/>
+  <text class="label" x="380" y="200">100% now</text>
+  <text class="desc" x="760" y="230">Cutover is instant.</text>
+  <text class="desc" x="760" y="252">Rollback = flip back.</text>
+
+  <!-- ===== Canary ===== -->
+  <rect class="card" x="60" y="310" width="920" height="170" rx="12"/>
+  <text class="cardhead" x="84" y="342" fill="#004a99">Canary</text>
+  <text class="desc" x="84" y="364">Route a small slice (e.g. 5%) to v2, watch metrics, then gradually ramp to 100%.</text>
+
+  <rect class="users" x="84" y="390" width="120" height="48" rx="8"/>
+  <text class="node" x="144" y="419" text-anchor="middle">All users</text>
+
+  <rect class="v1" x="560" y="380" width="160" height="40" rx="8"/>
+  <text class="node" x="640" y="405" text-anchor="middle">v1 (95%)</text>
+  <rect class="v2" x="560" y="434" width="160" height="40" rx="8"/>
+  <text class="node" x="640" y="459" text-anchor="middle">v2 (5%)</text>
+
+  <path class="arrow" d="M204,410 L555,400" marker-end="url(#ah)"/>
+  <path class="arrow" d="M204,418 L555,452" marker-end="url(#ah)"/>
+  <text class="label" x="380" y="392">95%</text>
+  <text class="label" x="380" y="468">5% canary</text>
+  <text class="desc" x="760" y="420">Ramp 5 to 100%</text>
+  <text class="desc" x="760" y="442">if metrics stay green.</text>
+
+  <!-- ===== Shadow ===== -->
+  <rect class="card" x="60" y="500" width="920" height="180" rx="12"/>
+  <text class="cardhead" x="84" y="532" fill="#004a99">Shadow (Mirror)</text>
+  <text class="desc" x="84" y="554">Send a copy of live traffic to v2 but discard its responses. Tests v2 on real load with zero user impact.</text>
+
+  <rect class="users" x="84" y="582" width="120" height="48" rx="8"/>
+  <text class="node" x="144" y="611" text-anchor="middle">All users</text>
+
+  <rect class="v1" x="560" y="572" width="160" height="40" rx="8"/>
+  <text class="node" x="640" y="597" text-anchor="middle">v1 (serves)</text>
+  <rect class="v2" x="560" y="626" width="160" height="40" rx="8"/>
+  <text class="node" x="640" y="651" text-anchor="middle">v2 (shadow)</text>
+
+  <path class="arrow" d="M204,600 L555,592" marker-end="url(#ah)"/>
+  <path class="arrowfaint" d="M204,608 L555,644" marker-end="url(#ahf)"/>
+  <text class="label" x="360" y="584">100% served</text>
+  <text class="label" x="360" y="660">mirrored copy</text>
+  <text class="desc" x="760" y="612">v2 responses are</text>
+  <text class="desc" x="760" y="634">logged, not returned.</text>
+</svg>

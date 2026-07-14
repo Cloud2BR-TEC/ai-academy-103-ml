@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="480" viewBox="0 0 1040 480" role="img" aria-labelledby="title desc">
+  <title id="title">Azure ML Endpoint Concept</title>
+  <desc id="desc">Anatomy of an Azure ML endpoint: a scoring request passes through authentication and a traffic router to one or more model version deployments such as blue and green.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .node { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; font-weight: 700; fill: #ffffff; }
+      .label { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #1f2937; }
+      .desc2 { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #475569; }
+      .arrow { stroke: #475569; stroke-width: 2.5; fill: none; }
+      .boundary { fill: none; stroke: #004a99; stroke-width: 2; stroke-dasharray: 7 6; }
+      .boundlbl { font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #004a99; }
+    </style>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="480"/>
+  <text class="title" x="60" y="52">Azure ML Endpoint Concept</text>
+  <text class="subtitle" x="60" y="80">The single stable address consumers call — it authenticates, then routes traffic to deployments</text>
+
+  <!-- Endpoint boundary -->
+  <rect class="boundary" x="260" y="130" width="720" height="300" rx="14"/>
+  <text class="boundlbl" x="280" y="158">Azure ML Endpoint</text>
+
+  <!-- Consumer request -->
+  <rect class="card" x="50" y="220" width="180" height="80" rx="10"/>
+  <rect x="50" y="220" width="180" height="40" rx="10" fill="#64748b"/>
+  <text class="node" x="140" y="246" text-anchor="middle">Scoring Request</text>
+  <text class="desc2" x="68" y="285">HTTPS POST (JSON)</text>
+
+  <!-- Authentication -->
+  <rect class="card" x="290" y="220" width="150" height="80" rx="10"/>
+  <rect x="290" y="220" width="150" height="40" rx="10" fill="#b45309"/>
+  <text class="node" x="365" y="246" text-anchor="middle">Authentication</text>
+  <text class="desc2" x="305" y="285">Key / token / AAD</text>
+
+  <!-- Traffic Router -->
+  <rect class="card" x="480" y="220" width="160" height="80" rx="10"/>
+  <rect x="480" y="220" width="160" height="40" rx="10" fill="#0e7490"/>
+  <text class="node" x="560" y="246" text-anchor="middle">Traffic Router</text>
+  <text class="desc2" x="495" y="285">Splits by weight %</text>
+
+  <!-- Blue deployment -->
+  <rect class="card" x="690" y="170" width="270" height="70" rx="10"/>
+  <rect x="690" y="170" width="270" height="36" rx="10" fill="#004a99"/>
+  <text class="node" x="825" y="194" text-anchor="middle">Deployment: blue — model v1</text>
+  <text class="desc2" x="706" y="228">Compute + scoring script + env</text>
+
+  <!-- Green deployment -->
+  <rect class="card" x="690" y="300" width="270" height="70" rx="10"/>
+  <rect x="690" y="300" width="270" height="36" rx="10" fill="#15803d"/>
+  <text class="node" x="825" y="324" text-anchor="middle">Deployment: green — model v2</text>
+  <text class="desc2" x="706" y="358">New version under test</text>
+
+  <!-- arrows -->
+  <path class="arrow" d="M230,260 L285,260" marker-end="url(#ah)"/>
+  <path class="arrow" d="M440,260 L475,260" marker-end="url(#ah)"/>
+  <path class="arrow" d="M640,250 C668,250 668,205 685,205" marker-end="url(#ah)"/>
+  <path class="arrow" d="M640,270 C668,270 668,335 685,335" marker-end="url(#ah)"/>
+  <text class="label" x="650" y="200">90%</text>
+  <text class="label" x="650" y="360">10%</text>
+</svg>

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="620" viewBox="0 0 1040 620" role="img" aria-labelledby="title desc">
+  <title id="title">How to choose a metric for imbalanced classification</title>
+  <desc id="desc">A decision flowchart: if data is imbalanced, prefer F1, PR-AUC or MCC over accuracy, then weight recall for costly false negatives, precision for costly false positives, or log loss and calibration when probability quality matters.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .start { fill: #0f172a; }
+      .starttxt { font-family: Segoe UI, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #ffffff; }
+      .diamond { fill: #ffffff; stroke: #64748b; stroke-width: 2; }
+      .qtxt { font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #0f172a; }
+      .branch { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; font-weight: 700; fill: #475569; }
+      .label { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; fill: #1f2937; }
+      .head { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; font-weight: 700; }
+      .metric { font-family: Segoe UI, Arial, sans-serif; font-size: 18px; font-weight: 700; }
+      .desc2 { font-family: Segoe UI, Arial, sans-serif; font-size: 12px; fill: #475569; }
+      .arrow { stroke: #475569; stroke-width: 2.5; fill: none; }
+    </style>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="620"/>
+  <text class="title" x="60" y="52">Choosing a metric for imbalanced classification</text>
+  <text class="subtitle" x="60" y="80">Let the cost of each error type drive the metric — accuracy alone can mislead.</text>
+
+  <!-- start -->
+  <rect class="start" x="360" y="104" width="320" height="48" rx="10"/>
+  <text class="starttxt" x="520" y="134" text-anchor="middle">Choosing a classification metric</text>
+  <line class="arrow" x1="520" y1="152" x2="520" y2="184" marker-end="url(#ah)"/>
+
+  <!-- diamond -->
+  <polygon class="diamond" points="520,184 660,239 520,294 380,239"/>
+  <text class="qtxt" x="520" y="244" text-anchor="middle">Is the data imbalanced?</text>
+
+  <!-- No branch -->
+  <line class="arrow" x1="660" y1="239" x2="724" y2="239" marker-end="url(#ah)"/>
+  <text class="branch" x="688" y="229" text-anchor="middle">No</text>
+  <rect class="card" x="726" y="208" width="244" height="62" rx="10" stroke="#64748b"/>
+  <text class="head" x="848" y="234" text-anchor="middle" fill="#64748b">Accuracy is a fair baseline</text>
+  <text class="desc2" x="848" y="254" text-anchor="middle">when classes are roughly balanced.</text>
+
+  <!-- Yes branch -->
+  <line class="arrow" x1="520" y1="294" x2="520" y2="326" marker-end="url(#ah)"/>
+  <text class="branch" x="534" y="314">Yes</text>
+  <rect x="320" y="326" width="400" height="70" rx="10" fill="#ffffff" stroke="#15803d" stroke-width="2"/>
+  <text class="head" x="520" y="354" text-anchor="middle" fill="#15803d" font-size="15">Avoid plain accuracy</text>
+  <text class="label" x="520" y="378" text-anchor="middle">Prefer F1 &#183; PR-AUC &#183; MCC</text>
+
+  <!-- distributor -->
+  <line class="arrow" x1="520" y1="396" x2="520" y2="424" marker-end="url(#ah)"/>
+  <text class="branch" x="640" y="418" text-anchor="middle">Which error costs more?</text>
+  <path class="arrow" d="M200,430 L840,430"/>
+  <line x1="520" y1="424" x2="520" y2="430" class="arrow"/>
+  <line class="arrow" x1="200" y1="430" x2="200" y2="466" marker-end="url(#ah)"/>
+  <line class="arrow" x1="520" y1="430" x2="520" y2="466" marker-end="url(#ah)"/>
+  <line class="arrow" x1="840" y1="430" x2="840" y2="466" marker-end="url(#ah)"/>
+
+  <!-- outcome 1 -->
+  <rect class="card" x="70" y="468" width="260" height="120" rx="10" stroke="#0e7490"/>
+  <text class="head" x="200" y="496" text-anchor="middle" fill="#0e7490">High false-negative cost</text>
+  <text class="metric" x="200" y="528" text-anchor="middle" fill="#0e7490">Weight Recall</text>
+  <text class="desc2" x="200" y="554" text-anchor="middle">Catch the positives &#8212; missing</text>
+  <text class="desc2" x="200" y="570" text-anchor="middle">a true case is expensive.</text>
+
+  <!-- outcome 2 -->
+  <rect class="card" x="390" y="468" width="260" height="120" rx="10" stroke="#b45309"/>
+  <text class="head" x="520" y="496" text-anchor="middle" fill="#b45309">High false-positive cost</text>
+  <text class="metric" x="520" y="528" text-anchor="middle" fill="#b45309">Weight Precision</text>
+  <text class="desc2" x="520" y="554" text-anchor="middle">Avoid false alarms &#8212; acting</text>
+  <text class="desc2" x="520" y="570" text-anchor="middle">on a wrong flag is costly.</text>
+
+  <!-- outcome 3 -->
+  <rect class="card" x="710" y="468" width="260" height="120" rx="10" stroke="#004a99"/>
+  <text class="head" x="840" y="496" text-anchor="middle" fill="#004a99">Need probability quality</text>
+  <text class="metric" x="840" y="528" text-anchor="middle" fill="#004a99">Log loss / calibration</text>
+  <text class="desc2" x="840" y="554" text-anchor="middle">Scores must be reliable, not</text>
+  <text class="desc2" x="840" y="570" text-anchor="middle">just correctly ranked.</text>
+</svg>

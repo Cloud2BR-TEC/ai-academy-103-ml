@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="600" viewBox="0 0 1040 600" role="img" aria-labelledby="title desc">
+  <title id="title">Teorema de Bayes con el ejemplo de la prueba médica</title>
+  <desc id="desc">Un árbol que divide a 1000 personas en 1 por ciento enfermas y 99 por ciento sanas, mostrando que una prueba 99 por ciento precisa produce números casi iguales de verdaderos y falsos positivos, por lo que la probabilidad posterior de enfermedad dado un positivo es de aproximadamente 50 por ciento.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .card { stroke: #cbd5e1; stroke-width: 1.5; }
+      .node { font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #ffffff; }
+      .count { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #ffffff; }
+      .label { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #1f2937; }
+      .desc2 { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #475569; }
+      .panel { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .arrow { stroke: #475569; stroke-width: 2.5; fill: none; }
+      .formula { font-family: Segoe UI, Arial, sans-serif; font-size: 16px; fill: #0f172a; }
+    </style>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="600"/>
+  <text class="title" x="60" y="52">Teorema de Bayes: la trampa de la prueba médica</text>
+  <text class="subtitle" x="60" y="80">Una prueba 99% precisa para una enfermedad rara aún deja solo un ~50% de probabilidad de estar enfermo tras un positivo.</text>
+
+  <!-- conectores -->
+  <path class="arrow" d="M220,305 C255,305 260,186 286,186" marker-end="url(#ah)"/>
+  <path class="arrow" d="M220,305 C255,305 260,436 286,436" marker-end="url(#ah)"/>
+  <path class="arrow" d="M480,186 C515,186 520,140 546,140" marker-end="url(#ah)"/>
+  <path class="arrow" d="M480,186 C515,186 520,230 546,230" marker-end="url(#ah)"/>
+  <path class="arrow" d="M480,436 C515,436 520,390 546,390" marker-end="url(#ah)"/>
+  <path class="arrow" d="M480,436 C515,436 520,480 546,480" marker-end="url(#ah)"/>
+
+  <!-- etiquetas de aristas -->
+  <text class="desc2" x="252" y="232">a priori 1%</text>
+  <text class="desc2" x="252" y="392">a priori 99%</text>
+  <text class="label" x="512" y="118">99%</text>
+  <text class="label" x="512" y="262">1%</text>
+  <text class="label" x="512" y="368">1%</text>
+  <text class="label" x="512" y="512">99%</text>
+
+  <!-- raíz -->
+  <rect class="card" x="70" y="270" width="150" height="70" rx="10" fill="#334155"/>
+  <text class="node" x="145" y="300" text-anchor="middle">Población</text>
+  <text class="count" x="145" y="322" text-anchor="middle">1000 personas</text>
+
+  <!-- nivel 2 -->
+  <rect class="card" x="290" y="150" width="190" height="72" rx="10" fill="#004a99"/>
+  <text class="node" x="385" y="180" text-anchor="middle">Enfermas — 1%</text>
+  <text class="count" x="385" y="202" text-anchor="middle">10 personas</text>
+
+  <rect class="card" x="290" y="400" width="190" height="72" rx="10" fill="#0e7490"/>
+  <text class="node" x="385" y="430" text-anchor="middle">Sanas — 99%</text>
+  <text class="count" x="385" y="452" text-anchor="middle">990 personas</text>
+
+  <!-- nivel 3 -->
+  <rect class="card" x="550" y="110" width="230" height="60" rx="10" fill="#b91c1c"/>
+  <text class="node" x="665" y="136" text-anchor="middle">Prueba + : verd. positivos</text>
+  <text class="count" x="665" y="156" text-anchor="middle">≈ 10</text>
+
+  <rect class="card" x="550" y="200" width="230" height="60" rx="10" fill="#64748b"/>
+  <text class="node" x="665" y="226" text-anchor="middle">Prueba − : falsos negativos</text>
+  <text class="count" x="665" y="246" text-anchor="middle">≈ 0</text>
+
+  <rect class="card" x="550" y="360" width="230" height="60" rx="10" fill="#b45309"/>
+  <text class="node" x="665" y="386" text-anchor="middle">Prueba + : falsos positivos</text>
+  <text class="count" x="665" y="406" text-anchor="middle">≈ 10</text>
+
+  <rect class="card" x="550" y="450" width="230" height="60" rx="10" fill="#15803d"/>
+  <text class="node" x="665" y="476" text-anchor="middle">Prueba − : verd. negativos</text>
+  <text class="count" x="665" y="496" text-anchor="middle">≈ 980</text>
+
+  <!-- panel de resultado -->
+  <rect class="panel" x="815" y="150" width="190" height="320" rx="10"/>
+  <text class="label" x="910" y="182" text-anchor="middle" font-weight="700">Entre ~20 positivos</text>
+  <rect x="835" y="205" width="75" height="44" fill="#b91c1c"/>
+  <rect x="910" y="205" width="75" height="44" fill="#b45309"/>
+  <text class="count" x="872" y="232" text-anchor="middle">10 enf.</text>
+  <text class="count" x="947" y="232" text-anchor="middle">10 san.</text>
+  <text class="desc2" x="910" y="278" text-anchor="middle">La mitad de los positivos</text>
+  <text class="desc2" x="910" y="298" text-anchor="middle">están en realidad sanos.</text>
+  <text class="title" x="910" y="360" text-anchor="middle" font-size="22">P(D | +)</text>
+  <text class="title" x="910" y="400" text-anchor="middle" font-size="30" fill="#b91c1c">≈ 50%</text>
+  <text class="desc2" x="910" y="440" text-anchor="middle">Domina la tasa base</text>
+
+  <!-- fórmula -->
+  <rect class="panel" x="60" y="535" width="945" height="46" rx="10"/>
+  <text class="formula" x="80" y="564">posterior = (verosimilitud × a priori) / evidencia</text>
+  <text class="formula" x="560" y="564">P(D|+) = (0.99 × 0.01) / 0.0198 ≈ 0.50</text>
+</svg>

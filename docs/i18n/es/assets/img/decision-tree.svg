@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="540" viewBox="0 0 1040 540" role="img" aria-labelledby="title desc">
+  <title id="title">Árbol de decisión dividiendo datos en regiones</title>
+  <desc id="desc">Un árbol de decisión como un diagrama de flujo de preguntas sí/no sobre características, terminando en nodos hoja que dan la clase predicha.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .node { fill: #ffffff; stroke: #004a99; stroke-width: 2.5; }
+      .leafA { fill: #e0f2fe; stroke: #0e7490; stroke-width: 2.5; }
+      .leafB { fill: #fff7ed; stroke: #b45309; stroke-width: 2.5; }
+      .q { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; }
+      .leaflbl { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; }
+      .edge { stroke: #475569; stroke-width: 2.5; }
+      .elbl { fill: #475569; font-family: Segoe UI, Arial, sans-serif; font-size: 13px; font-weight: 700; }
+      .note { fill: #475569; font-family: Segoe UI, Arial, sans-serif; font-size: 14px; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="540"/>
+  <text class="title" x="60" y="52">Árbol de decisión: un diagrama de preguntas sí/no</text>
+  <text class="subtitle" x="60" y="80">Cada división elige la pregunta que más reduce la impureza (Gini o entropía).</text>
+  <!-- root -->
+  <rect class="node" x="420" y="110" width="200" height="60" rx="10"/>
+  <text class="q" x="520" y="146" text-anchor="middle">edad &gt; 30 ?</text>
+  <!-- edges to level 2 -->
+  <line class="edge" x1="470" y1="170" x2="280" y2="240"/>
+  <text class="elbl" x="350" y="195">no</text>
+  <line class="edge" x1="570" y1="170" x2="760" y2="240"/>
+  <text class="elbl" x="680" y="195">sí</text>
+  <!-- level 2 left -->
+  <rect class="node" x="180" y="240" width="200" height="60" rx="10"/>
+  <text class="q" x="280" y="276" text-anchor="middle">ingreso &gt; 50k ?</text>
+  <!-- level 2 right -->
+  <rect class="node" x="660" y="240" width="200" height="60" rx="10"/>
+  <text class="q" x="760" y="276" text-anchor="middle">visitas &gt; 5 ?</text>
+  <!-- leaves under left -->
+  <line class="edge" x1="240" y1="300" x2="170" y2="380"/>
+  <text class="elbl" x="185" y="345">no</text>
+  <line class="edge" x1="320" y1="300" x2="380" y2="380"/>
+  <text class="elbl" x="365" y="345">sí</text>
+  <rect class="leafB" x="90" y="380" width="160" height="56" rx="10"/>
+  <text class="leaflbl" x="170" y="414" text-anchor="middle">clase: fuga</text>
+  <rect class="leafA" x="300" y="380" width="160" height="56" rx="10"/>
+  <text class="leaflbl" x="380" y="414" text-anchor="middle">clase: permanece</text>
+  <!-- leaves under right -->
+  <line class="edge" x1="720" y1="300" x2="650" y2="380"/>
+  <text class="elbl" x="665" y="345">no</text>
+  <line class="edge" x1="800" y1="300" x2="860" y2="380"/>
+  <text class="elbl" x="845" y="345">sí</text>
+  <rect class="leafB" x="570" y="380" width="160" height="56" rx="10"/>
+  <text class="leaflbl" x="650" y="414" text-anchor="middle">clase: fuga</text>
+  <rect class="leafA" x="780" y="380" width="160" height="56" rx="10"/>
+  <text class="leaflbl" x="860" y="414" text-anchor="middle">clase: permanece</text>
+  <text class="note" x="60" y="490" font-weight="700" fill="#004a99">Los árboles más profundos capturan más detalle pero sobreajustan; max-depth y min-samples son los frenos.</text>
+</svg>

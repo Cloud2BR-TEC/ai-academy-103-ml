@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="560" viewBox="0 0 1040 560" role="img" aria-labelledby="title desc">
+  <title id="title">Gradient descent on a convex loss</title>
+  <desc id="desc">A bowl-shaped loss curve. Each training step computes the gradient (the slope) and moves the weights downhill toward the single minimum, taking smaller steps as the slope flattens.</desc>
+
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .axis { stroke: #0f172a; stroke-width: 3; }
+      .axis-label { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; }
+      .curve { fill: none; stroke: #004a99; stroke-width: 5; }
+      .step { stroke: #b45309; stroke-width: 2.5; }
+      .dot { fill: #b45309; }
+      .startdot { fill: #0e7490; }
+      .mindot { fill: #15803d; }
+      .label { fill: #1f2937; font-family: Segoe UI, Arial, sans-serif; font-size: 14px; }
+      .note { fill: #475569; font-family: Segoe UI, Arial, sans-serif; font-size: 13px; }
+      .opt { stroke: #475569; stroke-width: 2; stroke-dasharray: 6 6; }
+    </style>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1040" height="560"/>
+  <text class="title" x="60" y="52">Gradient descent: how a model learns</text>
+  <text class="subtitle" x="60" y="80">The model keeps checking how wrong it is and takes small steps downhill to get less wrong.</text>
+
+  <!-- axes -->
+  <line class="axis" x1="120" y1="500" x2="960" y2="500"/>
+  <line class="axis" x1="120" y1="500" x2="120" y2="120"/>
+  <text class="axis-label" x="540" y="540" text-anchor="middle">Parameter value (weight)</text>
+  <text class="axis-label" x="60" y="310" transform="rotate(-90 60 310)" text-anchor="middle">Loss (error)</text>
+
+  <!-- convex loss curve (parabola) -->
+  <path class="curve" d="M150,200 Q540,800 930,200"/>
+
+  <!-- minimum marker -->
+  <line class="opt" x1="540" y1="480" x2="540" y2="120"/>
+  <circle class="mindot" cx="540" cy="480" r="8"/>
+  <text class="label" x="556" y="470" font-weight="700" fill="#15803d">Lowest point = best settings</text>
+
+  <!-- descent steps (points along parabola) -->
+  <circle class="startdot" cx="210" cy="287" r="9"/>
+  <text class="label" x="150" y="270" font-weight="700" fill="#0e7490">Start</text>
+  <line class="step" x1="218" y1="294" x2="295" y2="372" marker-end="url(#arrow)"/>
+  <circle class="dot" cx="305" cy="380" r="7"/>
+  <line class="step" x1="313" y1="386" x2="385" y2="437" marker-end="url(#arrow)"/>
+  <circle class="dot" cx="395" cy="443" r="7"/>
+  <line class="step" x1="403" y1="447" x2="455" y2="466" marker-end="url(#arrow)"/>
+  <circle class="dot" cx="465" cy="469" r="7"/>
+  <line class="step" x1="473" y1="471" x2="515" y2="478" marker-end="url(#arrow)"/>
+  <circle class="dot" cx="525" cy="479" r="7"/>
+
+  <!-- step size note -->
+  <text class="note" x="250" y="330">Big steps where the hill</text>
+  <text class="note" x="250" y="348">is steep...</text>
+  <text class="note" x="470" y="520">...baby steps near the bottom</text>
+
+  <!-- learning rate callout -->
+  <text class="note" x="640" y="300">Step size = the learning rate.</text>
+  <text class="note" x="640" y="320">Too big: it overshoots and never settles.</text>
+  <text class="note" x="640" y="340">Too small: it takes forever to get there.</text>
+  <text class="note" x="640" y="372" font-weight="700" fill="#004a99">One valley = one bottom,</text>
+  <text class="note" x="640" y="390" font-weight="700" fill="#004a99">so it always reaches the best answer.</text>
+</svg>

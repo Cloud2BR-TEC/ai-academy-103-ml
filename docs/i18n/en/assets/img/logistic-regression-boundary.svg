@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="540" viewBox="0 0 1040 540" role="img" aria-labelledby="title desc">
+  <title id="title">Logistic regression decision boundary</title>
+  <desc id="desc">Two classes of points separated by a straight boundary line. A shaded band shows where the predicted probability is near 0.5, the most uncertain region.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .axis { stroke: #0f172a; stroke-width: 3; }
+      .axis-label { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; }
+      .boundary { fill: none; stroke: #004a99; stroke-width: 5; }
+      .c0 { fill: #0e7490; }
+      .c1 { fill: #b45309; }
+      .band { fill: #004a99; opacity: 0.10; }
+      .note { fill: #475569; font-family: Segoe UI, Arial, sans-serif; font-size: 14px; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="540"/>
+  <text class="title" x="60" y="52">Logistic regression: a probability-based boundary</text>
+  <text class="subtitle" x="60" y="80">A linear score becomes a probability; the line where p = 0.5 separates the two classes.</text>
+  <line class="axis" x1="120" y1="470" x2="960" y2="470"/>
+  <line class="axis" x1="120" y1="470" x2="120" y2="120"/>
+  <text class="axis-label" x="540" y="510" text-anchor="middle">Feature 1</text>
+  <text class="axis-label" x="60" y="300" transform="rotate(-90 60 300)" text-anchor="middle">Feature 2</text>
+  <!-- uncertainty band around boundary -->
+  <polygon class="band" points="250,470 470,130 540,130 320,470"/>
+  <!-- boundary line p=0.5 -->
+  <line class="boundary" x1="290" y1="470" x2="500" y2="130"/>
+  <text class="note" x="505" y="150" font-weight="700" fill="#004a99">p = 0.5 boundary</text>
+  <!-- class 0 cluster (lower-left) -->
+  <circle class="c0" cx="200" cy="300" r="8"/>
+  <circle class="c0" cx="240" cy="360" r="8"/>
+  <circle class="c0" cx="180" cy="240" r="8"/>
+  <circle class="c0" cx="260" cy="420" r="8"/>
+  <circle class="c0" cx="300" cy="400" r="8"/>
+  <circle class="c0" cx="220" cy="430" r="8"/>
+  <circle class="c0" cx="160" cy="350" r="8"/>
+  <!-- class 1 cluster (upper-right) -->
+  <circle class="c1" cx="600" cy="250" r="8"/>
+  <circle class="c1" cx="660" cy="200" r="8"/>
+  <circle class="c1" cx="700" cy="300" r="8"/>
+  <circle class="c1" cx="560" cy="180" r="8"/>
+  <circle class="c1" cx="760" cy="240" r="8"/>
+  <circle class="c1" cx="640" cy="330" r="8"/>
+  <circle class="c1" cx="820" cy="290" r="8"/>
+  <!-- legend -->
+  <circle class="c0" cx="640" cy="425" r="8"/>
+  <text class="note" x="656" y="430">class 0 (p &lt; 0.5)</text>
+  <circle class="c1" cx="640" cy="455" r="8"/>
+  <text class="note" x="656" y="460">class 1 (p &gt; 0.5)</text>
+  <text class="note" x="955" y="490" text-anchor="end" font-weight="700" fill="#004a99">shaded band = least confident region</text>
+</svg>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="480" viewBox="0 0 1040 480" role="img" aria-labelledby="title desc">
+  <title id="title">Web service versus API</title>
+  <desc id="desc">A client calls an API, the contract defining request, response, auth and schema, which is implemented by a hosted web service.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .head { font-family: Segoe UI, Arial, sans-serif; font-size: 18px; font-weight: 700; fill: #ffffff; }
+      .sub { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; fill: #ffffff; }
+      .item { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; fill: #1f2937; }
+      .tag { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; font-weight: 700; }
+      .arrow { stroke: #475569; stroke-width: 3; fill: none; }
+      .albl { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #475569; text-anchor: middle; }
+    </style>
+    <marker id="ah" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="480"/>
+  <text class="title" x="60" y="52">Web Service vs API</text>
+  <text class="subtitle" x="60" y="80">The API is the contract; the web service is the running implementation behind it</text>
+
+  <!-- Client -->
+  <rect class="card" x="40" y="190" width="180" height="120" rx="10" fill="#64748b"/>
+  <text class="head" x="60" y="232">Client</text>
+  <text class="sub" x="60" y="262">App, browser,</text>
+  <text class="sub" x="60" y="284">or service that</text>
+  <text class="sub" x="60" y="306">calls the API</text>
+
+  <!-- API contract layer -->
+  <rect class="card" x="370" y="150" width="250" height="220" rx="10" fill="#eff6ff" stroke="#004a99" stroke-width="2.5"/>
+  <rect x="370" y="150" width="250" height="40" rx="10" fill="#004a99"/>
+  <text class="head" x="390" y="178">API — the contract</text>
+  <text class="tag" x="390" y="218" fill="#004a99">Defines, does not run:</text>
+  <text class="item" x="390" y="248">• Request / response shape</text>
+  <text class="item" x="390" y="276">• Authentication</text>
+  <text class="item" x="390" y="304">• Schema &amp; data types</text>
+  <text class="item" x="390" y="332">• Versioning</text>
+
+  <!-- Web Service implementation -->
+  <rect class="card" x="770" y="150" width="250" height="220" rx="10" fill="#f0fdf4" stroke="#15803d" stroke-width="2.5"/>
+  <rect x="770" y="150" width="250" height="40" rx="10" fill="#15803d"/>
+  <text class="head" x="790" y="178">Web Service</text>
+  <text class="tag" x="790" y="218" fill="#15803d">Hosted implementation:</text>
+  <text class="item" x="790" y="248">• Running deployment</text>
+  <text class="item" x="790" y="276">• Compute &amp; replicas</text>
+  <text class="item" x="790" y="304">• Executes the logic</text>
+  <text class="item" x="790" y="332">• Returns real responses</text>
+
+  <!-- arrows -->
+  <line class="arrow" x1="220" y1="250" x2="366" y2="250" marker-end="url(#ah)"/>
+  <text class="albl" x="293" y="238">calls</text>
+  <line class="arrow" x1="620" y1="250" x2="766" y2="250" marker-end="url(#ah)"/>
+  <text class="albl" x="693" y="238">implemented by</text>
+
+  <text class="albl" x="495" y="408" font-size="14">Contract layer (what to send &amp; expect)</text>
+  <text class="albl" x="895" y="408" font-size="14">Hosted runtime (where it actually runs)</text>
+</svg>

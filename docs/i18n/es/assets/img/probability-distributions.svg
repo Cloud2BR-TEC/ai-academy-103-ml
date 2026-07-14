@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="560" viewBox="0 0 1040 560" role="img" aria-labelledby="title desc">
+  <title id="title">FMP discreta frente a FDP continua y la FDA</title>
+  <desc id="desc">Una función de masa de probabilidad discreta dibujada como barras separadas que suman uno, una función de densidad de probabilidad continua cuya área sombreada es igual a uno, y una función de distribución acumulada que crece monótonamente de cero a uno.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .panel { font-family: Segoe UI, Arial, sans-serif; font-size: 17px; font-weight: 700; fill: #0f172a; }
+      .label { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #1f2937; }
+      .desc2 { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #475569; }
+      .axis { stroke: #0f172a; stroke-width: 3; }
+      .tick { stroke: #94a3b8; stroke-width: 1.5; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="560"/>
+  <text class="title" x="60" y="52">Distribuciones: FMP, FDP y FDA</text>
+  <text class="subtitle" x="60" y="80">La masa discreta suma 1, la densidad continua integra 1, y la FDA acumula de 0 a 1.</text>
+
+  <!-- Panel 1: FMP discreta -->
+  <rect class="card" x="60" y="110" width="290" height="370" rx="10"/>
+  <text class="panel" x="80" y="142">Discreta — FMP</text>
+  <text class="desc2" x="80" y="162">Barras separadas, P(X=k)</text>
+  <line class="axis" x1="100" y1="440" x2="330" y2="440"/>
+  <line class="axis" x1="100" y1="440" x2="100" y2="190"/>
+  <rect x="120" y="360" width="24" height="80" fill="#004a99"/>
+  <rect x="160" y="240" width="24" height="200" fill="#004a99"/>
+  <rect x="200" y="200" width="24" height="240" fill="#004a99"/>
+  <rect x="240" y="280" width="24" height="160" fill="#004a99"/>
+  <rect x="280" y="320" width="24" height="120" fill="#004a99"/>
+  <text class="label" x="132" y="458" text-anchor="middle">1</text>
+  <text class="label" x="172" y="458" text-anchor="middle">2</text>
+  <text class="label" x="212" y="458" text-anchor="middle">3</text>
+  <text class="label" x="252" y="458" text-anchor="middle">4</text>
+  <text class="label" x="292" y="458" text-anchor="middle">5</text>
+  <text class="desc2" x="215" y="475" text-anchor="middle">Σ p&#8342; = 1</text>
+
+  <!-- Panel 2: FDP continua -->
+  <rect class="card" x="375" y="110" width="290" height="370" rx="10"/>
+  <text class="panel" x="395" y="142">Continua — FDP</text>
+  <text class="desc2" x="395" y="162">Densidad suave, f(x) &#8805; 0</text>
+  <line class="axis" x1="410" y1="440" x2="650" y2="440"/>
+  <line class="axis" x1="410" y1="440" x2="410" y2="190"/>
+  <path d="M412,440 C470,438 495,210 530,210 C565,210 590,438 648,440 Z" fill="#0e7490" fill-opacity="0.22"/>
+  <path d="M412,440 C470,438 495,210 530,210 C565,210 590,438 648,440" fill="none" stroke="#0e7490" stroke-width="4"/>
+  <text class="desc2" x="530" y="372" text-anchor="middle" fill="#0e7490" font-weight="700">área = 1</text>
+  <text class="label" x="530" y="475" text-anchor="middle">∫ f(x) dx = 1</text>
+
+  <!-- Panel 3: FDA -->
+  <rect class="card" x="690" y="110" width="290" height="370" rx="10"/>
+  <text class="panel" x="710" y="142">Ambas — FDA</text>
+  <text class="desc2" x="710" y="162">F(x) = P(X &#8804; x)</text>
+  <line class="axis" x1="730" y1="440" x2="960" y2="440"/>
+  <line class="axis" x1="730" y1="440" x2="730" y2="190"/>
+  <line class="tick" x1="724" y1="200" x2="960" y2="200" stroke-dasharray="5 5"/>
+  <text class="label" x="722" y="445" text-anchor="end">0</text>
+  <text class="label" x="722" y="205" text-anchor="end">1</text>
+  <path d="M732,438 C800,438 808,320 845,320 C882,320 892,202 958,202" fill="none" stroke="#b45309" stroke-width="4"/>
+  <text class="desc2" x="845" y="430" text-anchor="middle" fill="#b45309" font-weight="700">monótona 0 → 1</text>
+</svg>

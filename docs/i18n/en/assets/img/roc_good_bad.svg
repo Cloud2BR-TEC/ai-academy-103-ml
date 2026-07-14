@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="560" viewBox="0 0 1040 560" role="img" aria-labelledby="title desc">
+  <title id="title">ROC curves — good vs bad</title>
+  <desc id="desc">Two ROC curves on one set of axes: a good model bowing toward the top-left corner with high AUC, and a weak model tracking the dashed diagonal of random guessing.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .cardhead { font-family: Segoe UI, Arial, sans-serif; font-size: 18px; font-weight: 700; }
+      .axislbl { font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #0f172a; }
+      .tick { font-family: Segoe UI, Arial, sans-serif; font-size: 12px; fill: #64748b; }
+      .label { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; font-weight: 700; fill: #1f2937; }
+      .desc2 { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #475569; }
+      .axis { stroke: #0f172a; stroke-width: 3; }
+      .grid { stroke: #e2e8f0; stroke-width: 1; }
+      .good { stroke: #0e7490; stroke-width: 4; fill: none; stroke-linecap: round; }
+      .bad { stroke: #b45309; stroke-width: 4; fill: none; stroke-linecap: round; }
+      .ref { stroke: #94a3b8; stroke-width: 2.5; stroke-dasharray: 6 6; fill: none; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="560"/>
+  <text class="title" x="60" y="52">ROC curves — good vs bad</text>
+  <text class="subtitle" x="60" y="80">A good classifier bows toward the top-left corner; a weak one tracks the diagonal.</text>
+
+  <!-- Chart card -->
+  <rect class="card" x="100" y="108" width="560" height="432" rx="12"/>
+
+  <!-- Grid -->
+  <line class="grid" x1="160" y1="300" x2="640" y2="300"/>
+  <line class="grid" x1="400" y1="130" x2="400" y2="470"/>
+
+  <!-- Axes -->
+  <line class="axis" x1="160" y1="470" x2="640" y2="470"/>
+  <line class="axis" x1="160" y1="470" x2="160" y2="130"/>
+
+  <!-- Ticks -->
+  <text class="tick" x="160" y="492" text-anchor="middle">0.0</text>
+  <text class="tick" x="400" y="492" text-anchor="middle">0.5</text>
+  <text class="tick" x="640" y="492" text-anchor="middle">1.0</text>
+  <text class="tick" x="150" y="475" text-anchor="end">0.0</text>
+  <text class="tick" x="150" y="305" text-anchor="end">0.5</text>
+  <text class="tick" x="150" y="135" text-anchor="end">1.0</text>
+
+  <!-- Axis titles -->
+  <text class="axislbl" x="400" y="522" text-anchor="middle">False Positive Rate</text>
+  <text class="axislbl" x="124" y="300" text-anchor="middle" transform="rotate(-90 124 300)">True Positive Rate</text>
+
+  <!-- Random reference -->
+  <line class="ref" x1="160" y1="470" x2="640" y2="130"/>
+
+  <!-- Bad curve (near diagonal) -->
+  <path class="bad" d="M160,470 C222,408 258,374 302,336 C362,286 482,206 542,176 C582,156 610,142 640,132"/>
+  <!-- Good curve (bows top-left) -->
+  <path class="good" d="M160,470 C172,365 188,255 210,228 C262,168 322,158 402,146 C500,135 560,131 640,132"/>
+
+  <!-- Legend / how to read -->
+  <rect class="card" x="700" y="150" width="280" height="346" rx="10"/>
+  <rect x="700" y="150" width="280" height="40" rx="10" fill="#004a99"/>
+  <rect x="700" y="170" width="280" height="20" fill="#004a99"/>
+  <text class="cardhead" x="722" y="177" fill="#ffffff">How to read it</text>
+
+  <line x1="722" y1="226" x2="762" y2="226" stroke="#0e7490" stroke-width="4" stroke-linecap="round"/>
+  <text class="label" x="772" y="231" fill="#0e7490">Good — high AUC</text>
+  <text class="desc2" x="722" y="254">Bows into the top-left corner.</text>
+  <text class="desc2" x="722" y="274">Many true positives, few false alarms.</text>
+
+  <line x1="722" y1="316" x2="762" y2="316" stroke="#b45309" stroke-width="4" stroke-linecap="round"/>
+  <text class="label" x="772" y="321" fill="#b45309">Weak — low AUC</text>
+  <text class="desc2" x="722" y="344">Stays close to the diagonal.</text>
+  <text class="desc2" x="722" y="364">Barely better than guessing.</text>
+
+  <line x1="722" y1="406" x2="762" y2="406" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="6 6"/>
+  <text class="label" x="772" y="411" fill="#64748b">Random baseline</text>
+  <text class="desc2" x="722" y="434">AUC ≈ 0.5 reference line.</text>
+
+  <rect x="716" y="452" width="248" height="32" rx="8" fill="#eef2f7"/>
+  <text class="desc2" x="728" y="473">Higher curve = better ranking of positives.</text>
+</svg>

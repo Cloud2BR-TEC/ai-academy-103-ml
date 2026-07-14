@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="540" viewBox="0 0 1040 540" role="img" aria-labelledby="title desc">
+  <title id="title">Gradient boosting sequential residual correction</title>
+  <desc id="desc">Trees are added one at a time; each new tree is trained on the residual errors left by the sum of the previous trees, and the predictions are added together.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .stage { fill: #ffffff; stroke: #004a99; stroke-width: 2.5; }
+      .resid { fill: #fff7ed; stroke: #b45309; stroke-width: 2.5; }
+      .final { fill: #dcfce7; stroke: #15803d; stroke-width: 3; }
+      .lbl { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 14px; font-weight: 700; }
+      .sub { fill: #475569; font-family: Segoe UI, Arial, sans-serif; font-size: 12px; }
+      .edge { stroke: #475569; stroke-width: 2.5; }
+      .op { fill: #15803d; font-family: Segoe UI, Arial, sans-serif; font-size: 26px; font-weight: 700; }
+      .note { fill: #475569; font-family: Segoe UI, Arial, sans-serif; font-size: 14px; }
+    </style>
+    <marker id="ar3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#475569"/></marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="540"/>
+  <text class="title" x="60" y="52">Gradient boosting: each tree fixes the last one's errors</text>
+  <text class="subtitle" x="60" y="80">Trees are added in sequence; every new tree predicts the leftover residual, scaled by the learning rate.</text>
+  <!-- tree 1 -->
+  <rect class="stage" x="70" y="160" width="160" height="80" rx="10"/>
+  <text class="lbl" x="150" y="196" text-anchor="middle">tree 1</text>
+  <text class="sub" x="150" y="218" text-anchor="middle">rough first guess</text>
+  <line class="edge" x1="150" y1="240" x2="150" y2="300" marker-end="url(#ar3)"/>
+  <rect class="resid" x="70" y="300" width="160" height="70" rx="10"/>
+  <text class="lbl" x="150" y="332" text-anchor="middle">residuals 1</text>
+  <text class="sub" x="150" y="354" text-anchor="middle">what it got wrong</text>
+  <!-- arrow to tree2 -->
+  <line class="edge" x1="230" y1="335" x2="300" y2="200" marker-end="url(#ar3)"/>
+  <!-- tree 2 -->
+  <rect class="stage" x="310" y="160" width="160" height="80" rx="10"/>
+  <text class="lbl" x="390" y="196" text-anchor="middle">tree 2</text>
+  <text class="sub" x="390" y="218" text-anchor="middle">fits residuals 1</text>
+  <line class="edge" x1="390" y1="240" x2="390" y2="300" marker-end="url(#ar3)"/>
+  <rect class="resid" x="310" y="300" width="160" height="70" rx="10"/>
+  <text class="lbl" x="390" y="332" text-anchor="middle">residuals 2</text>
+  <text class="sub" x="390" y="354" text-anchor="middle">smaller errors</text>
+  <line class="edge" x1="470" y1="335" x2="540" y2="200" marker-end="url(#ar3)"/>
+  <!-- tree 3 -->
+  <rect class="stage" x="550" y="160" width="160" height="80" rx="10"/>
+  <text class="lbl" x="630" y="196" text-anchor="middle">tree 3</text>
+  <text class="sub" x="630" y="218" text-anchor="middle">fits residuals 2</text>
+  <text class="op" x="760" y="208" text-anchor="middle">…</text>
+  <!-- sum -->
+  <line class="edge" x1="150" y1="160" x2="150" y2="120"/>
+  <line class="edge" x1="150" y1="120" x2="870" y2="120"/>
+  <line class="edge" x1="390" y1="160" x2="390" y2="120"/>
+  <line class="edge" x1="630" y1="160" x2="630" y2="120"/>
+  <line class="edge" x1="870" y1="120" x2="870" y2="240" marker-end="url(#ar3)"/>
+  <rect class="final" x="790" y="250" width="170" height="90" rx="10"/>
+  <text class="lbl" x="875" y="290" text-anchor="middle">sum of all trees</text>
+  <text class="sub" x="875" y="312" text-anchor="middle">= final prediction</text>
+  <text class="note" x="60" y="430" font-weight="700" fill="#b45309">Small learning rate + many trees = accurate but slower; the classic accuracy/overfit trade-off.</text>
+  <text class="note" x="60" y="460" fill="#004a99">Boosting lowers bias (fits hard patterns); regularization and early stopping keep it from memorizing noise.</text>
+</svg>

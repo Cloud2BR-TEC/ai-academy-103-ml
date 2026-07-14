@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="470" viewBox="0 0 1040 470" role="img" aria-labelledby="title desc">
+  <title id="title">Recolectar características y objetivos juntos</title>
+  <desc id="desc">Un conjunto de datos recolectado con columnas de características, un objetivo primario y objetivos secundarios, enfatizando definir el objetivo con precisión y saber cuándo su valor está disponible para evitar fugas.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .node { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; font-weight: 700; fill: #ffffff; }
+      .cell { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #1f2937; }
+      .grouplbl { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; font-weight: 700; }
+      .bracket { fill: none; stroke-width: 2; }
+      .calloutt { font-family: Segoe UI, Arial, sans-serif; font-size: 13.5px; fill: #7c2d12; }
+      .calloutb { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; font-weight: 700; fill: #b45309; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="470"/>
+  <text class="title" x="60" y="52">Recolectar características y objetivos juntos</text>
+  <text class="subtitle" x="60" y="80">Define el objetivo con precisión — y sabe exactamente cuándo está disponible su valor.</text>
+
+  <!-- Corchetes de grupo -->
+  <path class="bracket" stroke="#004a99" d="M180,176 L180,168 L558,168 L558,176"/>
+  <text class="grouplbl" x="369" y="160" text-anchor="middle" fill="#004a99">Características (entradas)</text>
+  <path class="bracket" stroke="#15803d" d="M564,176 L564,168 L654,168 L654,176"/>
+  <text class="grouplbl" x="609" y="160" text-anchor="middle" fill="#15803d">Objetivo Primario</text>
+  <path class="bracket" stroke="#0e7490" d="M660,176 L660,168 L846,168 L846,176"/>
+  <text class="grouplbl" x="753" y="160" text-anchor="middle" fill="#0e7490">Objetivos Secundarios</text>
+
+  <!-- Fila de encabezado -->
+  <rect x="180" y="190" width="90" height="40" fill="#004a99"/>
+  <rect x="276" y="190" width="90" height="40" fill="#004a99"/>
+  <rect x="372" y="190" width="90" height="40" fill="#004a99"/>
+  <rect x="468" y="190" width="90" height="40" fill="#004a99"/>
+  <rect x="564" y="190" width="90" height="40" fill="#15803d"/>
+  <rect x="660" y="190" width="90" height="40" fill="#0e7490"/>
+  <rect x="756" y="190" width="90" height="40" fill="#0e7490"/>
+  <text class="node" x="225" y="215" text-anchor="middle">Edad</text>
+  <text class="node" x="321" y="215" text-anchor="middle">Ingreso</text>
+  <text class="node" x="417" y="215" text-anchor="middle">Región</text>
+  <text class="node" x="513" y="215" text-anchor="middle">Visitas</text>
+  <text class="node" x="609" y="215" text-anchor="middle">¿Fuga?</text>
+  <text class="node" x="705" y="215" text-anchor="middle">VTC</text>
+  <text class="node" x="801" y="215" text-anchor="middle">Plan</text>
+
+  <!-- Filas de datos -->
+  <g>
+    <rect x="180" y="230" width="666" height="34" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="180" y="264" width="666" height="34" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <rect x="180" y="298" width="666" height="34" fill="#ffffff" stroke="#cbd5e1"/>
+  </g>
+  <g stroke="#e2e8f0">
+    <line x1="270" y1="230" x2="270" y2="332"/>
+    <line x1="366" y1="230" x2="366" y2="332"/>
+    <line x1="462" y1="230" x2="462" y2="332"/>
+    <line x1="558" y1="230" x2="558" y2="332"/>
+    <line x1="654" y1="230" x2="654" y2="332"/>
+    <line x1="750" y1="230" x2="750" y2="332"/>
+  </g>
+  <!-- fila 1 -->
+  <text class="cell" x="225" y="252" text-anchor="middle">34</text>
+  <text class="cell" x="321" y="252" text-anchor="middle">52k</text>
+  <text class="cell" x="417" y="252" text-anchor="middle">Oeste</text>
+  <text class="cell" x="513" y="252" text-anchor="middle">12</text>
+  <text class="cell" x="609" y="252" text-anchor="middle">Sí</text>
+  <text class="cell" x="705" y="252" text-anchor="middle">480</text>
+  <text class="cell" x="801" y="252" text-anchor="middle">Pro</text>
+  <!-- fila 2 -->
+  <text class="cell" x="225" y="286" text-anchor="middle">27</text>
+  <text class="cell" x="321" y="286" text-anchor="middle">38k</text>
+  <text class="cell" x="417" y="286" text-anchor="middle">Este</text>
+  <text class="cell" x="513" y="286" text-anchor="middle">5</text>
+  <text class="cell" x="609" y="286" text-anchor="middle">No</text>
+  <text class="cell" x="705" y="286" text-anchor="middle">210</text>
+  <text class="cell" x="801" y="286" text-anchor="middle">Gratis</text>
+  <!-- fila 3 -->
+  <text class="cell" x="225" y="320" text-anchor="middle">51</text>
+  <text class="cell" x="321" y="320" text-anchor="middle">91k</text>
+  <text class="cell" x="417" y="320" text-anchor="middle">Norte</text>
+  <text class="cell" x="513" y="320" text-anchor="middle">23</text>
+  <text class="cell" x="609" y="320" text-anchor="middle">No</text>
+  <text class="cell" x="705" y="320" text-anchor="middle">760</text>
+  <text class="cell" x="801" y="320" text-anchor="middle">Pro</text>
+
+  <!-- Aviso de fuga -->
+  <rect x="60" y="370" width="920" height="78" rx="10" fill="#fff7ed" stroke="#b45309" stroke-width="1.8"/>
+  <text class="calloutb" x="80" y="397">Control de fugas: ¿cuándo se conoce el objetivo?</text>
+  <text class="calloutt" x="80" y="420">Una característica debe estar disponible al momento de predecir. Si el valor del objetivo solo se conoce</text>
+  <text class="calloutt" x="80" y="438">después, nunca dejes que él (ni nada derivado de él) se filtre en las columnas de características.</text>
+</svg>

@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="720" viewBox="0 0 1400 720" role="img" aria-labelledby="title desc">
+  <title id="title">Guía de tamaño del conjunto de datos</title>
+  <desc id="desc">Gráfico de orientación que relaciona la complejidad del proyecto y el tipo de modelo con rangos recomendados de tamaño del conjunto de datos.</desc>
+
+  <defs>
+    <style>
+      .bg { fill: #f8fbff; }
+      .panel { fill: #ffffff; stroke: #d1d9e0; stroke-width: 1.5; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 36px; font-weight: 700; }
+      .sub { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 18px; }
+      .h { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 16px; font-weight: 700; }
+      .t { fill: #1f2937; font-family: Segoe UI, Arial, sans-serif; font-size: 14px; }
+      .small { fill: #475569; font-family: Segoe UI, Arial, sans-serif; font-size: 12px; }
+      .axis { stroke: #1e293b; stroke-width: 3; }
+      .grid { stroke: #cbd5e1; stroke-width: 1; stroke-dasharray: 4 4; }
+      .low { fill: #cfe8ff; stroke: #7fb8ff; stroke-width: 1.5; }
+      .mid { fill: #d9f3e3; stroke: #8bc9a1; stroke-width: 1.5; }
+      .high { fill: #ffe8cc; stroke: #f4b36b; stroke-width: 1.5; }
+      .vhigh { fill: #f8dcff; stroke: #d39be8; stroke-width: 1.5; }
+      .chip { fill: #004a99; }
+      .chip-text { fill: #ffffff; font-family: Segoe UI, Arial, sans-serif; font-size: 12px; font-weight: 700; }
+      .gb { fill: #004a99; font-family: Segoe UI, Arial, sans-serif; font-size: 12px; font-weight: 700; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1400" height="720"/>
+  <rect class="panel" x="30" y="24" width="1340" height="672" rx="16"/>
+
+  <text class="title" x="60" y="78">Guía de tamaño del conjunto de datos por caso de uso</text>
+  <text class="sub" x="60" y="108">Referencia para planificar el volumen de datos antes del entrenamiento y la selección del modelo</text>
+
+  <line class="axis" x1="130" y1="560" x2="1240" y2="560"/>
+  <line class="axis" x1="130" y1="560" x2="130" y2="200"/>
+
+  <line class="grid" x1="130" y1="500" x2="1240" y2="500"/>
+  <line class="grid" x1="130" y1="440" x2="1240" y2="440"/>
+  <line class="grid" x1="130" y1="380" x2="1240" y2="380"/>
+  <line class="grid" x1="130" y1="320" x2="1240" y2="320"/>
+  <line class="grid" x1="130" y1="260" x2="1240" y2="260"/>
+
+  <text class="small" x="70" y="564" transform="rotate(-90 70 564)">Escala de tamaño del conjunto de datos (filas/muestras)</text>
+  <text class="small" x="136" y="582">Pequeño</text>
+  <text class="gb" x="136" y="600">~0.01-0.1 GB</text>
+  <text class="small" x="430" y="582">Mediano</text>
+  <text class="gb" x="430" y="600">~0.1-5 GB</text>
+  <text class="small" x="760" y="582">Grande</text>
+  <text class="gb" x="760" y="600">~5-100 GB</text>
+  <text class="small" x="1120" y="582">Muy grande</text>
+  <text class="gb" x="1120" y="600">~100 GB a TB</text>
+
+  <text class="small" x="78" y="503">~1K</text>
+  <text class="small" x="70" y="443">~10K</text>
+  <text class="small" x="62" y="383">~100K</text>
+  <text class="small" x="54" y="323">~1M</text>
+  <text class="small" x="46" y="263">~10M+</text>
+
+  <rect class="low" x="170" y="455" width="170" height="85" rx="10"/>
+  <text class="h" x="182" y="480">Líneas base tabulares</text>
+  <text class="t" x="182" y="502">RegLog / Árboles</text>
+  <text class="t" x="182" y="522">Típico: 1K-50K</text>
+
+  <rect class="mid" x="380" y="410" width="248" height="130" rx="10"/>
+  <text class="h" x="394" y="437">ML clásico a escala</text>
+  <text class="t" x="394" y="459">Boosting / RandomForest</text>
+  <text class="t" x="394" y="479">Típico: 10K-500K</text>
+  <text class="t" x="394" y="499">Sólido para datos tabulares de negocio</text>
+
+  <rect class="high" x="650" y="335" width="250" height="205" rx="10"/>
+  <text class="h" x="666" y="364">Aprendizaje profundo (CV/NLP)</text>
+  <text class="t" x="666" y="388">CNN / RNN / Transformers</text>
+  <text class="t" x="666" y="410">Típico: 100K-5M</text>
+  <text class="t" x="666" y="432">La calidad y el etiquetado de datos importan</text>
+  <text class="t" x="666" y="454">tanto como el volumen puro.</text>
+
+  <rect class="vhigh" x="940" y="235" width="270" height="305" rx="10"/>
+  <text class="h" x="956" y="266">Cargas de modelos fundacionales</text>
+  <text class="t" x="956" y="290">Preentrenamiento LLM/multimodal</text>
+  <text class="t" x="956" y="312">Típico: 10M+ a miles de millones</text>
+  <text class="t" x="956" y="334">Requiere cómputo distribuido,</text>
+  <text class="t" x="956" y="356">gobernanza de datos estricta,</text>
+  <text class="t" x="956" y="378">canalizaciones de curación y dedup.</text>
+
+  <rect class="panel" x="60" y="610" width="1280" height="66" rx="10"/>
+  <text class="h" x="78" y="636">Cómo explicar este gráfico</text>
+  <text class="small" x="78" y="656">Comienza por el riesgo del proyecto y las restricciones de latencia, luego elige el modelo más pequeño que cumpla el KPI. Más datos ayudan, pero etiquetas limpias, clases balanceadas y control de fugas suelen tener mayor impacto que el volumen puro.</text>
+</svg>

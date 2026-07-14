@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="420" viewBox="0 0 1040 420" role="img" aria-labelledby="title desc">
+  <title id="title">Flujo de despliegue de ML</title>
+  <desc id="desc">Un flujo de despliegue de seis etapas, cada una un punto de control: modelo registrado, empaquetar el script de scoring y el entorno, validar en local, desplegar, enrutar el tráfico y llegar a un endpoint activo.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .node { font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #0f172a; }
+      .badge { font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #ffffff; }
+      .cap { font-family: Segoe UI, Arial, sans-serif; font-size: 12.5px; fill: #475569; }
+      .arrow { stroke: #475569; stroke-width: 2.5; fill: none; }
+    </style>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="420"/>
+  <text class="title" x="60" y="52">Flujo de despliegue de ML</text>
+  <text class="subtitle" x="60" y="80">Cada etapa es un punto de control — del modelo registrado al endpoint activo.</text>
+
+  <!-- Flechas -->
+  <line class="arrow" x1="190" y1="205" x2="216" y2="205" marker-end="url(#ah)"/>
+  <line class="arrow" x1="348" y1="205" x2="374" y2="205" marker-end="url(#ah)"/>
+  <line class="arrow" x1="506" y1="205" x2="532" y2="205" marker-end="url(#ah)"/>
+  <line class="arrow" x1="664" y1="205" x2="690" y2="205" marker-end="url(#ah)"/>
+  <line class="arrow" x1="822" y1="205" x2="848" y2="205" marker-end="url(#ah)"/>
+
+  <!-- Nodo 1 -->
+  <rect class="card" x="60" y="160" width="130" height="92" rx="12"/>
+  <rect x="60" y="160" width="130" height="8" rx="4" fill="#004a99"/>
+  <circle cx="125" cy="160" r="16" fill="#004a99"/>
+  <text class="badge" x="125" y="165" text-anchor="middle">1</text>
+  <text class="node" x="125" y="206" text-anchor="middle">Modelo</text>
+  <text class="node" x="125" y="226" text-anchor="middle">registrado</text>
+  <text class="cap" x="125" y="284" text-anchor="middle">Artefacto</text>
+  <text class="cap" x="125" y="302" text-anchor="middle">versionado</text>
+
+  <!-- Nodo 2 -->
+  <rect class="card" x="218" y="160" width="130" height="92" rx="12"/>
+  <rect x="218" y="160" width="130" height="8" rx="4" fill="#004a99"/>
+  <circle cx="283" cy="160" r="16" fill="#004a99"/>
+  <text class="badge" x="283" y="165" text-anchor="middle">2</text>
+  <text class="node" x="283" y="216" text-anchor="middle">Empaquetar</text>
+  <text class="cap" x="283" y="284" text-anchor="middle">Script de scoring</text>
+  <text class="cap" x="283" y="302" text-anchor="middle">y entorno</text>
+
+  <!-- Nodo 3 -->
+  <rect class="card" x="376" y="160" width="130" height="92" rx="12"/>
+  <rect x="376" y="160" width="130" height="8" rx="4" fill="#004a99"/>
+  <circle cx="441" cy="160" r="16" fill="#004a99"/>
+  <text class="badge" x="441" y="165" text-anchor="middle">3</text>
+  <text class="node" x="441" y="206" text-anchor="middle">Validar</text>
+  <text class="node" x="441" y="226" text-anchor="middle">en local</text>
+  <text class="cap" x="441" y="284" text-anchor="middle">Prueba rápida</text>
+  <text class="cap" x="441" y="302" text-anchor="middle">antes de la nube</text>
+
+  <!-- Nodo 4 -->
+  <rect class="card" x="534" y="160" width="130" height="92" rx="12"/>
+  <rect x="534" y="160" width="130" height="8" rx="4" fill="#004a99"/>
+  <circle cx="599" cy="160" r="16" fill="#004a99"/>
+  <text class="badge" x="599" y="165" text-anchor="middle">4</text>
+  <text class="node" x="599" y="216" text-anchor="middle">Desplegar</text>
+  <text class="cap" x="599" y="284" text-anchor="middle">Aprovisionar</text>
+  <text class="cap" x="599" y="302" text-anchor="middle">el endpoint</text>
+
+  <!-- Nodo 5 -->
+  <rect class="card" x="692" y="160" width="130" height="92" rx="12"/>
+  <rect x="692" y="160" width="130" height="8" rx="4" fill="#004a99"/>
+  <circle cx="757" cy="160" r="16" fill="#004a99"/>
+  <text class="badge" x="757" y="165" text-anchor="middle">5</text>
+  <text class="node" x="757" y="206" text-anchor="middle">Enrutar</text>
+  <text class="node" x="757" y="226" text-anchor="middle">tráfico</text>
+  <text class="cap" x="757" y="284" text-anchor="middle">Mover % a la</text>
+  <text class="cap" x="757" y="302" text-anchor="middle">nueva versión</text>
+
+  <!-- Nodo 6 -->
+  <rect class="card" x="850" y="160" width="130" height="92" rx="12" stroke="#15803d"/>
+  <rect x="850" y="160" width="130" height="8" rx="4" fill="#15803d"/>
+  <circle cx="915" cy="160" r="16" fill="#15803d"/>
+  <path d="M908,160 l5,5 l9,-10" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="node" x="915" y="206" text-anchor="middle" fill="#15803d">Endpoint</text>
+  <text class="node" x="915" y="226" text-anchor="middle" fill="#15803d">activo</text>
+  <text class="cap" x="915" y="284" text-anchor="middle">Atendiendo</text>
+  <text class="cap" x="915" y="302" text-anchor="middle">solicitudes</text>
+
+  <!-- Nota de pie -->
+  <rect x="280" y="350" width="480" height="32" rx="16" fill="#eef2f7"/>
+  <text class="cap" x="520" y="371" text-anchor="middle">Supera cada punto de control antes de enviar tráfico real.</text>
+</svg>

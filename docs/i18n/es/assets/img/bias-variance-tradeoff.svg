@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="660" viewBox="0 0 1040 660" role="img" aria-labelledby="title desc">
+  <title id="title">Compensación sesgo-varianza</title>
+  <desc id="desc">A medida que aumenta la complejidad del modelo, el sesgo baja y la varianza sube; el error total se minimiza en una complejidad intermedia.</desc>
+
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 30px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 16px; }
+      .axis { stroke: #0f172a; stroke-width: 3; }
+      .axis-label { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 16px; font-weight: 700; }
+      .bias { fill: none; stroke: #0e7490; stroke-width: 4; }
+      .variance { fill: none; stroke: #b45309; stroke-width: 4; }
+      .total { fill: none; stroke: #004a99; stroke-width: 5; }
+      .opt { stroke: #475569; stroke-width: 2; stroke-dasharray: 6 6; }
+      .zone { font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; }
+      .legend-text { fill: #1f2937; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .note { fill: #475569; font-family: Segoe UI, Arial, sans-serif; font-size: 13px; }
+      .panel { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1040" height="660"/>
+
+  <text class="title" x="60" y="56">Compensación sesgo-varianza</text>
+  <text class="subtitle" x="60" y="84">El error total se minimiza en una complejidad intermedia del modelo</text>
+
+  <!-- Axes -->
+  <line class="axis" x1="120" y1="120" x2="120" y2="470"/>
+  <line class="axis" x1="120" y1="470" x2="940" y2="470"/>
+  <text class="axis-label" x="60" y="300" transform="rotate(-90 60 300)">Error</text>
+  <text class="axis-label" x="430" y="505">Complejidad del modelo</text>
+
+  <!-- Bias squared: high at left, decreasing -->
+  <path class="bias" d="M140,170 C320,330 460,420 920,448"/>
+  <!-- Variance: low at left, increasing -->
+  <path class="variance" d="M140,452 C520,438 700,320 920,160"/>
+  <!-- Total error: U-shape, min near center -->
+  <path class="total" d="M140,150 C360,360 470,372 520,372 C650,372 800,250 920,150"/>
+
+  <!-- Optimal complexity marker -->
+  <line class="opt" x1="520" y1="130" x2="520" y2="470"/>
+  <circle cx="520" cy="372" r="7" fill="#004a99"/>
+  <text class="note" x="470" y="120" text-anchor="middle">Complejidad óptima</text>
+
+  <!-- Zones -->
+  <text class="zone" x="200" y="450" fill="#0e7490">Subajuste</text>
+  <text class="note" x="200" y="468" font-size="12">sesgo alto</text>
+  <text class="zone" x="800" y="450" fill="#b45309" text-anchor="end">Sobreajuste</text>
+  <text class="note" x="800" y="468" font-size="12" text-anchor="end">varianza alta</text>
+
+  <!-- Legend -->
+  <rect class="panel" x="660" y="120" width="270" height="120" rx="10"/>
+  <line class="total" x1="678" y1="148" x2="712" y2="148"/>
+  <text class="legend-text" x="722" y="153">Error total</text>
+  <line class="bias" x1="678" y1="180" x2="712" y2="180"/>
+  <text class="legend-text" x="722" y="185">Sesgo al cuadrado</text>
+  <line class="variance" x1="678" y1="212" x2="712" y2="212"/>
+  <text class="legend-text" x="722" y="217">Varianza</text>
+
+  <!-- Bottom explanation panel -->
+  <rect class="panel" x="60" y="530" width="900" height="100" rx="12"/>
+  <text class="note" x="80" y="560" font-size="14">- Los modelos simples subajustan: sesgo alto, varianza baja, malos en entrenamiento y prueba.</text>
+  <text class="note" x="80" y="582" font-size="14">- Los modelos complejos sobreajustan: sesgo bajo, varianza alta, buenos en entrenamiento pero malos en prueba.</text>
+  <text class="note" x="80" y="604" font-size="14">- Ajuste la complejidad, agregue datos o regularice para alcanzar el error total mínimo (más el ruido irreducible).</text>
+</svg>

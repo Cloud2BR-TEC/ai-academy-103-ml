@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="470" viewBox="0 0 1040 470" role="img" aria-labelledby="title desc">
+  <title id="title">Train and test split</title>
+  <desc id="desc">A bar showing a common 80 percent train and 20 percent test split, with notes to use a stratified split for class imbalance and a chronological split for time series.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .barlbl { font-family: Segoe UI, Arial, sans-serif; font-size: 24px; font-weight: 700; fill: #ffffff; }
+      .barsub { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; fill: #ffffff; }
+      .scale { font-family: Segoe UI, Arial, sans-serif; font-size: 12px; fill: #64748b; }
+      .head { font-family: Segoe UI, Arial, sans-serif; font-size: 18px; font-weight: 700; }
+      .label { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; fill: #1f2937; }
+      .desc2 { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #475569; }
+      .tick { stroke: #94a3b8; stroke-width: 1.5; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="470"/>
+  <text class="title" x="60" y="52">Train and test split</text>
+  <text class="subtitle" x="60" y="80">A common default is 80% train / 20% test — choose the split strategy to match your data.</text>
+
+  <!-- Bar -->
+  <rect x="60" y="150" width="920" height="92" rx="12" fill="#004a99"/>
+  <path d="M796,150 H968 a12,12 0 0 1 12,12 V230 a12,12 0 0 1 -12,12 H796 Z" fill="#b45309"/>
+  <line x1="796" y1="150" x2="796" y2="242" stroke="#ffffff" stroke-width="2"/>
+  <text class="barlbl" x="428" y="198" text-anchor="middle">Train · 80%</text>
+  <text class="barsub" x="428" y="222" text-anchor="middle">used to fit the model</text>
+  <text class="barlbl" x="888" y="198" text-anchor="middle">Test · 20%</text>
+  <text class="barsub" x="888" y="222" text-anchor="middle">final eval</text>
+
+  <!-- Scale -->
+  <g class="tick">
+    <line x1="60" y1="246" x2="60" y2="258"/>
+    <line x1="244" y1="246" x2="244" y2="258"/>
+    <line x1="428" y1="246" x2="428" y2="258"/>
+    <line x1="612" y1="246" x2="612" y2="258"/>
+    <line x1="796" y1="246" x2="796" y2="258"/>
+    <line x1="980" y1="246" x2="980" y2="258"/>
+  </g>
+  <text class="scale" x="60" y="274" text-anchor="middle">0%</text>
+  <text class="scale" x="244" y="274" text-anchor="middle">20%</text>
+  <text class="scale" x="428" y="274" text-anchor="middle">40%</text>
+  <text class="scale" x="612" y="274" text-anchor="middle">60%</text>
+  <text class="scale" x="796" y="274" text-anchor="middle">80%</text>
+  <text class="scale" x="980" y="274" text-anchor="middle">100%</text>
+
+  <!-- Note: stratified -->
+  <rect class="card" x="60" y="310" width="440" height="130" rx="10" stroke="#0e7490"/>
+  <rect x="60" y="310" width="440" height="38" rx="10" fill="#0e7490"/>
+  <rect x="60" y="330" width="440" height="18" fill="#0e7490"/>
+  <text class="head" x="80" y="336" fill="#ffffff">Stratified split</text>
+  <text class="label" x="80" y="376">Keeps the same class balance in both train</text>
+  <text class="label" x="80" y="396">and test sets.</text>
+  <text class="desc2" x="80" y="422">Use for imbalanced classification (e.g. rare fraud).</text>
+
+  <!-- Note: chronological -->
+  <rect class="card" x="540" y="310" width="440" height="130" rx="10" stroke="#b45309"/>
+  <rect x="540" y="310" width="440" height="38" rx="10" fill="#b45309"/>
+  <rect x="540" y="330" width="440" height="18" fill="#b45309"/>
+  <text class="head" x="560" y="336" fill="#ffffff">Chronological split</text>
+  <text class="label" x="560" y="376">Train on the past, test on the future — no</text>
+  <text class="label" x="560" y="396">shuffling across time.</text>
+  <text class="desc2" x="560" y="422">Use for time series to avoid look-ahead leakage.</text>
+</svg>

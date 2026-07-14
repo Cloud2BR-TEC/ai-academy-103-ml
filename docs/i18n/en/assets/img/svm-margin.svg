@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="540" viewBox="0 0 1040 540" role="img" aria-labelledby="title desc">
+  <title id="title">SVM maximum-margin boundary</title>
+  <desc id="desc">Two classes separated by a boundary line with a wide margin street on both sides. The points touching the margin edges are the support vectors that define the boundary.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .axis { stroke: #0f172a; stroke-width: 3; }
+      .axis-label { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; }
+      .boundary { fill: none; stroke: #004a99; stroke-width: 5; }
+      .margin { fill: none; stroke: #475569; stroke-width: 2.5; stroke-dasharray: 7 6; }
+      .street { fill: #004a99; opacity: 0.08; }
+      .c0 { fill: #0e7490; }
+      .c1 { fill: #b45309; }
+      .sv { fill: none; stroke: #15803d; stroke-width: 3.5; }
+      .note { fill: #475569; font-family: Segoe UI, Arial, sans-serif; font-size: 14px; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="540"/>
+  <text class="title" x="60" y="52">SVM: the widest possible street between classes</text>
+  <text class="subtitle" x="60" y="80">Maximize the margin; only the points on the edges (support vectors) define the boundary.</text>
+  <line class="axis" x1="120" y1="470" x2="960" y2="470"/>
+  <line class="axis" x1="120" y1="470" x2="120" y2="120"/>
+  <text class="axis-label" x="540" y="510" text-anchor="middle">Feature 1</text>
+  <text class="axis-label" x="60" y="300" transform="rotate(-90 60 300)" text-anchor="middle">Feature 2</text>
+  <!-- margin street -->
+  <polygon class="street" points="200,470 470,130 560,130 290,470"/>
+  <!-- boundary + margins -->
+  <line class="boundary" x1="245" y1="470" x2="515" y2="130"/>
+  <line class="margin" x1="200" y1="470" x2="470" y2="130"/>
+  <line class="margin" x1="290" y1="470" x2="560" y2="130"/>
+  <text class="note" x="520" y="150" font-weight="700" fill="#004a99">boundary</text>
+  <!-- class 0 (left) -->
+  <circle class="c0" cx="170" cy="280" r="8"/>
+  <circle class="c0" cx="200" cy="380" r="8"/>
+  <circle class="c0" cx="150" cy="200" r="8"/>
+  <circle class="c0" cx="230" cy="420" r="8"/>
+  <!-- support vector class 0 (on left margin) -->
+  <circle class="c0" cx="300" cy="280" r="8"/>
+  <circle class="sv" cx="300" cy="280" r="14"/>
+  <!-- class 1 (right) -->
+  <circle class="c1" cx="650" cy="250" r="8"/>
+  <circle class="c1" cx="720" cy="320" r="8"/>
+  <circle class="c1" cx="780" cy="220" r="8"/>
+  <circle class="c1" cx="700" cy="180" r="8"/>
+  <!-- support vector class 1 (on right margin) -->
+  <circle class="c1" cx="455" cy="300" r="8"/>
+  <circle class="sv" cx="455" cy="300" r="14"/>
+  <!-- legend -->
+  <circle class="c0" cx="640" cy="420" r="8"/>
+  <text class="note" x="656" y="425">class A</text>
+  <circle class="c1" cx="640" cy="450" r="8"/>
+  <text class="note" x="656" y="455">class B</text>
+  <circle class="sv" cx="760" cy="420" r="11"/>
+  <text class="note" x="780" y="425">support vector</text>
+  <text class="note" x="955" y="478" text-anchor="end" font-weight="700" fill="#15803d">C controls how many margin violations are tolerated</text>
+</svg>

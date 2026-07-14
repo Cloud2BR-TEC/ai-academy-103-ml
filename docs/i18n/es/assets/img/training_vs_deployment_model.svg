@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="610" viewBox="0 0 1040 610" role="img" aria-labelledby="title desc">
+  <title id="title">Modelo de entrenamiento vs modelo de despliegue</title>
+  <desc id="desc">El mismo artefacto de modelo se ejecuta en dos contextos. En entrenamiento es offline, por lotes y optimizado para la exactitud. En despliegue es en línea, sin estado y optimizado para la latencia.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .cardhead { font-family: Segoe UI, Arial, sans-serif; font-size: 19px; font-weight: 700; fill: #ffffff; }
+      .pill { font-family: Segoe UI, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #ffffff; }
+      .rowlbl { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; font-weight: 700; fill: #475569; }
+      .rowval { font-family: Segoe UI, Arial, sans-serif; font-size: 15px; fill: #1f2937; }
+      .foot { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; font-weight: 700; fill: #334155; }
+      .arrow { stroke: #475569; stroke-width: 2.5; fill: none; }
+      .rowline { stroke: #eef2f7; stroke-width: 1.5; }
+    </style>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="610"/>
+  <text class="title" x="60" y="52">Modelo de entrenamiento vs despliegue</text>
+  <text class="subtitle" x="60" y="80">Un artefacto, dos contextos — los objetivos pasan de la exactitud a la latencia.</text>
+
+  <!-- Píldora del artefacto compartido -->
+  <rect x="380" y="106" width="280" height="48" rx="24" fill="#004a99"/>
+  <text class="pill" x="520" y="136" text-anchor="middle">Mismo artefacto de modelo</text>
+  <path class="arrow" d="M430,150 C360,176 320,182 290,206" marker-end="url(#ah)"/>
+  <path class="arrow" d="M610,150 C680,176 720,182 750,206" marker-end="url(#ah)"/>
+
+  <!-- Tarjeta ENTRENAMIENTO -->
+  <rect class="card" x="60" y="210" width="430" height="346" rx="12"/>
+  <rect x="60" y="210" width="430" height="46" rx="12" fill="#0e7490"/>
+  <rect x="60" y="234" width="430" height="22" fill="#0e7490"/>
+  <text class="cardhead" x="84" y="240">Contexto de entrenamiento · offline</text>
+
+  <text class="rowlbl" x="84" y="298">Modo</text>
+  <text class="rowval" x="240" y="298">Offline · por lotes</text>
+  <line class="rowline" x1="84" y1="314" x2="466" y2="314"/>
+  <text class="rowlbl" x="84" y="342">Objetivo</text>
+  <text class="rowval" x="240" y="342">Maximizar la exactitud</text>
+  <line class="rowline" x1="84" y1="358" x2="466" y2="358"/>
+  <text class="rowlbl" x="84" y="386">Datos</text>
+  <text class="rowval" x="240" y="386">Histórico completo</text>
+  <line class="rowline" x1="84" y1="402" x2="466" y2="402"/>
+  <text class="rowlbl" x="84" y="430">Cómputo</text>
+  <text class="rowval" x="240" y="430">Clúster grande y escalable</text>
+  <line class="rowline" x1="84" y1="446" x2="466" y2="446"/>
+  <text class="rowlbl" x="84" y="474">Cadencia</text>
+  <text class="rowval" x="240" y="474">Periódico · experimental</text>
+  <line class="rowline" x1="84" y1="490" x2="466" y2="490"/>
+  <text class="rowlbl" x="84" y="518">Latencia</text>
+  <text class="rowval" x="240" y="518">No es crítica</text>
+
+  <!-- Tarjeta DESPLIEGUE -->
+  <rect class="card" x="550" y="210" width="430" height="346" rx="12"/>
+  <rect x="550" y="210" width="430" height="46" rx="12" fill="#004a99"/>
+  <rect x="550" y="234" width="430" height="22" fill="#004a99"/>
+  <text class="cardhead" x="574" y="240">Contexto de despliegue · en línea</text>
+
+  <text class="rowlbl" x="574" y="298">Modo</text>
+  <text class="rowval" x="730" y="298">En línea · tiempo real</text>
+  <line class="rowline" x1="574" y1="314" x2="956" y2="314"/>
+  <text class="rowlbl" x="574" y="342">Objetivo</text>
+  <text class="rowval" x="730" y="342">Baja latencia y fiabilidad</text>
+  <line class="rowline" x1="574" y1="358" x2="956" y2="358"/>
+  <text class="rowlbl" x="574" y="386">Datos</text>
+  <text class="rowval" x="730" y="386">Una solicitud a la vez</text>
+  <line class="rowline" x1="574" y1="402" x2="956" y2="402"/>
+  <text class="rowlbl" x="574" y="430">Cómputo</text>
+  <text class="rowval" x="730" y="430">Pequeño, siempre activo</text>
+  <line class="rowline" x1="574" y1="446" x2="956" y2="446"/>
+  <text class="rowlbl" x="574" y="474">Cadencia</text>
+  <text class="rowval" x="730" y="474">Sirviendo continuamente</text>
+  <line class="rowline" x1="574" y1="490" x2="956" y2="490"/>
+  <text class="rowlbl" x="574" y="518">Estado</text>
+  <text class="rowval" x="730" y="518">Sin estado por llamada</text>
+
+  <!-- Pie -->
+  <rect x="300" y="572" width="440" height="30" rx="15" fill="#eef2f7"/>
+  <text class="foot" x="520" y="592" text-anchor="middle">Mismo artefacto — dos contextos de ejecución.</text>
+</svg>

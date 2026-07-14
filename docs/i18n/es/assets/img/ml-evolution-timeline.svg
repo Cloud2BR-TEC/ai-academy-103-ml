@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="800" viewBox="0 0 1500 800" role="img" aria-labelledby="title desc">
+  <title id="title">Evolución del aprendizaje automático: eras e hitos</title>
+  <desc id="desc">Línea de tiempo de la historia del aprendizaje automático con eventos hito y lo que cada era aportó a los sistemas de ML modernos.</desc>
+
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .panel { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 36px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 18px; }
+      .axis { stroke: #0f172a; stroke-width: 4; }
+      .era-a { fill: #e0ecff; stroke: #9ec2ff; stroke-width: 1.5; }
+      .era-b { fill: #e7f5ea; stroke: #9fd3aa; stroke-width: 1.5; }
+      .era-c { fill: #fff3e2; stroke: #f4c38a; stroke-width: 1.5; }
+      .era-d { fill: #f2eaff; stroke: #cfb5ff; stroke-width: 1.5; }
+      .era-title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; }
+      .era-copy { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 12.5px; }
+      .dot { fill: #004a99; }
+      .year { fill: #003874; font-family: Segoe UI, Arial, sans-serif; font-size: 13px; font-weight: 700; text-anchor: middle; }
+      .callout { fill: #ffffff; stroke: #93c5fd; stroke-width: 1.5; }
+      .callout-title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 13px; font-weight: 700; }
+      .callout-copy { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 11.5px; }
+      .line { stroke: #60a5fa; stroke-width: 1.5; }
+      .legend { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 14px; font-weight: 700; }
+      .small { fill: #475569; font-family: Segoe UI, Arial, sans-serif; font-size: 12.5px; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1500" height="800"/>
+
+  <text class="title" x="60" y="60">Evolución del aprendizaje automático</text>
+  <text class="subtitle" x="62" y="92">De la teoría fundacional (1950s) a los modelos fundacionales y la GenAI (2020s)</text>
+
+  <!-- Era bands -->
+  <rect class="era-a" x="60" y="120" width="325" height="92" rx="12"/>
+  <text class="era-title" x="78" y="148">1) Fundamentos (1950s-1970s)</text>
+  <text class="era-copy" x="78" y="172">Pregunta central: ¿pueden las máquinas aprender patrones?</text>
+  <text class="era-copy" x="78" y="192">IA simbólica e ideas de vecino más cercano.</text>
+
+  <rect class="era-b" x="400" y="120" width="325" height="92" rx="12"/>
+  <text class="era-title" x="418" y="148">2) Sistemas expertos (1980s)</text>
+  <text class="era-copy" x="418" y="172">Conocimiento codificado como reglas escritas a mano.</text>
+  <text class="era-copy" x="418" y="192">Fuertes en dominios estrechos; difíciles de escalar.</text>
+
+  <rect class="era-c" x="740" y="120" width="325" height="92" rx="12"/>
+  <text class="era-title" x="758" y="148">3) ML estadístico (1990s-2000s)</text>
+  <text class="era-copy" x="758" y="172">Regularización, kernels y ensambles.</text>
+  <text class="era-copy" x="758" y="192">La predicción tabular se volvió lista para producción.</text>
+
+  <rect class="era-d" x="1080" y="120" width="360" height="92" rx="12"/>
+  <text class="era-title" x="1098" y="148">4) Era del aprendizaje profundo (2010s-2020s)</text>
+  <text class="era-copy" x="1098" y="172">Escala GPU, big data, modelos transformer.</text>
+  <text class="era-copy" x="1098" y="192">Visión, lenguaje y modelos fundacionales.</text>
+
+  <!-- Axis -->
+  <line class="axis" x1="90" y1="370" x2="1410" y2="370"/>
+
+  <!-- Turing Test (top) -->
+  <circle class="dot" cx="120" cy="370" r="8"/>
+  <text class="year" x="120" y="398">1950</text>
+  <line class="line" x1="120" y1="362" x2="120" y2="308"/>
+  <rect class="callout" x="42" y="230" width="172" height="78" rx="8"/>
+  <text class="callout-title" x="56" y="256">Prueba de Turing</text>
+  <text class="callout-copy" x="56" y="277">Definió un punto de referencia</text>
+  <text class="callout-copy" x="56" y="294">para la inteligencia de máquina.</text>
+
+  <!-- Perceptron (bottom) -->
+  <circle class="dot" cx="232" cy="370" r="8"/>
+  <text class="year" x="232" y="398">1957</text>
+  <line class="line" x1="232" y1="378" x2="232" y2="432"/>
+  <rect class="callout" x="150" y="432" width="172" height="78" rx="8"/>
+  <text class="callout-title" x="164" y="458">Perceptrón</text>
+  <text class="callout-copy" x="164" y="479">Modelo clasificador neuronal</text>
+  <text class="callout-copy" x="164" y="496">entrenable temprano.</text>
+
+  <!-- k-NN (top) -->
+  <circle class="dot" cx="352" cy="370" r="8"/>
+  <text class="year" x="352" y="398">1967</text>
+  <line class="line" x1="352" y1="362" x2="352" y2="308"/>
+  <rect class="callout" x="266" y="230" width="172" height="78" rx="8"/>
+  <text class="callout-title" x="280" y="256">k-NN</text>
+  <text class="callout-copy" x="280" y="277">Aprendizaje basado en instancias</text>
+  <text class="callout-copy" x="280" y="294">sin entrenamiento explícito.</text>
+
+  <!-- Backpropagation (bottom) -->
+  <circle class="dot" cx="498" cy="370" r="8"/>
+  <text class="year" x="498" y="398">1986</text>
+  <line class="line" x1="498" y1="378" x2="498" y2="432"/>
+  <rect class="callout" x="412" y="432" width="178" height="78" rx="8"/>
+  <text class="callout-title" x="426" y="458">Retropropagación</text>
+  <text class="callout-copy" x="426" y="479">Hizo práctico el entrenamiento</text>
+  <text class="callout-copy" x="426" y="496">de redes multicapa.</text>
+
+  <!-- SVM (top) -->
+  <circle class="dot" cx="650" cy="370" r="8"/>
+  <text class="year" x="650" y="398">1995</text>
+  <line class="line" x1="650" y1="362" x2="650" y2="308"/>
+  <rect class="callout" x="558" y="230" width="190" height="78" rx="8"/>
+  <text class="callout-title" x="572" y="256">Máquinas de vectores de soporte</text>
+  <text class="callout-copy" x="572" y="277">Márgenes y kernels fuertes</text>
+  <text class="callout-copy" x="572" y="294">para fronteras complejas.</text>
+
+  <!-- Random Forests (bottom) -->
+  <circle class="dot" cx="800" cy="370" r="8"/>
+  <text class="year" x="800" y="398">2001</text>
+  <line class="line" x1="800" y1="378" x2="800" y2="432"/>
+  <rect class="callout" x="714" y="432" width="178" height="78" rx="8"/>
+  <text class="callout-title" x="728" y="458">Bosques aleatorios</text>
+  <text class="callout-copy" x="728" y="479">Ensambles robustos para</text>
+  <text class="callout-copy" x="728" y="496">datos estructurados.</text>
+
+  <!-- AlexNet (top) -->
+  <circle class="dot" cx="952" cy="370" r="8"/>
+  <text class="year" x="952" y="398">2012</text>
+  <line class="line" x1="952" y1="362" x2="952" y2="308"/>
+  <rect class="callout" x="866" y="230" width="178" height="78" rx="8"/>
+  <text class="callout-title" x="880" y="256">AlexNet</text>
+  <text class="callout-copy" x="880" y="277">El avance en ImageNet</text>
+  <text class="callout-copy" x="880" y="294">aceleró la visión profunda.</text>
+
+  <!-- Transformers (bottom) -->
+  <circle class="dot" cx="1100" cy="370" r="8"/>
+  <text class="year" x="1100" y="398">2017</text>
+  <line class="line" x1="1100" y1="378" x2="1100" y2="432"/>
+  <rect class="callout" x="1014" y="432" width="178" height="78" rx="8"/>
+  <text class="callout-title" x="1028" y="458">Transformers</text>
+  <text class="callout-copy" x="1028" y="479">La arquitectura de atención</text>
+  <text class="callout-copy" x="1028" y="496">escaló el aprendizaje del lenguaje.</text>
+
+  <!-- Foundation Models (top) -->
+  <circle class="dot" cx="1260" cy="370" r="8"/>
+  <text class="year" x="1260" y="398">2020-2022+</text>
+  <line class="line" x1="1260" y1="362" x2="1260" y2="308"/>
+  <rect class="callout" x="1168" y="230" width="192" height="78" rx="8"/>
+  <text class="callout-title" x="1182" y="256">Modelos fundacionales</text>
+  <text class="callout-copy" x="1182" y="277">Preentrenamiento a gran escala y</text>
+  <text class="callout-copy" x="1182" y="294">GenAI de uso generalizado.</text>
+
+  <!-- Legend panel -->
+  <rect class="panel" x="60" y="560" width="1380" height="200" rx="14"/>
+  <text class="legend" x="82" y="592">Cómo leer esta línea de tiempo</text>
+  <text class="small" x="82" y="620">- Las bandas de era en la parte superior muestran el paradigma dominante de cada periodo.</text>
+  <text class="small" x="82" y="644">- Los puntos en el eje son hitos; cada nota explica por qué ese evento cambió la práctica del ML.</text>
+  <text class="small" x="82" y="668">- El ML estadístico sigue siendo fuerte para problemas tabulares de negocio; el aprendizaje profundo domina los datos no estructurados.</text>
+  <text class="small" x="82" y="692">- Los modelos fundacionales unifican tareas (texto, imagen, código) y requieren mayor gobernanza de MLOps, control de costos y seguridad.</text>
+  <text class="small" x="82" y="724">Resumen didáctico: el ML evolucionó de reglas hechas a mano a la generalización basada en datos, luego a grandes sistemas preentrenados.</text>
+</svg>

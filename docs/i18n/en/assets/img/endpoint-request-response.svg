@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="720" viewBox="0 0 1040 720" role="img" aria-labelledby="title desc">
+  <title id="title">Calling a deployed model endpoint</title>
+  <desc id="desc">A client sends a JSON HTTP POST with features to an Azure ML online endpoint; the scoring script loads the model once and returns a JSON prediction and probability.</desc>
+
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 30px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 16px; }
+      .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .endpoint { fill: #eef4fb; stroke: #004a99; stroke-width: 2; }
+      .head { font-family: Segoe UI, Arial, sans-serif; font-size: 18px; font-weight: 700; fill: #0f172a; }
+      .headw { font-family: Segoe UI, Arial, sans-serif; font-size: 18px; font-weight: 700; fill: #ffffff; }
+      .mono { font-family: Consolas, "Courier New", monospace; font-size: 13px; fill: #1f2937; }
+      .monosm { font-family: Consolas, "Courier New", monospace; font-size: 12px; fill: #334155; }
+      .label { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #475569; }
+      .pill { fill: #004a99; }
+      .pillg { fill: #0f766e; }
+      .arrow { stroke: #004a99; stroke-width: 3; fill: none; }
+      .arrowback { stroke: #0f766e; stroke-width: 3; fill: none; }
+    </style>
+    <marker id="ablue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#004a99"/>
+    </marker>
+    <marker id="agreen" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0f766e"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1040" height="720"/>
+  <text class="title" x="60" y="52">Calling a Deployed Model Endpoint</text>
+  <text class="subtitle" x="60" y="80">HTTP POST with JSON features in, JSON prediction out</text>
+
+  <!-- Client -->
+  <rect class="card" x="60" y="120" width="250" height="120" rx="12"/>
+  <rect class="pill" x="60" y="120" width="250" height="34" rx="12"/>
+  <text class="headw" x="80" y="144">Client app</text>
+  <text class="label" x="80" y="178">Web / mobile / service</text>
+  <text class="monosm" x="80" y="202">POST /score</text>
+  <text class="monosm" x="80" y="222">Authorization: Bearer key</text>
+
+  <!-- Endpoint -->
+  <rect class="endpoint" x="395" y="110" width="250" height="240" rx="12"/>
+  <rect class="pill" x="395" y="110" width="250" height="34" rx="12"/>
+  <text class="headw" x="415" y="134">Online endpoint</text>
+  <text class="label" x="415" y="170">fraud-endpoint (HTTPS)</text>
+  <text class="monosm" x="415" y="196">Auth + schema check</text>
+  <text class="monosm" x="415" y="218">Load balance to replica</text>
+
+  <!-- scoring script inside -->
+  <rect class="card" x="415" y="236" width="210" height="96" rx="8"/>
+  <text class="head" x="430" y="262" font-size="15">score.py</text>
+  <text class="monosm" x="430" y="286">init() loads model once</text>
+  <text class="monosm" x="430" y="308">run() predicts per request</text>
+
+  <!-- Model registry -->
+  <rect class="card" x="730" y="120" width="250" height="120" rx="12"/>
+  <rect class="pillg" x="730" y="120" width="250" height="34" rx="12"/>
+  <text class="headw" x="750" y="144">Registered model</text>
+  <text class="label" x="750" y="178">azureml:fraud-model:3</text>
+  <text class="monosm" x="750" y="202">joblib artifact + env</text>
+  <text class="monosm" x="750" y="222">versioned, reproducible</text>
+
+  <!-- Arrows -->
+  <path class="arrow" d="M312,170 L390,180" marker-end="url(#ablue)"/>
+  <text class="mono" x="318" y="160" fill="#004a99" font-size="12">request</text>
+  <path class="arrowback" d="M390,300 L314,212" marker-end="url(#agreen)"/>
+  <text class="mono" x="300" y="270" fill="#0f766e" font-size="12">response</text>
+  <path class="arrow" d="M647,180 L726,180" marker-end="url(#ablue)"/>
+  <text class="mono" x="652" y="170" fill="#004a99" font-size="12">load (init)</text>
+
+  <!-- Request panel -->
+  <rect class="card" x="60" y="390" width="440" height="290" rx="12"/>
+  <rect class="pill" x="60" y="390" width="440" height="34" rx="12"/>
+  <text class="headw" x="80" y="414">Request body (JSON)</text>
+  <text class="mono" x="80" y="450">{</text>
+  <text class="mono" x="100" y="472">"features": [</text>
+  <text class="mono" x="120" y="494">[0.21, 1.4, 0.0, 7, 1, 0.55],</text>
+  <text class="mono" x="120" y="516">[1.02, 0.3, 2.1, 2, 0, 0.10]</text>
+  <text class="mono" x="100" y="538">]</text>
+  <text class="mono" x="80" y="560">}</text>
+  <text class="label" x="80" y="600">Each row = one transaction's features,</text>
+  <text class="label" x="80" y="622">in the exact training column order.</text>
+  <text class="monosm" x="80" y="654">Content-Type: application/json</text>
+
+  <!-- Response panel -->
+  <rect class="card" x="540" y="390" width="440" height="290" rx="12"/>
+  <rect class="pillg" x="540" y="390" width="440" height="34" rx="12"/>
+  <text class="headw" x="560" y="414">Response body (JSON)</text>
+  <text class="mono" x="560" y="450">{</text>
+  <text class="mono" x="580" y="472">"prediction": [1, 0],</text>
+  <text class="mono" x="580" y="494">"probability": [</text>
+  <text class="mono" x="600" y="516">[0.08, 0.92],</text>
+  <text class="mono" x="600" y="538">[0.86, 0.14]</text>
+  <text class="mono" x="580" y="560">]</text>
+  <text class="mono" x="560" y="582">}</text>
+  <text class="label" x="560" y="616">Row 1: class 1 (fraud), 92% confidence.</text>
+  <text class="label" x="560" y="638">Row 2: class 0 (legit), 86% confidence.</text>
+  <text class="monosm" x="560" y="666">HTTP 200 OK</text>
+</svg>

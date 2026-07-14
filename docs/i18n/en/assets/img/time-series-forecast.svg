@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="540" viewBox="0 0 1040 540" role="img" aria-labelledby="title desc">
+  <title id="title">Time-series forecast with trend, seasonality, and horizon</title>
+  <desc id="desc">A historical time series with an upward trend and repeating seasonal waves, extended into a future forecast with a widening uncertainty band.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .axis { stroke: #0f172a; stroke-width: 3; }
+      .axis-label { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; }
+      .hist { fill: none; stroke: #004a99; stroke-width: 4; }
+      .fcast { fill: none; stroke: #b45309; stroke-width: 4; stroke-dasharray: 9 6; }
+      .band { fill: #b45309; opacity: 0.12; }
+      .divider { stroke: #475569; stroke-width: 2; stroke-dasharray: 6 6; }
+      .note { fill: #475569; font-family: Segoe UI, Arial, sans-serif; font-size: 14px; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="540"/>
+  <text class="title" x="60" y="52">Time-series forecasting: trend + seasonality + horizon</text>
+  <text class="subtitle" x="60" y="80">Decompose history into trend and repeating seasonal cycles, then project forward with growing uncertainty.</text>
+  <line class="axis" x1="120" y1="460" x2="980" y2="460"/>
+  <line class="axis" x1="120" y1="460" x2="120" y2="120"/>
+  <text class="axis-label" x="540" y="505" text-anchor="middle">Time</text>
+  <text class="axis-label" x="60" y="290" transform="rotate(-90 60 290)" text-anchor="middle">Value</text>
+  <!-- now divider -->
+  <line class="divider" x1="660" y1="120" x2="660" y2="460"/>
+  <text class="note" x="610" y="140" font-weight="700" fill="#475569">now</text>
+  <text class="note" x="180" y="140" font-weight="700" fill="#004a99">observed history</text>
+  <text class="note" x="700" y="140" font-weight="700" fill="#b45309">forecast horizon</text>
+  <!-- history: rising seasonal wave -->
+  <path class="hist" d="M140,400 Q175,350 210,380 Q245,300 280,340 Q315,260 350,310 Q385,230 420,290 Q455,200 490,265 Q525,180 560,245 Q595,160 630,225 L660,210"/>
+  <!-- uncertainty band -->
+  <path class="band" d="M660,210 Q740,150 820,140 Q900,130 960,120 L960,300 Q900,260 820,250 Q740,250 660,230 Z"/>
+  <!-- forecast -->
+  <path class="fcast" d="M660,210 Q700,150 740,185 Q780,120 820,160 Q860,100 900,150 Q940,90 960,135"/>
+  <text class="note" x="60" y="525" font-weight="700" fill="#b45309">The band widens with the horizon: confidence drops the further ahead you predict.</text>
+</svg>

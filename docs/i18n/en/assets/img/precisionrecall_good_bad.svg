@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="560" viewBox="0 0 1040 560" role="img" aria-labelledby="title desc">
+  <title id="title">Precision-recall curves — good vs bad</title>
+  <desc id="desc">Two precision-recall curves on one set of axes: a good model that keeps precision high as recall increases, and a weak model whose precision drops quickly.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .cardhead { font-family: Segoe UI, Arial, sans-serif; font-size: 18px; font-weight: 700; }
+      .axislbl { font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #0f172a; }
+      .tick { font-family: Segoe UI, Arial, sans-serif; font-size: 12px; fill: #64748b; }
+      .label { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; font-weight: 700; fill: #1f2937; }
+      .desc2 { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #475569; }
+      .axis { stroke: #0f172a; stroke-width: 3; }
+      .grid { stroke: #e2e8f0; stroke-width: 1; }
+      .good { stroke: #15803d; stroke-width: 4; fill: none; stroke-linecap: round; }
+      .bad { stroke: #b91c1c; stroke-width: 4; fill: none; stroke-linecap: round; }
+      .ref { stroke: #94a3b8; stroke-width: 2.5; stroke-dasharray: 6 6; fill: none; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="560"/>
+  <text class="title" x="60" y="52">Precision-recall curves — good vs bad</text>
+  <text class="subtitle" x="60" y="80">A good model holds precision high as recall grows; a weak one falls away fast.</text>
+
+  <!-- Chart card -->
+  <rect class="card" x="100" y="108" width="560" height="432" rx="12"/>
+
+  <!-- Grid -->
+  <line class="grid" x1="160" y1="300" x2="640" y2="300"/>
+  <line class="grid" x1="400" y1="130" x2="400" y2="470"/>
+
+  <!-- Axes -->
+  <line class="axis" x1="160" y1="470" x2="640" y2="470"/>
+  <line class="axis" x1="160" y1="470" x2="160" y2="130"/>
+
+  <!-- Ticks -->
+  <text class="tick" x="160" y="492" text-anchor="middle">0.0</text>
+  <text class="tick" x="400" y="492" text-anchor="middle">0.5</text>
+  <text class="tick" x="640" y="492" text-anchor="middle">1.0</text>
+  <text class="tick" x="150" y="475" text-anchor="end">0.0</text>
+  <text class="tick" x="150" y="305" text-anchor="end">0.5</text>
+  <text class="tick" x="150" y="135" text-anchor="end">1.0</text>
+
+  <!-- Axis titles -->
+  <text class="axislbl" x="400" y="522" text-anchor="middle">Recall</text>
+  <text class="axislbl" x="124" y="300" text-anchor="middle" transform="rotate(-90 124 300)">Precision</text>
+
+  <!-- Prevalence baseline -->
+  <line class="ref" x1="160" y1="385" x2="640" y2="385"/>
+
+  <!-- Bad curve (drops fast) -->
+  <path class="bad" d="M160,164 C210,200 256,232 300,255 C360,290 480,350 544,368 C580,378 612,392 640,402"/>
+  <!-- Good curve (stays high) -->
+  <path class="good" d="M160,130 C300,136 460,150 544,168 C590,182 620,205 640,232"/>
+
+  <!-- Legend / how to read -->
+  <rect class="card" x="700" y="150" width="280" height="346" rx="10"/>
+  <rect x="700" y="150" width="280" height="40" rx="10" fill="#004a99"/>
+  <rect x="700" y="170" width="280" height="20" fill="#004a99"/>
+  <text class="cardhead" x="722" y="177" fill="#ffffff">How to read it</text>
+
+  <line x1="722" y1="226" x2="762" y2="226" stroke="#15803d" stroke-width="4" stroke-linecap="round"/>
+  <text class="label" x="772" y="231" fill="#15803d">Good model</text>
+  <text class="desc2" x="722" y="254">Precision stays high while recall grows.</text>
+  <text class="desc2" x="722" y="274">High average precision (AP).</text>
+
+  <line x1="722" y1="316" x2="762" y2="316" stroke="#b91c1c" stroke-width="4" stroke-linecap="round"/>
+  <text class="label" x="772" y="321" fill="#b91c1c">Weak model</text>
+  <text class="desc2" x="722" y="344">Precision collapses as recall rises.</text>
+  <text class="desc2" x="722" y="364">Many false positives slip in.</text>
+
+  <line x1="722" y1="406" x2="762" y2="406" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="6 6"/>
+  <text class="label" x="772" y="411" fill="#64748b">Prevalence baseline</text>
+  <text class="desc2" x="722" y="434">Precision of a random classifier.</text>
+
+  <rect x="716" y="452" width="248" height="32" rx="8" fill="#eef2f7"/>
+  <text class="desc2" x="728" y="473">Best for imbalanced positive classes.</text>
+</svg>

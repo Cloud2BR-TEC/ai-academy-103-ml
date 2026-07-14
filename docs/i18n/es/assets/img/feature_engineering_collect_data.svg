@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="480" viewBox="0 0 1040 480" role="img" aria-labelledby="title desc">
+  <title id="title">Ingeniería de características durante la recolección de datos</title>
+  <desc id="desc">Los datos recolectados se dividen en entrenamiento y prueba; las transformaciones de características como escalado, codificación y agregados se ajustan solo en el conjunto de entrenamiento y luego se aplican al conjunto de prueba para evitar fugas.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 26px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .node { font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #ffffff; }
+      .head { font-family: Segoe UI, Arial, sans-serif; font-size: 16px; font-weight: 700; }
+      .label { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #1f2937; }
+      .desc2 { font-family: Segoe UI, Arial, sans-serif; font-size: 12px; fill: #475569; }
+      .arrow { stroke: #475569; stroke-width: 2.5; fill: none; }
+      .green { stroke: #15803d; stroke-width: 2.5; fill: none; }
+      .orange { stroke: #b45309; stroke-width: 2.5; fill: none; stroke-dasharray: 7 5; }
+      .gtxt { font-family: Segoe UI, Arial, sans-serif; font-size: 12.5px; font-weight: 700; fill: #15803d; }
+      .otxt { font-family: Segoe UI, Arial, sans-serif; font-size: 12.5px; font-weight: 700; fill: #b45309; }
+    </style>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#475569"/></marker>
+    <marker id="ag" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#15803d"/></marker>
+    <marker id="ao" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#b45309"/></marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="480"/>
+  <text class="title" x="60" y="50">Ingeniería de características al recolectar datos</text>
+  <text class="subtitle" x="60" y="80">Ajusta las transformaciones solo en el conjunto de ENTRENAMIENTO y aplícalas luego al de prueba.</text>
+
+  <!-- Datos recolectados -->
+  <rect class="card" x="50" y="205" width="150" height="100" rx="10" stroke="#64748b"/>
+  <rect x="50" y="205" width="150" height="34" rx="10" fill="#64748b"/>
+  <rect x="50" y="222" width="150" height="17" fill="#64748b"/>
+  <text class="node" x="125" y="228" text-anchor="middle">Datos recolectados</text>
+  <text class="desc2" x="125" y="265" text-anchor="middle">Filas y</text>
+  <text class="desc2" x="125" y="282" text-anchor="middle">columnas crudas</text>
+
+  <!-- Entrenamiento -->
+  <rect class="card" x="320" y="150" width="150" height="64" rx="10" stroke="#15803d"/>
+  <rect x="320" y="150" width="150" height="30" rx="10" fill="#15803d"/>
+  <rect x="320" y="165" width="150" height="15" fill="#15803d"/>
+  <text class="node" x="395" y="171" text-anchor="middle">Entrenamiento</text>
+  <text class="desc2" x="395" y="201" text-anchor="middle">ajustar + transformar</text>
+
+  <!-- Prueba -->
+  <rect class="card" x="320" y="296" width="150" height="64" rx="10" stroke="#b45309"/>
+  <rect x="320" y="296" width="150" height="30" rx="10" fill="#b45309"/>
+  <rect x="320" y="311" width="150" height="15" fill="#b45309"/>
+  <text class="node" x="395" y="317" text-anchor="middle">Prueba</text>
+  <text class="desc2" x="395" y="347" text-anchor="middle">solo transformar</text>
+
+  <!-- Datos a divisiones -->
+  <path class="arrow" d="M200,240 C260,220 270,190 318,182" marker-end="url(#ah)"/>
+  <path class="arrow" d="M200,275 C260,300 270,322 318,328" marker-end="url(#ah)"/>
+
+  <!-- Caja de transformaciones -->
+  <rect class="card" x="540" y="170" width="250" height="220" rx="10" stroke="#004a99"/>
+  <rect x="540" y="170" width="250" height="36" rx="10" fill="#004a99"/>
+  <rect x="540" y="188" width="250" height="18" fill="#004a99"/>
+  <text class="node" x="665" y="195" text-anchor="middle">Transformaciones</text>
+  <rect class="card" x="560" y="222" width="210" height="46" rx="8" fill="#eaf2fb"/>
+  <text class="head" x="572" y="243" fill="#004a99" font-size="14px">Escalado</text>
+  <text class="desc2" x="572" y="260">StandardScaler / MinMax</text>
+  <rect class="card" x="560" y="278" width="210" height="46" rx="8" fill="#eaf2fb"/>
+  <text class="head" x="572" y="299" fill="#004a99" font-size="14px">Codificación</text>
+  <text class="desc2" x="572" y="316">One-hot / por objetivo</text>
+  <rect class="card" x="560" y="334" width="210" height="46" rx="8" fill="#eaf2fb"/>
+  <text class="head" x="572" y="355" fill="#004a99" font-size="14px">Agregados</text>
+  <text class="desc2" x="572" y="372">group-by, estad. móviles</text>
+
+  <!-- Entrenamiento -> transformaciones (ajustar) -->
+  <path class="green" d="M470,182 C505,182 510,232 538,238" marker-end="url(#ag)"/>
+  <text class="gtxt" x="478" y="200">ajustar solo en TRAIN</text>
+  <!-- Prueba -> transformaciones (aplicar) -->
+  <path class="orange" d="M470,328 C505,328 510,330 538,330" marker-end="url(#ao)"/>
+  <text class="otxt" x="478" y="352">aplicar parám. de train</text>
+
+  <!-- Salida -->
+  <rect class="card" x="830" y="234" width="160" height="92" rx="10" stroke="#0e7490"/>
+  <rect x="830" y="234" width="160" height="32" rx="10" fill="#0e7490"/>
+  <rect x="830" y="250" width="160" height="16" fill="#0e7490"/>
+  <text class="node" x="910" y="256" text-anchor="middle">Listo para modelo</text>
+  <text class="desc2" x="910" y="288" text-anchor="middle">características</text>
+  <text class="desc2" x="910" y="306" text-anchor="middle">consistentes</text>
+  <path class="arrow" d="M790,280 L826,280" marker-end="url(#ah)"/>
+
+  <!-- Banner -->
+  <rect x="50" y="420" width="940" height="44" rx="10" fill="#ecfdf5" stroke="#15803d" stroke-width="1.6"/>
+  <text class="label" x="520" y="447" text-anchor="middle">Ajustar las transformaciones solo en Train — y reusar esos parámetros en Test — evita la fuga de datos y da una evaluación honesta.</text>
+</svg>

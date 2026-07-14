@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="1120" viewBox="0 0 1040 1120" role="img" aria-labelledby="title desc">
+  <title id="title">El flujo de trabajo de Machine Learning de extremo a extremo</title>
+  <desc id="desc">Una canalización vertical con tres etapas agrupadas. Los datos de origen y su preparación alimentan el desarrollo y entrenamiento del modelo, cuyo resultado se sirve en un endpoint de despliegue sobre Kubernetes.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 26px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .tab { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; font-weight: 700; }
+      .node { fill: #ffffff; stroke: #94a3b8; stroke-width: 1.5; }
+      .nt { fill: #1f2937; font-family: Segoe UI, Arial, sans-serif; font-size: 12.5px; }
+      .seblbl { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 13px; font-weight: 700; }
+      .cap { fill: #475569; font-family: Segoe UI, Arial, sans-serif; font-size: 12.5px; }
+      .cyl { fill: #e2e8f0; stroke: #94a3b8; stroke-width: 1.5; }
+      .cyltop { fill: #f1f5f9; stroke: #94a3b8; stroke-width: 1.5; }
+      .con { stroke: #475569; stroke-width: 1.6; fill: none; }
+      .fnd { fill: #1e293b; font-family: Segoe UI, Arial, sans-serif; font-size: 14px; font-weight: 600; }
+    </style>
+    <marker id="ah" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1040" height="1120"/>
+  <text class="title" x="44" y="48">El flujo de trabajo de Machine Learning de extremo a extremo</text>
+  <text class="subtitle" x="44" y="76">De los datos crudos a un modelo desplegado: preparar los datos, desarrollar y entrenar el modelo, y servirlo en un endpoint</text>
+
+  <!-- ============ ETAPA 1: DATOS DE ORIGEN Y PREPARACIÓN ============ -->
+  <rect x="120" y="100" width="800" height="186" rx="14" fill="#ecfeff" fill-opacity="0.55" stroke="#0e7490" stroke-width="2.5" stroke-dasharray="9 7"/>
+  <rect x="676" y="84" width="244" height="34" rx="9" fill="#0e7490"/>
+  <text class="tab" x="798" y="106" text-anchor="middle" fill="#ffffff">Datos de Origen y Preparación</text>
+  <text class="tab" x="138" y="124" fill="#0e7490" font-size="12px">Módulo 08</text>
+
+  <!-- cilindro 1 -->
+  <path class="cyl" d="M212,158 v60 a66,15 0 0 0 132,0 v-60 Z"/>
+  <ellipse class="cyltop" cx="278" cy="158" rx="66" ry="15"/>
+  <text class="cap" x="278" y="246" text-anchor="middle">Datos de origen</text>
+  <!-- cilindro 2 -->
+  <path class="cyl" d="M408,158 v60 a66,15 0 0 0 132,0 v-60 Z"/>
+  <ellipse class="cyltop" cx="474" cy="158" rx="66" ry="15"/>
+  <text class="cap" x="474" y="246" text-anchor="middle">Datos preparados</text>
+
+  <!-- pasos de preparación -->
+  <rect class="node" x="622" y="138" width="216" height="34" rx="6"/>
+  <text class="nt" x="730" y="159" text-anchor="middle">Recolectar fuentes</text>
+  <rect class="node" x="622" y="182" width="216" height="34" rx="6"/>
+  <text class="nt" x="730" y="203" text-anchor="middle">Limpiar y codificar</text>
+  <rect class="node" x="622" y="226" width="216" height="34" rx="6"/>
+  <text class="nt" x="730" y="247" text-anchor="middle">División train / test</text>
+  <path class="con" d="M730,172 L730,182" marker-end="url(#ah)"/>
+  <path class="con" d="M730,216 L730,226" marker-end="url(#ah)"/>
+  <path class="con" d="M540,188 L618,188" marker-end="url(#ah)"/>
+
+  <!-- flecha naranja Etapa1 -> Etapa2 -->
+  <rect x="509" y="294" width="22" height="30" fill="#f59e0b"/>
+  <polygon points="492,322 548,322 520,348" fill="#f59e0b"/>
+
+  <!-- ============ ETAPA 2: DESARROLLO Y ENTRENAMIENTO DEL MODELO ============ -->
+  <rect x="44" y="360" width="952" height="416" rx="14" fill="#fffbeb" fill-opacity="0.6" stroke="#b45309" stroke-width="2.5" stroke-dasharray="9 7"/>
+  <rect x="660" y="344" width="336" height="34" rx="9" fill="#b45309"/>
+  <text class="tab" x="828" y="366" text-anchor="middle" fill="#ffffff">Desarrollo y Entrenamiento del Modelo</text>
+  <text class="tab" x="62" y="384" fill="#b45309" font-size="12px">Módulos 06, 07, 09, 10</text>
+
+  <!-- INICIO -->
+  <rect class="node" x="455" y="398" width="130" height="34" rx="6" fill="#fef3c7" stroke="#b45309"/>
+  <text class="seblbl" x="520" y="420" text-anchor="middle">INICIO</text>
+  <path class="con" d="M520,432 L520,452"/>
+  <!-- bus superior -->
+  <path class="con" d="M150,452 L830,452"/>
+  <path class="con" d="M150,452 L150,470" marker-end="url(#ah)"/>
+  <path class="con" d="M380,452 L380,470" marker-end="url(#ah)"/>
+  <path class="con" d="M610,452 L610,470" marker-end="url(#ah)"/>
+  <path class="con" d="M830,452 L830,470" marker-end="url(#ah)"/>
+
+  <!-- Columna A: datos -->
+  <rect class="node" x="62" y="470" width="176" height="38" rx="6"/>
+  <text class="nt" x="150" y="494" text-anchor="middle">Leer datos de origen</text>
+  <rect class="node" x="62" y="534" width="176" height="38" rx="6"/>
+  <text class="nt" x="150" y="558" text-anchor="middle">Limpiar columnas</text>
+  <rect class="node" x="62" y="598" width="176" height="38" rx="6"/>
+  <text class="nt" x="150" y="622" text-anchor="middle">Identificar conjuntos</text>
+  <path class="con" d="M150,508 L150,534" marker-end="url(#ah)"/>
+  <path class="con" d="M150,572 L150,598" marker-end="url(#ah)"/>
+
+  <!-- Columna B: AutoML -->
+  <rect class="node" x="292" y="470" width="176" height="38" rx="6"/>
+  <text class="nt" x="380" y="494" text-anchor="middle">Configurar AutoML</text>
+  <rect class="node" x="292" y="534" width="176" height="38" rx="6"/>
+  <text class="nt" x="380" y="558" text-anchor="middle">Configurar área</text>
+  <rect class="node" x="292" y="598" width="176" height="38" rx="6"/>
+  <text class="nt" x="380" y="622" text-anchor="middle">Ejecutar AutoML</text>
+  <path class="con" d="M380,508 L380,534" marker-end="url(#ah)"/>
+  <path class="con" d="M380,572 L380,598" marker-end="url(#ah)"/>
+
+  <!-- Columna C: métricas -->
+  <rect class="node" x="522" y="470" width="176" height="38" rx="6"/>
+  <text class="nt" x="610" y="494" text-anchor="middle">Calcular métricas</text>
+
+  <!-- Columna D: resultados -->
+  <rect class="node" x="742" y="470" width="176" height="38" rx="6"/>
+  <text class="nt" x="830" y="494" text-anchor="middle">Mostrar resultados</text>
+  <rect class="node" x="742" y="534" width="176" height="38" rx="6"/>
+  <text class="nt" x="830" y="558" text-anchor="middle">Explicabilidad</text>
+  <path class="con" d="M830,508 L830,534" marker-end="url(#ah)"/>
+
+  <!-- convergencia a FIN -->
+  <path class="con" d="M150,636 L150,690"/>
+  <path class="con" d="M380,636 L380,690"/>
+  <path class="con" d="M610,508 L610,690"/>
+  <path class="con" d="M830,572 L830,690"/>
+  <path class="con" d="M150,690 L830,690"/>
+  <path class="con" d="M520,690 L520,712" marker-end="url(#ah)"/>
+  <!-- FIN -->
+  <rect class="node" x="455" y="712" width="130" height="34" rx="6" fill="#fef3c7" stroke="#b45309"/>
+  <text class="seblbl" x="520" y="734" text-anchor="middle">FIN</text>
+
+  <!-- flecha naranja Etapa2 -> Etapa3 -->
+  <rect x="509" y="784" width="22" height="30" fill="#f59e0b"/>
+  <polygon points="492,812 548,812 520,838" fill="#f59e0b"/>
+
+  <!-- ============ ETAPA 3: ENDPOINT DE DESPLIEGUE ============ -->
+  <rect x="300" y="850" width="440" height="196" rx="14" fill="#eff6ff" fill-opacity="0.7" stroke="#004a99" stroke-width="2.5" stroke-dasharray="9 7"/>
+  <rect x="510" y="834" width="230" height="34" rx="9" fill="#004a99"/>
+  <text class="tab" x="625" y="856" text-anchor="middle" fill="#ffffff">Endpoint de Despliegue</text>
+  <text class="tab" x="318" y="876" fill="#004a99" font-size="12px">Módulo 13</text>
+
+  <!-- hexágono de kubernetes -->
+  <polygon points="372,892 405,911 405,949 372,968 339,949 339,911" fill="#326ce5" stroke="#1d4ed8" stroke-width="1.5"/>
+  <circle cx="372" cy="930" r="17" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+  <circle cx="372" cy="930" r="4" fill="#ffffff"/>
+  <g stroke="#ffffff" stroke-width="2">
+    <line x1="372" y1="913" x2="372" y2="921"/>
+    <line x1="388" y1="924" x2="381" y2="928"/>
+    <line x1="383" y1="945" x2="378" y2="938"/>
+    <line x1="361" y1="945" x2="366" y2="938"/>
+    <line x1="356" y1="924" x2="363" y2="928"/>
+  </g>
+  <text class="cap" x="372" y="994" text-anchor="middle" font-weight="700">Kubernetes</text>
+
+  <!-- pasos del endpoint -->
+  <rect class="node" x="446" y="888" width="262" height="34" rx="6"/>
+  <text class="nt" x="577" y="909" text-anchor="middle">Registrar el modelo</text>
+  <rect class="node" x="446" y="930" width="262" height="34" rx="6"/>
+  <text class="nt" x="577" y="951" text-anchor="middle">Endpoint en línea o por lotes</text>
+  <rect class="node" x="446" y="972" width="262" height="34" rx="6"/>
+  <text class="nt" x="577" y="993" text-anchor="middle">Servicio en Kubernetes</text>
+  <path class="con" d="M577,922 L577,930" marker-end="url(#ah)"/>
+  <path class="con" d="M577,964 L577,972" marker-end="url(#ah)"/>
+
+  <!-- ============ Banda de fundamentos ============ -->
+  <rect x="44" y="1062" width="952" height="44" rx="10" fill="#eef2ff" stroke="#c7d2fe" stroke-width="1.5"/>
+  <text class="fnd" x="520" y="1090" text-anchor="middle">Fundamentos en cada etapa: Matemáticas (Módulo 01) y Redes Neuronales y Deep Learning (Módulo 05)</text>
+</svg>

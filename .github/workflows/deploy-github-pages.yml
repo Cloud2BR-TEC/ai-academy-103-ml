@@ -1,0 +1,104 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "docs/**"
+      - "mkdocs.yml"
+      - ".github/workflows/deploy-github-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  deployments: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install MkDocs dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install mkdocs mkdocs-material pymdown-extensions mkdocs-static-i18n
+
+      - name: Build with MkDocs
+        run: |
+          mkdocs build --strict
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  cleanup-old-deployments:
+    name: Cleanup Old github-pages Deployments
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - name: Keep latest and previous deployments
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+
+          mapfile -t DEPLOYMENT_IDS < <(gh api \
+            "repos/${REPO}/deployments" \
+            -f environment=github-pages \
+            -f per_page=100 \
+            --jq 'sort_by(.created_at) | reverse | .[].id')
+
+          echo "Total deployments found: ${#DEPLOYMENT_IDS[@]}"
+
+          if [ "${#DEPLOYMENT_IDS[@]}" -le 2 ]; then
+            echo "Nothing to clean."
+            exit 0
+          fi
+
+          echo "Keeping: ${DEPLOYMENT_IDS[0]} (latest), ${DEPLOYMENT_IDS[1]} (previous)"
+
+          for OLD_ID in "${DEPLOYMENT_IDS[@]:2}"; do
+            echo "Marking inactive: ${OLD_ID}"
+            gh api "repos/${REPO}/deployments/${OLD_ID}/statuses" \
+              -f state=inactive >/dev/null 2>&1 || true
+          done
+
+          sleep 5
+
+          for OLD_ID in "${DEPLOYMENT_IDS[@]:2}"; do
+            echo "Deleting: ${OLD_ID}"
+            gh api -X DELETE "repos/${REPO}/deployments/${OLD_ID}" >/dev/null 2>&1 || true
+          done
+
+          echo "Cleanup complete."

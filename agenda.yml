@@ -1,0 +1,224 @@
+version: 1
+name: machine-learning-101-agenda
+scope: backend-only
+published_in_docs: false
+owner: Cloud2BR TEC
+updated: 2026-07-13
+
+# ─────────────────────────────────────────────
+# ENGLISH
+# ─────────────────────────────────────────────
+en:
+  meeting:
+    title: Machine Learning 101 - Team Session Agenda
+    audience: People joining the meeting (mixed technical levels)
+    total_duration_minutes: 60
+    objective: Align everyone on core ML concepts, flow, and practical next actions.
+
+  timing_model:
+    explain_minutes: 36
+    participant_share_minutes: 18
+    transition_minutes: 6
+    explain_percentage: 60
+    participant_share_percentage: 30
+    transition_percentage: 10
+
+  shareable_intro:
+    message: |
+      Welcome to Machine Learning 101. This agenda is designed so everyone can follow the basics,
+      ask questions, and share examples from their own work.
+      We will keep explanations simple, practical, and tied to real use cases.
+
+  goals:
+    - Keep Machine Learning 101 content focused, simple, and accurate.
+    - Maintain module-to-module continuity across theory, platform, and deployment.
+    - Keep visual assets aligned with module numbering and titles.
+
+  meeting_agenda:
+    - duration: 5 min
+      segment: Welcome and session goals
+      explain: Introduce the purpose, outcomes, and meeting flow.
+      participant_share: Quick attendee introductions and expectations.
+    - duration: 10 min
+      segment: ML fundamentals in plain language
+      explain: Explain what ML is, key terms, and common ML types.
+      participant_share: Share one business or school scenario where ML could help.
+    - duration: 10 min
+      segment: End-to-end workflow overview
+      explain: Walk through data, training, evaluation, deployment, and monitoring.
+      participant_share: Ask attendees to map the workflow to their current projects.
+    - duration: 10 min
+      segment: Platform focus (Azure ML and Fabric context)
+      explain: Clarify where Azure ML and Fabric fit in the workflow.
+      participant_share: Attendees share tool familiarity and blockers.
+    - duration: 10 min
+      segment: Interactive Q&A and examples
+      explain: Answer common beginner questions with simple examples.
+      participant_share: Open floor for participant questions and examples.
+    - duration: 10 min
+      segment: Action planning
+      explain: Propose practical next steps and learning path options.
+      participant_share: Attendees confirm their first next action.
+    - duration: 5 min
+      segment: Wrap-up
+      explain: Summarize key points and confirm follow-up items.
+      participant_share: Final comments and confidence check.
+
+  facilitation_notes:
+    - Keep explanations at beginner level (Grade 10-12 equivalent).
+    - Use software engineering analogies when introducing ML lifecycle concepts.
+    - Pause every 10 minutes for comprehension checks.
+    - Capture attendee questions for post-meeting follow-up.
+
+  pre_read_to_share:
+    - README.md
+    - docs/i18n/en/index.md
+
+  outputs_to_share_after_meeting:
+    - Session summary with answered questions.
+    - Links to modules covered in the session.
+    - Suggested next-step learning order for attendees.
+
+  delivery_sequence:
+    - module: "01"
+      title: Machine Learning Basics
+      objective: Build foundational ML intuition and vocabulary.
+    - module: "02"
+      title: Azure ML Overview
+      objective: Understand the lifecycle and platform structure.
+    - module: "03"
+      title: Workspace and Authoring
+      objective: Navigate workspace components and authoring options.
+    - module: "04"
+      title: Assets and Lifecycle
+      objective: Connect data, jobs, models, and endpoints.
+    - module: "05"
+      title: Build Your First Model
+      objective: Train, evaluate, and interpret first results.
+    - module: "06"
+      title: Deploy and Score
+      objective: Register, deploy, and invoke model endpoints.
+    - module: "07"
+      title: Terraform Foundations
+      objective: Use IaC patterns for repeatable setup.
+    - module: "08"
+      title: Fabric and AI Integration
+      objective: Explain Fabric and Azure ML integration points.
+    - module: "09"
+      title: Wrap-Up and Next Steps
+      objective: Consolidate perspective and define practical next actions.
+
+  maintenance_checks:
+    - Validate mkdocs build with strict mode.
+    - Verify all internal links resolve.
+    - Ensure no deprecated naming appears in module titles.
+    - Keep diagrams synchronized with module flow.
+
+# ─────────────────────────────────────────────
+# ESPAÑOL
+# ─────────────────────────────────────────────
+es:
+  meeting:
+    title: Machine Learning 101 - Agenda de Sesión
+    audience: Personas que se unen a la reunión (niveles técnicos mixtos)
+    total_duration_minutes: 60
+    objective: Alinear al equipo en conceptos clave de ML, flujo de trabajo y siguientes acciones prácticas.
+
+  timing_model:
+    explain_minutes: 36
+    participant_share_minutes: 18
+    transition_minutes: 6
+    explain_percentage: 60
+    participant_share_percentage: 30
+    transition_percentage: 10
+
+  shareable_intro:
+    message: |
+      Bienvenido a Machine Learning 101. Esta agenda está diseñada para que todos puedan seguir los conceptos básicos,
+      hacer preguntas y compartir ejemplos de su propio trabajo.
+      Mantendremos las explicaciones simples, prácticas y vinculadas a casos de uso reales.
+
+  goals:
+    - Mantener el contenido de Machine Learning 101 enfocado, simple y preciso.
+    - Mantener continuidad de módulo a módulo entre teoría, plataforma y despliegue.
+    - Mantener los recursos visuales alineados con la numeración y títulos de los módulos.
+
+  meeting_agenda:
+    - duration: 5 min
+      segment: Bienvenida y objetivos de la sesión
+      explain: Presentar el propósito, resultados esperados y dinámica de la reunión.
+      participant_share: Presentaciones rápidas de los asistentes y expectativas.
+    - duration: 10 min
+      segment: Fundamentos de ML en lenguaje simple
+      explain: Explicar qué es ML, términos clave y tipos comunes.
+      participant_share: Compartir un escenario de negocio o escuela donde ML podría ayudar.
+    - duration: 10 min
+      segment: Resumen del flujo de trabajo de extremo a extremo
+      explain: Recorrer datos, entrenamiento, evaluación, despliegue y monitoreo.
+      participant_share: Pedir a los asistentes que mapeen el flujo con sus proyectos actuales.
+    - duration: 10 min
+      segment: Enfoque en la plataforma (contexto de Azure ML y Fabric)
+      explain: Aclarar dónde encajan Azure ML y Fabric en el flujo de trabajo.
+      participant_share: Los asistentes comparten familiaridad con herramientas y bloqueos.
+    - duration: 10 min
+      segment: Preguntas y respuestas interactivas con ejemplos
+      explain: Responder preguntas frecuentes de principiantes con ejemplos simples.
+      participant_share: Turno abierto para preguntas y ejemplos de los participantes.
+    - duration: 10 min
+      segment: Planificación de acciones
+      explain: Proponer próximos pasos prácticos y opciones de ruta de aprendizaje.
+      participant_share: Los asistentes confirman su primera acción siguiente.
+    - duration: 5 min
+      segment: Cierre
+      explain: Resumir puntos clave y confirmar elementos de seguimiento.
+      participant_share: Comentarios finales y verificación de confianza.
+
+  facilitation_notes:
+    - Mantener las explicaciones a nivel principiante (equivalente a bachillerato).
+    - Usar analogías de ingeniería de software al introducir conceptos del ciclo de vida de ML.
+    - Hacer pausas cada 10 minutos para verificar comprensión.
+    - Capturar preguntas de los asistentes para seguimiento posterior a la reunión.
+
+  pre_read_to_share:
+    - README.md
+    - docs/i18n/es/index.md
+
+  outputs_to_share_after_meeting:
+    - Resumen de la sesión con preguntas respondidas.
+    - Enlaces a los módulos cubiertos en la sesión.
+    - Orden de aprendizaje sugerido de próximos pasos para los asistentes.
+
+  delivery_sequence:
+    - module: "01"
+      title: Fundamentos de Aprendizaje Automático
+      objective: Construir intuición y vocabulario fundamental de ML.
+    - module: "02"
+      title: Resumen de Azure ML
+      objective: Comprender el ciclo de vida y la estructura de la plataforma.
+    - module: "03"
+      title: Workspace y Autoría
+      objective: Navegar componentes del workspace y opciones de autoría.
+    - module: "04"
+      title: Activos y Ciclo de Vida
+      objective: Conectar datos, jobs, modelos y endpoints.
+    - module: "05"
+      title: Construye tu Primer Modelo
+      objective: Entrenar, evaluar e interpretar primeros resultados.
+    - module: "06"
+      title: Desplegar y Puntuar
+      objective: Registrar, desplegar e invocar endpoints de modelos.
+    - module: "07"
+      title: Fundamentos de Terraform
+      objective: Usar patrones de IaC para configuración repetible.
+    - module: "08"
+      title: Integración de Fabric e IA
+      objective: Explicar puntos de integración entre Fabric y Azure ML.
+    - module: "09"
+      title: Cierre y Próximos Pasos
+      objective: Consolidar perspectiva y definir próximas acciones prácticas.
+
+  maintenance_checks:
+    - Validar la build de mkdocs con modo estricto.
+    - Verificar que todos los enlaces internos se resuelvan.
+    - Asegurar que no aparezca nomenclatura obsoleta en los títulos de los módulos.
+    - Mantener los diagramas sincronizados con el flujo del módulo.

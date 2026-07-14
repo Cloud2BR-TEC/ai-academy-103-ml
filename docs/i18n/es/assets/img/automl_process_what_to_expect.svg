@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="520" viewBox="0 0 1040 520" role="img" aria-labelledby="title desc">
+  <title id="title">AutoML: qué esperar a lo largo de las pruebas</title>
+  <desc id="desc">Un gráfico de barras de la calidad del modelo a lo largo de las pruebas. Las primeras pruebas puntúan bajo, la calidad sube a medida que la búsqueda explora y la línea del mejor hasta ahora asciende. El ganador final suele ser un ensamble por votación o apilamiento.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .axis { stroke: #0f172a; stroke-width: 3; }
+      .grid { stroke: #e2e8f0; stroke-width: 1; }
+      .axis-label { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; }
+      .bar { fill: #004a99; }
+      .barwin { fill: #15803d; }
+      .best { fill: none; stroke: #b45309; stroke-width: 3.5; }
+      .note { fill: #475569; font-family: Segoe UI, Arial, sans-serif; font-size: 13px; }
+      .winnote { fill: #15803d; font-family: Segoe UI, Arial, sans-serif; font-size: 14px; font-weight: 700; }
+      .leg { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #334155; }
+      .arrow { stroke: #475569; stroke-width: 2; fill: none; }
+    </style>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="520"/>
+  <text class="title" x="60" y="52">AutoML: qué esperar a lo largo de las pruebas</text>
+  <text class="subtitle" x="60" y="80">Las primeras pruebas son débiles; la calidad sube al explorar — y suele ganar un ensamble.</text>
+
+  <!-- líneas de cuadrícula -->
+  <line class="grid" x1="120" y1="350" x2="980" y2="350"/>
+  <line class="grid" x1="120" y1="275" x2="980" y2="275"/>
+  <line class="grid" x1="120" y1="200" x2="980" y2="200"/>
+
+  <!-- ejes -->
+  <line class="axis" x1="120" y1="440" x2="980" y2="440"/>
+  <line class="axis" x1="120" y1="440" x2="120" y2="130"/>
+  <text class="axis-label" x="550" y="478" text-anchor="middle">Pruebas &#8594;</text>
+  <text class="axis-label" x="58" y="285" transform="rotate(-90 58 285)" text-anchor="middle">Métrica principal &#8594;</text>
+
+  <!-- barras -->
+  <rect class="bar" x="142" y="350" width="36" height="90"/>
+  <rect class="bar" x="202" y="314" width="36" height="126"/>
+  <rect class="bar" x="262" y="326" width="36" height="114"/>
+  <rect class="bar" x="322" y="275" width="36" height="165"/>
+  <rect class="bar" x="382" y="290" width="36" height="150"/>
+  <rect class="bar" x="442" y="254" width="36" height="186"/>
+  <rect class="bar" x="502" y="242" width="36" height="198"/>
+  <rect class="bar" x="562" y="260" width="36" height="180"/>
+  <rect class="bar" x="622" y="227" width="36" height="213"/>
+  <rect class="bar" x="682" y="218" width="36" height="222"/>
+  <rect class="bar" x="742" y="230" width="36" height="210"/>
+  <rect class="bar" x="802" y="206" width="36" height="234"/>
+  <rect class="bar" x="862" y="200" width="36" height="240"/>
+  <rect class="barwin" x="922" y="164" width="36" height="276"/>
+
+  <!-- línea del mejor hasta ahora -->
+  <polyline class="best" points="160,350 220,314 280,314 340,275 400,275 460,254 520,242 580,242 640,227 700,218 760,218 820,206 880,200 940,164"/>
+
+  <!-- nota de primeras pruebas -->
+  <text class="note" x="150" y="395" text-anchor="middle" fill="#475569">primeras</text>
+  <text class="note" x="150" y="411" text-anchor="middle" fill="#475569">pruebas débiles</text>
+
+  <!-- anotación del ganador -->
+  <text class="winnote" x="660" y="120" text-anchor="middle">Ganador final — suele ser un ensamble por votación / apilamiento</text>
+  <path class="arrow" d="M820,128 Q900,140 938,160" marker-end="url(#ah)"/>
+
+  <!-- leyenda -->
+  <rect x="120" y="498" width="16" height="12" fill="#004a99"/>
+  <text class="leg" x="142" y="508">puntuación</text>
+  <line x1="225" y1="504" x2="255" y2="504" stroke="#b45309" stroke-width="3.5"/>
+  <text class="leg" x="263" y="508">mejor hasta ahora</text>
+  <rect x="395" y="498" width="16" height="12" fill="#15803d"/>
+  <text class="leg" x="417" y="508">ensamble ganador final</text>
+</svg>

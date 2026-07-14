@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="420" viewBox="0 0 1040 420" role="img" aria-labelledby="title desc">
+  <title id="title">End-to-end ML flow overview</title>
+  <desc id="desc">Raw data is prepared, used to train a model, deployed as an endpoint, and serves predictions left to right.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .head { font-family: Segoe UI, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #ffffff; text-anchor: middle; }
+      .sub { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #475569; text-anchor: middle; }
+      .arrow { stroke: #475569; stroke-width: 3; fill: none; }
+    </style>
+    <marker id="ah" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="420"/>
+  <text class="title" x="60" y="52">End-to-End ML Flow</text>
+  <text class="subtitle" x="60" y="80">From raw data to live predictions</text>
+
+  <!-- 1 Raw Data -->
+  <rect class="card" x="40" y="180" width="160" height="110" rx="10"/>
+  <rect x="40" y="180" width="160" height="38" rx="10" fill="#004a99"/>
+  <text class="head" x="120" y="205">Raw Data</text>
+  <text class="sub" x="120" y="250">Source files,</text>
+  <text class="sub" x="120" y="270">tables, logs</text>
+
+  <!-- 2 Prepared Data -->
+  <rect class="card" x="240" y="180" width="160" height="110" rx="10"/>
+  <rect x="240" y="180" width="160" height="38" rx="10" fill="#0e7490"/>
+  <text class="head" x="320" y="205">Prepared Data</text>
+  <text class="sub" x="320" y="250">Cleaned &amp;</text>
+  <text class="sub" x="320" y="270">engineered</text>
+
+  <!-- 3 Trained Model -->
+  <rect class="card" x="440" y="180" width="160" height="110" rx="10"/>
+  <rect x="440" y="180" width="160" height="38" rx="10" fill="#b45309"/>
+  <text class="head" x="520" y="205">Trained Model</text>
+  <text class="sub" x="520" y="250">Fitted &amp;</text>
+  <text class="sub" x="520" y="270">validated</text>
+
+  <!-- 4 Deployed Endpoint -->
+  <rect class="card" x="640" y="180" width="160" height="110" rx="10"/>
+  <rect x="640" y="180" width="160" height="38" rx="10" fill="#15803d"/>
+  <text class="head" x="720" y="205">Deployed</text>
+  <text class="sub" x="720" y="250">Hosted</text>
+  <text class="sub" x="720" y="270">endpoint / API</text>
+
+  <!-- 5 Prediction -->
+  <rect class="card" x="840" y="180" width="160" height="110" rx="10"/>
+  <rect x="840" y="180" width="160" height="38" rx="10" fill="#64748b"/>
+  <text class="head" x="920" y="205">Prediction</text>
+  <text class="sub" x="920" y="250">Score for a</text>
+  <text class="sub" x="920" y="270">new request</text>
+
+  <!-- arrows -->
+  <line class="arrow" x1="200" y1="235" x2="236" y2="235" marker-end="url(#ah)"/>
+  <line class="arrow" x1="400" y1="235" x2="436" y2="235" marker-end="url(#ah)"/>
+  <line class="arrow" x1="600" y1="235" x2="636" y2="235" marker-end="url(#ah)"/>
+  <line class="arrow" x1="800" y1="235" x2="836" y2="235" marker-end="url(#ah)"/>
+</svg>

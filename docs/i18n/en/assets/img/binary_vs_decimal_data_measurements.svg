@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="470" viewBox="0 0 1040 470" role="img" aria-labelledby="title desc">
+  <title id="title">Binary vs Decimal Data Measurements</title>
+  <desc id="desc">Comparison table of decimal SI units versus binary IEC units: KB versus KiB, MB versus MiB, and GB versus GiB, noting that 1 GB is approximately 0.93 GiB.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .ghead { font-family: Segoe UI, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #ffffff; }
+      .chead { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; font-weight: 700; fill: #0f172a; }
+      .cell { font-family: Segoe UI, Arial, sans-serif; font-size: 15px; fill: #1f2937; }
+      .cellb { font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #0f172a; }
+      .note { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; fill: #475569; }
+      .grid { stroke: #cbd5e1; stroke-width: 1; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="470"/>
+  <text class="title" x="60" y="52">Binary vs Decimal Data Measurements</text>
+  <text class="subtitle" x="60" y="80">Drive makers use decimal (SI) units; operating systems count in binary (IEC) units</text>
+
+  <!-- group header -->
+  <rect x="60" y="120" width="460" height="44" rx="8" fill="#0e7490"/>
+  <text class="ghead" x="290" y="148" text-anchor="middle">Decimal (SI · base 10)</text>
+  <rect x="520" y="120" width="460" height="44" rx="8" fill="#004a99"/>
+  <text class="ghead" x="750" y="148" text-anchor="middle">Binary (IEC · base 2)</text>
+
+  <!-- column header row -->
+  <rect x="60" y="166" width="920" height="36" fill="#e2e8f0"/>
+  <text class="chead" x="175" y="190" text-anchor="middle">Unit</text>
+  <text class="chead" x="405" y="190" text-anchor="middle">Value (bytes)</text>
+  <text class="chead" x="635" y="190" text-anchor="middle">Unit</text>
+  <text class="chead" x="865" y="190" text-anchor="middle">Value (bytes)</text>
+
+  <!-- rows -->
+  <rect x="60" y="202" width="920" height="50" fill="#ffffff"/>
+  <rect x="60" y="252" width="920" height="50" fill="#f1f5f9"/>
+  <rect x="60" y="302" width="920" height="50" fill="#ffffff"/>
+
+  <text class="cellb" x="175" y="234" text-anchor="middle">KB (kilobyte)</text>
+  <text class="cell" x="405" y="234" text-anchor="middle">1,000</text>
+  <text class="cellb" x="635" y="234" text-anchor="middle">KiB (kibibyte)</text>
+  <text class="cell" x="865" y="234" text-anchor="middle">1,024</text>
+
+  <text class="cellb" x="175" y="284" text-anchor="middle">MB (megabyte)</text>
+  <text class="cell" x="405" y="284" text-anchor="middle">1,000,000</text>
+  <text class="cellb" x="635" y="284" text-anchor="middle">MiB (mebibyte)</text>
+  <text class="cell" x="865" y="284" text-anchor="middle">1,048,576</text>
+
+  <text class="cellb" x="175" y="334" text-anchor="middle">GB (gigabyte)</text>
+  <text class="cell" x="405" y="334" text-anchor="middle">1,000,000,000</text>
+  <text class="cellb" x="635" y="334" text-anchor="middle">GiB (gibibyte)</text>
+  <text class="cell" x="865" y="334" text-anchor="middle">1,073,741,824</text>
+
+  <!-- grid -->
+  <rect x="60" y="166" width="920" height="186" fill="none" class="grid"/>
+  <line class="grid" x1="60" y1="202" x2="980" y2="202"/>
+  <line class="grid" x1="60" y1="252" x2="980" y2="252"/>
+  <line class="grid" x1="60" y1="302" x2="980" y2="302"/>
+  <line class="grid" x1="290" y1="166" x2="290" y2="352"/>
+  <line class="grid" x1="520" y1="166" x2="520" y2="352"/>
+  <line class="grid" x1="750" y1="166" x2="750" y2="352"/>
+
+  <!-- note -->
+  <rect x="60" y="380" width="920" height="52" rx="8" fill="#fff7ed" stroke="#f4b36b" stroke-width="1.5"/>
+  <text class="note" x="80" y="404" fill="#b45309" font-weight="700">Note:</text>
+  <text class="note" x="128" y="404">1 GB &#8776; 0.93 GiB. A drive sold as "1 GB" (1,000,000,000 bytes) shows about 0.93 GiB in the OS —</text>
+  <text class="note" x="80" y="424">the same bytes, just a different counting base. This is why capacities look smaller after formatting.</text>
+</svg>

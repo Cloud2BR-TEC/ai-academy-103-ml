@@ -1,0 +1,336 @@
+/* Use more horizontal space on desktop to reduce blank areas. */
+@media (min-width: 66.5rem) {
+  .main-content-wrap {
+    max-width: none;
+    padding-right: 2.5rem;
+  }
+
+  .main-content {
+    max-width: none;
+  }
+}
+
+/* Home page module cards */
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 72rem) {
+  .home-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 44rem) {
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Whole card is a clickable link (not just the title). */
+a.home-card,
+a.home-card:visited {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid #dde3ed;
+  border-top: 3px solid var(--card-accent, #004a99);
+  border-radius: 8px;
+  padding: 1rem 1.05rem 0.9rem;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.07);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+a.home-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.11);
+  border-top-color: var(--card-accent, #004a99);
+}
+
+a.home-card:focus-visible {
+  outline: 2px solid var(--card-accent, #004a99);
+  outline-offset: 2px;
+}
+
+/* Module number badge */
+.card-badge {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--card-accent, #004a99);
+  background: var(--card-tint, rgba(0, 74, 153, 0.07));
+  border-radius: 4px;
+  padding: 0.18em 0.55em;
+  margin-bottom: 0.5rem;
+  width: fit-content;
+}
+
+.home-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.35rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.3;
+}
+
+.home-card p {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 0.77rem;
+  line-height: 1.45;
+  color: #64748b;
+  flex: 1;
+}
+
+/* Soft, professional rotating accent palette across the cards. */
+.home-grid a.home-card:nth-child(6n + 1) {
+  --card-accent: #004a99; /* blue */
+  --card-tint: rgba(0, 74, 153, 0.05);
+  --card-tint-strong: rgba(0, 74, 153, 0.11);
+}
+.home-grid a.home-card:nth-child(6n + 2) {
+  --card-accent: #0e7490; /* teal */
+  --card-tint: rgba(14, 116, 144, 0.05);
+  --card-tint-strong: rgba(14, 116, 144, 0.11);
+}
+.home-grid a.home-card:nth-child(6n + 3) {
+  --card-accent: #4f46e5; /* indigo */
+  --card-tint: rgba(79, 70, 229, 0.05);
+  --card-tint-strong: rgba(79, 70, 229, 0.11);
+}
+.home-grid a.home-card:nth-child(6n + 4) {
+  --card-accent: #0f766e; /* deep teal-green */
+  --card-tint: rgba(15, 118, 110, 0.05);
+  --card-tint-strong: rgba(15, 118, 110, 0.11);
+}
+.home-grid a.home-card:nth-child(6n + 5) {
+  --card-accent: #2563eb; /* bright blue */
+  --card-tint: rgba(37, 99, 235, 0.05);
+  --card-tint-strong: rgba(37, 99, 235, 0.11);
+}
+.home-grid a.home-card:nth-child(6n + 6) {
+  --card-accent: #7c3aed; /* violet */
+  --card-tint: rgba(124, 58, 237, 0.05);
+  --card-tint-strong: rgba(124, 58, 237, 0.11);
+}
+
+/* MkDocs Material overrides: darker blue and wider layout usage. */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #003366;
+  --md-primary-fg-color--light: #004a99;
+  --md-primary-fg-color--dark: #00264d;
+  --md-accent-fg-color: #004a99;
+}
+
+.md-typeset a,
+.md-tabs__link {
+  color: #004a99;
+}
+
+.md-typeset a:hover,
+.md-tabs__link:hover {
+  color: #003874;
+}
+
+/* ----------------------------------------------------------------------
+   Center article content: reduce typography by 15%
+   ---------------------------------------------------------------------- */
+.md-content__inner.md-typeset {
+  font-size: 0.68rem;
+}
+
+/* ----------------------------------------------------------------------
+   Content image sizing: keep diagrams readable without overwhelming text
+   ---------------------------------------------------------------------- */
+.md-typeset p > img {
+  display: block;
+  width: 100%;
+  max-width: 780px;
+  height: auto;
+  margin: 0.9rem auto 1.1rem;
+}
+
+@media (max-width: 48rem) {
+  .md-typeset p > img {
+    max-width: 100%;
+    margin: 0.75rem 0 0.95rem;
+  }
+}
+
+/* ----------------------------------------------------------------------
+   Softer, more professional sidebar navigation
+   ---------------------------------------------------------------------- */
+.md-nav {
+  font-size: 0.56rem;
+}
+
+/* Sidebar title ("Azure ML Training Hub") */
+.md-nav--primary > .md-nav__title {
+  color: #5b6675;
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding-bottom: 0.6rem;
+}
+
+/* Default nav links: calmer slate tone, comfortable spacing */
+.md-nav__link {
+  color: #3f4a5a;
+  border-radius: 8px;
+  padding: 0.34rem 0.6rem;
+  margin: 0.08rem 0.35rem 0.08rem 0;
+  line-height: 1.4;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Hover: soft blue wash with rounded pill */
+.md-nav__link:hover {
+  color: #003874;
+  background-color: rgba(0, 74, 153, 0.07);
+}
+
+/* Active page: gentle filled pill, no harsh bold */
+.md-nav__link--active,
+.md-nav__item--active > .md-nav__link {
+  color: #004a99;
+  background-color: rgba(0, 74, 153, 0.10);
+  font-weight: 600;
+}
+
+/* Section labels (e.g. "Reference"): quiet uppercase eyebrow */
+.md-nav__item--section > .md-nav__link,
+.md-nav--primary .md-nav__item--nested > .md-nav__link {
+  color: #6b7686;
+  font-size: 0.49rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 0.6rem;
+}
+
+/* Slightly indent nested groups for clear hierarchy */
+.md-nav__list .md-nav__list {
+  padding-left: 0.4rem;
+}
+
+/* ----------------------------------------------------------------------
+   Table of contents (right sidebar): 20% smaller than base nav
+   ---------------------------------------------------------------------- */
+.md-nav--secondary {
+  font-size: 0.5rem;
+}
+
+.md-nav--secondary .md-nav__title {
+  font-size: 0.46rem;
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-grid {
+    max-width: 96%;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  .md-grid {
+    max-width: 1800px;
+  }
+}
+
+/* Sidebar nav alignment: keep main nav flush to the left edge. */
+.site-nav,
+.site-nav .nav-list,
+.site-nav .nav-list .nav-list-item {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* Keep a small indent only for second-level items. */
+.site-nav .nav-list .nav-list {
+  padding-left: 0.75rem;
+}
+
+/* Use blue accents instead of purple for links/navigation. */
+:root {
+  --link-color: #004a99;
+  --btn-primary-color: #004a99;
+}
+
+a,
+.nav-list .nav-list-item .nav-list-link,
+.site-button,
+.site-title {
+  color: #004a99;
+}
+
+a:visited,
+.nav-list .nav-list-item .nav-list-link:visited {
+  color: #004a99;
+}
+
+a:hover,
+.nav-list .nav-list-item .nav-list-link:hover,
+.nav-list .nav-list-item .nav-list-link.active {
+  color: #003874;
+}
+
+/* Keep desktop sidebar pinned to the true left edge of the viewport. */
+@media (min-width: 66.5rem) {
+  .site-wrap {
+    max-width: none;
+    margin-left: 0;
+  }
+
+  .side-bar {
+    left: 0;
+    width: 264px;
+  }
+
+  .site-header {
+    width: 264px;
+  }
+
+  .main {
+    margin-left: 264px;
+    max-width: calc(100vw - 264px);
+  }
+
+  .main-content-wrap,
+  .main-content,
+  .search-input-wrap {
+    max-width: none !important;
+    width: 100%;
+  }
+
+  .main-content-wrap {
+    padding-left: 2rem;
+    padding-right: 3rem;
+  }
+
+  .search-input {
+    max-width: none;
+  }
+}
+
+/* ----------------------------------------------------------------------
+   Header title: ~15% smaller than default
+   ---------------------------------------------------------------------- */
+.md-header__title .md-ellipsis {
+  font-size: 0.85em;
+}
+
+/* Slightly larger brand mark in the header. */
+.md-header__button.md-logo img,
+.md-header__brand .md-logo img {
+  width: 2.15rem;
+  height: 2.15rem;
+}

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="490" viewBox="0 0 1040 490" role="img" aria-labelledby="title desc">
+  <title id="title">Tipos de datos comunes de pandas y Python</title>
+  <desc id="desc">Una tabla de referencia de tipos de datos comunes de pandas: int64, float64, bool, object/string, datetime64 y category, cada uno con una breve descripción y un ejemplo.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .subtitle { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; }
+      .hcell { font-family: Segoe UI, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #ffffff; }
+      .code { font-family: Consolas, "Courier New", monospace; font-size: 15px; font-weight: 700; fill: #004a99; }
+      .label { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; fill: #1f2937; }
+      .ex { font-family: Consolas, "Courier New", monospace; font-size: 13.5px; fill: #475569; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1040" height="490"/>
+  <text class="title" x="60" y="52">Tipos de datos comunes de pandas / Python</text>
+  <text class="subtitle" x="60" y="80">Elige el dtype correcto — controla memoria, velocidad y qué operaciones son válidas.</text>
+
+  <!-- Encabezado -->
+  <rect x="60" y="116" width="920" height="46" rx="8" fill="#004a99"/>
+  <rect x="60" y="138" width="920" height="24" fill="#004a99"/>
+  <text class="hcell" x="80" y="146">Tipo de dato</text>
+  <text class="hcell" x="320" y="146">Descripción</text>
+  <text class="hcell" x="740" y="146">Ejemplo</text>
+
+  <!-- Filas -->
+  <g>
+    <rect x="60" y="162" width="920" height="48" fill="#ffffff" stroke="#e2e8f0"/>
+    <rect x="60" y="210" width="920" height="48" fill="#f1f5f9" stroke="#e2e8f0"/>
+    <rect x="60" y="258" width="920" height="48" fill="#ffffff" stroke="#e2e8f0"/>
+    <rect x="60" y="306" width="920" height="48" fill="#f1f5f9" stroke="#e2e8f0"/>
+    <rect x="60" y="354" width="920" height="48" fill="#ffffff" stroke="#e2e8f0"/>
+    <rect x="60" y="402" width="920" height="48" fill="#f1f5f9" stroke="#e2e8f0"/>
+  </g>
+  <g stroke="#e2e8f0">
+    <line x1="300" y1="162" x2="300" y2="450"/>
+    <line x1="720" y1="162" x2="720" y2="450"/>
+  </g>
+
+  <text class="code"  x="80"  y="192">int64</text>
+  <text class="label" x="320" y="192">Entero de 64 bits — números enteros</text>
+  <text class="ex"    x="740" y="192">42, -7, 1000</text>
+
+  <text class="code"  x="80"  y="240">float64</text>
+  <text class="label" x="320" y="240">Decimal de 64 bits (punto flotante)</text>
+  <text class="ex"    x="740" y="240">3.14, -0.5, 2.0</text>
+
+  <text class="code"  x="80"  y="288">bool</text>
+  <text class="label" x="320" y="288">Bandera booleana verdadero / falso</text>
+  <text class="ex"    x="740" y="288">True, False</text>
+
+  <text class="code"  x="80"  y="336">object / string</text>
+  <text class="label" x="320" y="336">Texto u objetos Python mixtos</text>
+  <text class="ex"    x="740" y="336">"Paris", "N/A"</text>
+
+  <text class="code"  x="80"  y="384">datetime64</text>
+  <text class="label" x="320" y="384">Marcas de tiempo — fecha y hora</text>
+  <text class="ex"    x="740" y="384">2024-01-31 09:30</text>
+
+  <text class="code"  x="80"  y="432">category</text>
+  <text class="label" x="320" y="432">Conjunto finito de etiquetas, eficiente</text>
+  <text class="ex"    x="740" y="432">"low", "med", "high"</text>
+</svg>
