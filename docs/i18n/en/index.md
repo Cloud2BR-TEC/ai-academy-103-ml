@@ -1,4 +1,4 @@
-﻿# Machine Learning 103 - Implementation Guide
+﻿# Advanced Machine Learning & MLOps - Implementation Guide
 
 ## Learning Path
 

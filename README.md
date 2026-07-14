@@ -1,4 +1,4 @@
-# Machine Learning 103
+# Advanced Machine Learning & MLOps
 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [Cloud2BR TEC](https://github.com/Cloud2BR-TEC)
@@ -7,7 +7,7 @@ Last updated: 2026-07-13
 
 ----------
 
-> Machine Learning 103 is an advanced implementation path focused on production-grade Azure ML platforms.
+> Advanced Machine Learning & MLOps is an advanced implementation path focused on production-grade Azure ML platforms.
 
 ## Scope
 

@@ -1,4 +1,4 @@
-﻿# Machine Learning 103 - Guía de Implementación
+﻿# Advanced Machine Learning & MLOps - Guía de Implementación
 
 ## Ruta de Aprendizaje
 
