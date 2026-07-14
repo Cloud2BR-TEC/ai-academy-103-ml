@@ -3,7 +3,7 @@
 ## Validación de la Ruta Azure ML
 
 **1. Dataset registrado**
-- Dataset `employee_data` registrado como Tabular desde `sample_data.csv` en Azure ML.
+- Dataset `employee_data` registrado como Tabular desde [`sample_data.csv`](https://github.com/Cloud2BR-MSFTLearningHub/Azure-ML-Overview/blob/main/azML-modelcreation/data/sample_data.csv) en Azure ML.
 
 **2. Modelo entrenado y evaluado**
 

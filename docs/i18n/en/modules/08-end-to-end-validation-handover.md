@@ -3,7 +3,7 @@
 ## Azure ML Path Validation
 
 **1. Dataset registered**
-- `employee_data` dataset registered as Tabular from `sample_data.csv` in Azure ML.
+- `employee_data` dataset registered as Tabular from [`sample_data.csv`](https://github.com/Cloud2BR-MSFTLearningHub/Azure-ML-Overview/blob/main/azML-modelcreation/data/sample_data.csv) in Azure ML.
 
 **2. Model trained and evaluated**
 
