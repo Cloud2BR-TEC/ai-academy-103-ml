@@ -1,8 +1,8 @@
 // Point the top-left org logo/brand at the GitHub organization.
 (function () {
-  var ORG_URL = "https://github.com/Cloud2BR-MSFTLearningHub";
-  var SITE_BASE_PATH = "/Azure-ML-Advanced";
-  var HOME_URL = "/Azure-ML-Advanced/es/";
+  var ORG_URL = "https://github.com/Cloud2BR-TEC";
+  var SITE_BASE_PATH = "/ai-academy-103-ml";
+  var HOME_URL = "/ai-academy-103-ml/";
 
   function getRelativePagePath(pathname) {
     var currentPath = pathname || "/";
