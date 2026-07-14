@@ -13,7 +13,7 @@ Automate extraction and summarization of academic papers using an agent that loa
 
 ### Step 1 — Define Extraction and Prompt Functions
 
-![Content extraction](https://github.com/user-attachments/assets/54b0b122-e71e-4040-ad69-dd01b0411b3f)
+Two helper functions drive the pipeline. `paper_content_extraction` fetches an arXiv PDF via its URL and returns the first two pages of text. `prompt_generation` takes that extracted text and builds a structured prompt asking the model to identify the title, authors, and summary — then search for three recent papers by the first author.
 
 ```python
 from langchain.document_loaders import OnlinePDFLoader
@@ -37,7 +37,7 @@ def prompt_generation(inputs: dict) -> dict:
 
 ### Step 2 — Build Sequential Chain
 
-![Sequential chain](https://github.com/user-attachments/assets/3980b019-f3c7-4614-a27e-c2692e8d4f47)
+Wrap the extraction function in a `TransformChain` so LangChain can treat it as a pipeline stage. The `paper_summarizer_template` defines the system instruction passed to the model at runtime.
 
 ```python
 from langchain.chains import TransformChain, SimpleSequentialChain
@@ -59,7 +59,7 @@ and extract authors and paper title from the paper content.
 
 ### Train and Register a Model with MLflow
 
-![MLflow Fabric integration](https://github.com/user-attachments/assets/a6eebe61-bfde-48ce-88e7-9bd5dfb6d00a)
+Start an MLflow run, train the model, infer the input/output signature, then log parameters and register the model artifact with descriptive tags. The run ID and version number are printed for traceability.
 
 ```python
 import mlflow
@@ -89,7 +89,7 @@ with mlflow.start_run() as run:
 
 ### Compare and Filter Registered Models
 
-![Compare models](https://github.com/user-attachments/assets/d39e2a0e-3dde-4138-aafc-48d3d680bc93)
+Use `MlflowClient` to list all registered models in the workspace. This is useful for comparing multiple training runs and selecting the best candidate for promotion to production.
 
 ```python
 from pprint import pprint

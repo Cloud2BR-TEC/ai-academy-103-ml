@@ -13,7 +13,7 @@ Automatizar extracción y resumen de papers académicos usando un agente que car
 
 ### Paso 1 — Definir Funciones de Extracción y Prompt
 
-![Extracción de contenido](https://github.com/user-attachments/assets/54b0b122-e71e-4040-ad69-dd01b0411b3f)
+Dos funciones auxiliares impulsan el pipeline. `paper_content_extraction` obtiene un PDF de arXiv a partir de su URL y devuelve las primeras dos páginas de texto. `prompt_generation` toma ese texto extraído y construye un prompt estructurado que le pide al modelo identificar título, autores y resumen, y buscar tres papers recientes del primer autor.
 
 ```python
 from langchain.document_loaders import OnlinePDFLoader
@@ -37,7 +37,7 @@ def prompt_generation(inputs: dict) -> dict:
 
 ### Paso 2 — Construir Cadena Secuencial
 
-![Cadena secuencial](https://github.com/user-attachments/assets/3980b019-f3c7-4614-a27e-c2692e8d4f47)
+Encapsula la función de extracción en un `TransformChain` para que LangChain pueda tratarla como una etapa del pipeline. El `paper_summarizer_template` define la instrucción de sistema que se pasa al modelo en tiempo de ejecución.
 
 ```python
 from langchain.chains import TransformChain, SimpleSequentialChain
@@ -59,7 +59,7 @@ y extraer autores y título del mismo.
 
 ### Entrenar y Registrar un Modelo
 
-![Integración MLflow con Fabric](https://github.com/user-attachments/assets/a6eebe61-bfde-48ce-88e7-9bd5dfb6d00a)
+Inicia un run de MLflow, entrena el modelo, infiere la firma de entrada/salida y registra los parámetros y el artefacto del modelo con etiquetas descriptivas. El run ID y el número de versión se imprimen para trazabilidad.
 
 ```python
 import mlflow
@@ -89,7 +89,7 @@ with mlflow.start_run() as run:
 
 ### Comparar y Filtrar Modelos Registrados
 
-![Comparar modelos](https://github.com/user-attachments/assets/d39e2a0e-3dde-4138-aafc-48d3d680bc93)
+Usa `MlflowClient` para listar todos los modelos registrados en el workspace. Útil para comparar múltiples ejecuciones de entrenamiento y seleccionar el mejor candidato para promoción a producción.
 
 ```python
 from pprint import pprint
