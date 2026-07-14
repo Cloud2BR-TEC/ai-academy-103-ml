@@ -2,6 +2,17 @@
 
 This hub focuses on production implementation patterns for Azure ML and Fabric integration.
 
+## Source Content Reused
+
+This training reuses and consolidates implementation material from your local source repositories:
+
+- `azML-modelcreation` (model creation flow, notebook + scoring script)
+- `infrastructure/azMachineLearning` (Terraform Azure ML setup)
+- `infrastructure/msFabric` (Fabric infrastructure setup)
+- `msFabric-AI_integration` (Fabric + LLM integration notebook)
+
+![Cloud2BR learning asset](assets/img/org-logo.png)
+
 ## Learning Path
 
 <div class="home-grid">

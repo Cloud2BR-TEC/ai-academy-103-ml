@@ -2,6 +2,17 @@
 
 Este centro se enfoca en patrones avanzados de implementación para Azure ML e integración con Fabric.
 
+## Contenido Reutilizado
+
+Esta capacitación reutiliza y consolida material de implementación desde tus repos locales:
+
+- `azML-modelcreation` (flujo de creación de modelos, notebook + script de scoring)
+- `infrastructure/azMachineLearning` (configuración Terraform para Azure ML)
+- `infrastructure/msFabric` (configuración de infraestructura para Fabric)
+- `msFabric-AI_integration` (notebook de integración Fabric + LLM)
+
+![Asset de aprendizaje Cloud2BR](assets/img/org-logo.png)
+
 ## Ruta de Aprendizaje
 
 <div class="home-grid">
