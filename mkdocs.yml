@@ -33,23 +33,23 @@ plugins:
           name: English
           build: true
         - locale: es
-          name: "Espa駉l"
+          name: "Espa帽ol"
           build: true
           nav_translations:
             Home: Inicio
-            01. Platform and Azure Setup: "01. Plataforma y Configuraci髇 de Azure"
-            02. Model Creation Pipeline: "02. Pipeline de Creaci髇 de Modelos"
-            03. Fabric and Azure ML Integration: "03. Integraci髇 de Fabric y Azure ML"
+            01. Platform and Azure Setup: "01. Plataforma y Configuraci贸n de Azure"
+            02. Model Creation Pipeline: "02. Pipeline de Creaci贸n de Modelos"
+            03. Fabric and Azure ML Integration: "03. Integraci贸n de Fabric y Azure ML"
             04. Azure ML Environment Strategy: "04. Estrategia de Entornos en Azure ML"
-            05. Advanced Data Preparation: "05. Preparaci髇 Avanzada de Datos"
-            06. Training and Experimentation at Scale: "06. Entrenamiento y Experimentaci髇 a Escala"
+            05. Advanced Data Preparation: "05. Preparaci贸n Avanzada de Datos"
+            06. Training and Experimentation at Scale: "06. Entrenamiento y Experimentaci贸n a Escala"
             07. Terraform for Azure ML: "07. Terraform para Azure ML"
             08. Terraform for Fabric: "08. Terraform para Fabric"
             09. Deployment Reliability and SRE: "09. Confiabilidad de Despliegue y SRE"
             10. Capstone Architecture and Governance: "10. Arquitectura Final y Gobernanza"
             Reference: Referencia
-            Overview: "Visi髇 General"
-            Mathematical Model Deep Dive: "An醠isis Matem醫ico Profundo de Modelos"
+            Overview: "Visi贸n General"
+            Mathematical Model Deep Dive: "An谩lisis Matem谩tico Profundo de Modelos"
             CLI Commands: "Comandos CLI"
             Glossary: Glosario
 
