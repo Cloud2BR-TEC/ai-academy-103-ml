@@ -2,13 +2,6 @@
 
 Este centro se enfoca en patrones avanzados de implementación para Azure ML e integración con Fabric.
 
-## Qué agrega 103 frente a 101/102
-
-- Configuración de plataforma en Azure y estrategia de entornos.
-- Disciplina de creación de modelos desde notebook hasta endpoint.
-- Infraestructura como código para Azure ML y Fabric.
-- Confiabilidad de despliegue y gobernanza operativa.
-
 ## Ruta de Aprendizaje
 
 <div class="home-grid">
@@ -33,3 +26,12 @@ Este centro se enfoca en patrones avanzados de implementación para Azure ML e i
 ![Taxonomía de Azure ML](assets/img/azure-machine-learning-taxonomy.svg)
 ![Taxonomía de entornos Azure ML](assets/img/azure-ml-environment-taxonomy.svg)
 ![Flujo de despliegue](assets/img/ml_deployment_flow.svg)
+
+## Capturas del Portal de Azure
+
+Actualmente el repositorio no incluye capturas del portal en formato raster.
+Agrégalas en `docs/i18n/es/assets/img/` y enlázalas aquí, por ejemplo:
+
+- `azure-portal-workspace-overview.png`
+- `azure-portal-compute-instance.png`
+- `azure-portal-endpoint-monitoring.png`

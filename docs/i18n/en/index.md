@@ -2,13 +2,6 @@
 
 This hub focuses on production implementation patterns for Azure ML and Fabric integration.
 
-## What 103 Adds Beyond 101/102
-
-- Platform-level Azure setup and environment strategy.
-- Strong model creation discipline from notebook to endpoint.
-- Infrastructure as code for Azure ML and Fabric.
-- Deployment reliability patterns and operational governance.
-
 ## Learning Path
 
 <div class="home-grid">
@@ -29,3 +22,12 @@ This hub focuses on production implementation patterns for Azure ML and Fabric i
 ![Azure ML taxonomy](assets/img/azure-machine-learning-taxonomy.svg)
 ![Azure ML environment taxonomy](assets/img/azure-ml-environment-taxonomy.svg)
 ![Deployment flow](assets/img/ml_deployment_flow.svg)
+
+## Azure Portal Snapshots
+
+The repository currently doesn't include portal screenshots as raster images yet.
+Add them under `docs/i18n/en/assets/img/` and reference them here, for example:
+
+- `azure-portal-workspace-overview.png`
+- `azure-portal-compute-instance.png`
+- `azure-portal-endpoint-monitoring.png`
