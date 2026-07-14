@@ -6,7 +6,9 @@
 2. Upload `sample_data.csv`. Set Name: `employee_data`, Type: Tabular.
 3. Click **Next**, confirm the schema, then **Create** to register the dataset.
 
-![Register dataset](https://github.com/user-attachments/assets/f8cbd32c-94fc-43d3-a7a8-00f63cdc543d)
+<video width="100%" controls>
+  <source src="https://github.com/user-attachments/assets/f8cbd32c-94fc-43d3-a7a8-00f63cdc543d" type="video/mp4">
+</video>
 
 ## Step 2 — Open a Notebook
 
@@ -20,7 +22,9 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 ```
 
-![Open notebook](https://github.com/user-attachments/assets/16650584-11cb-48fb-928d-c032e519c14b)
+<video width="100%" controls>
+  <source src="https://github.com/user-attachments/assets/16650584-11cb-48fb-928d-c032e519c14b" type="video/mp4">
+</video>
 
 ## Step 3 — Load and Explore the Data
 
@@ -36,7 +40,9 @@ df = tbl.to_pandas_dataframe()
 df
 ```
 
-![Load data](https://github.com/user-attachments/assets/5fa65d95-8502-4ab7-ba0d-dfda66378cc2)
+<video width="100%" controls>
+  <source src="https://github.com/user-attachments/assets/5fa65d95-8502-4ab7-ba0d-dfda66378cc2" type="video/mp4">
+</video>
 
 ## Step 4 — Train the Model
 
@@ -61,7 +67,9 @@ model = RandomForestRegressor(n_estimators=100, random_state=42, n_jobs=-1)
 model.fit(X_train, y_train)
 ```
 
-![Train model](https://github.com/user-attachments/assets/2176c795-5fda-4746-93c7-8b137b526a09)
+<video width="100%" controls>
+  <source src="https://github.com/user-attachments/assets/2176c795-5fda-4746-93c7-8b137b526a09" type="video/mp4">
+</video>
 
 ## Step 5 — Evaluate
 

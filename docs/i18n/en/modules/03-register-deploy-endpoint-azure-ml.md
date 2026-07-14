@@ -11,19 +11,25 @@ ws = Workspace.from_config()
 Model.register(workspace=ws, model_path="model.pkl", model_name="my_model_RegressionModel")
 ```
 
-![Register model](https://github.com/user-attachments/assets/a82ff03e-437c-41bc-85fa-8b9903384a5b)
+<video width="100%" controls>
+  <source src="https://github.com/user-attachments/assets/a82ff03e-437c-41bc-85fa-8b9903384a5b" type="video/mp4">
+</video>
 
 ## Step 2 — Create the Scoring Script
 
 Use `score.py` with input validation, deterministic output, and logs.
 
-![Scoring script](https://github.com/user-attachments/assets/cdc64857-3bde-4ec9-957d-5399d9447813)
+<video width="100%" controls>
+  <source src="https://github.com/user-attachments/assets/cdc64857-3bde-4ec9-957d-5399d9447813" type="video/mp4">
+</video>
 
 ## Step 3 — Create Environment File
 
 Create `env.yaml` with all runtime dependencies.
 
-![Environment file](https://github.com/user-attachments/assets/8e7c37a2-e32b-4630-8516-f95926c374c0)
+<video width="100%" controls>
+  <source src="https://github.com/user-attachments/assets/8e7c37a2-e32b-4630-8516-f95926c374c0" type="video/mp4">
+</video>
 
 ## Step 4 — Deploy
 
@@ -50,4 +56,6 @@ service.wait_for_deployment(show_output=True)
 print(f"Scoring URI: {service.scoring_uri}")
 ```
 
-![Deploy notebook](https://github.com/user-attachments/assets/1b3e5602-dc64-4c39-be72-ed1cbd74361e)
+<video width="100%" controls>
+  <source src="https://github.com/user-attachments/assets/1b3e5602-dc64-4c39-be72-ed1cbd74361e" type="video/mp4">
+</video>

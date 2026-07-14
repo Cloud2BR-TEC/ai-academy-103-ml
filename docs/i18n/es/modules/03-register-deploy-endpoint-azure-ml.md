@@ -11,19 +11,25 @@ ws = Workspace.from_config()
 Model.register(workspace=ws, model_path="model.pkl", model_name="my_model_RegressionModel")
 ```
 
-![Registrar modelo](https://github.com/user-attachments/assets/a82ff03e-437c-41bc-85fa-8b9903384a5b)
+<video width="100%" controls>
+  <source src="https://github.com/user-attachments/assets/a82ff03e-437c-41bc-85fa-8b9903384a5b" type="video/mp4">
+</video>
 
 ## Paso 2 — Crear el Script de Scoring
 
 Usar `score.py` con validación de entrada, salida determinística y logs.
 
-![Script de scoring](https://github.com/user-attachments/assets/cdc64857-3bde-4ec9-957d-5399d9447813)
+<video width="100%" controls>
+  <source src="https://github.com/user-attachments/assets/cdc64857-3bde-4ec9-957d-5399d9447813" type="video/mp4">
+</video>
 
 ## Paso 3 — Crear el Archivo de Entorno
 
 Crear `env.yaml` con todas las dependencias del runtime.
 
-![Archivo de entorno](https://github.com/user-attachments/assets/8e7c37a2-e32b-4630-8516-f95926c374c0)
+<video width="100%" controls>
+  <source src="https://github.com/user-attachments/assets/8e7c37a2-e32b-4630-8516-f95926c374c0" type="video/mp4">
+</video>
 
 ## Paso 4 — Desplegar
 
@@ -50,4 +56,6 @@ service.wait_for_deployment(show_output=True)
 print(f"Scoring URI: {service.scoring_uri}")
 ```
 
-![Notebook de despliegue](https://github.com/user-attachments/assets/1b3e5602-dc64-4c39-be72-ed1cbd74361e)
+<video width="100%" controls>
+  <source src="https://github.com/user-attachments/assets/1b3e5602-dc64-4c39-be72-ed1cbd74361e" type="video/mp4">
+</video>

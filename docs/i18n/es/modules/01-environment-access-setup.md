@@ -6,7 +6,9 @@
 - Crear un **Machine Learning workspace** — definir resource group, nombre y región.
 - Abrir **Azure Machine Learning Studio**.
 
-![Workspace setup](https://github.com/user-attachments/assets/c199156f-96cf-4ed0-a8b5-c88db3e7a552)
+<video width="100%" controls>
+  <source src="https://github.com/user-attachments/assets/c199156f-96cf-4ed0-a8b5-c88db3e7a552" type="video/mp4">
+</video>
 
 ## Crear una Compute Instance
 
@@ -15,7 +17,9 @@
 3. Ingresar nombre y tamaño de VM (ej. `Standard_DS3_v2`).
 4. Hacer clic en **Create** y esperar el aprovisionamiento.
 
-![Compute instance](https://github.com/user-attachments/assets/bd5f3ce6-7082-4741-8827-8b344cd249a4)
+<video width="100%" controls>
+  <source src="https://github.com/user-attachments/assets/bd5f3ce6-7082-4741-8827-8b344cd249a4" type="video/mp4">
+</video>
 
 ## Configurar Capacidad de Microsoft Fabric
 
