@@ -11,6 +11,13 @@ Esta capacitación reutiliza y consolida material de implementación desde tus r
 - `infrastructure/msFabric` (configuración de infraestructura para Fabric)
 - `msFabric-AI_integration` (notebook de integración Fabric + LLM)
 
+Estos frentes se reflejan de forma explícita en 103 mediante:
+
+- Configuración de plataforma Azure y preparación de workspaces.
+- Creación/registro de modelos con enfoque productivo.
+- Arquitectura de integración entre Fabric y Azure ML.
+- Despliegue y operación con Infraestructura como Código.
+
 ![Asset de aprendizaje Cloud2BR](assets/img/org-logo.png)
 
 ## Ruta de Aprendizaje
@@ -40,9 +47,6 @@ Esta capacitación reutiliza y consolida material de implementación desde tus r
 
 ## Capturas del Portal de Azure
 
-Actualmente el repositorio no incluye capturas del portal en formato raster.
-Agrégalas en `docs/i18n/es/assets/img/` y enlázalas aquí, por ejemplo:
-
-- `azure-portal-workspace-overview.png`
-- `azure-portal-compute-instance.png`
-- `azure-portal-endpoint-monitoring.png`
+![Captura del portal Azure 1](assets/img/azure-portal-photo-1.jpg)
+![Captura del portal Azure 2](assets/img/azure-portal-photo-2.jpg)
+![Captura del portal Azure 3](assets/img/azure-portal-photo-3.jpg)

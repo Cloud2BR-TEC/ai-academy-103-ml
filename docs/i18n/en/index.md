@@ -11,6 +11,13 @@ This training reuses and consolidates implementation material from your local so
 - `infrastructure/msFabric` (Fabric infrastructure setup)
 - `msFabric-AI_integration` (Fabric + LLM integration notebook)
 
+These source tracks are explicitly covered in this 103 flow through:
+
+- Azure platform setup and workspace readiness.
+- Production-grade model creation and registration.
+- Fabric + Azure ML integration architecture.
+- Infrastructure as Code deployment and operations.
+
 ![Cloud2BR learning asset](assets/img/org-logo.png)
 
 ## Learning Path
@@ -36,9 +43,6 @@ This training reuses and consolidates implementation material from your local so
 
 ## Azure Portal Snapshots
 
-The repository currently doesn't include portal screenshots as raster images yet.
-Add them under `docs/i18n/en/assets/img/` and reference them here, for example:
-
-- `azure-portal-workspace-overview.png`
-- `azure-portal-compute-instance.png`
-- `azure-portal-endpoint-monitoring.png`
+![Azure portal snapshot 1](assets/img/azure-portal-photo-1.jpg)
+![Azure portal snapshot 2](assets/img/azure-portal-photo-2.jpg)
+![Azure portal snapshot 3](assets/img/azure-portal-photo-3.jpg)
