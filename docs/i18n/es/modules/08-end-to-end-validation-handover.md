@@ -7,7 +7,7 @@
 
 **2. Modelo entrenado y evaluado**
 
-Ejecuta predicciones sobre el conjunto de prueba e imprime las métricas clave de regresión para confirmar que el modelo rinde correctamente antes del registro.
+> Ejecuta predicciones sobre el conjunto de prueba e imprime las métricas clave de regresión para confirmar que el modelo rinde correctamente antes del registro.
 
 ```python
 predictions = model.predict(X_test)
@@ -16,7 +16,7 @@ print(f"MAE: {mae:.2f}  RMSE: {rmse:.2f}  R²: {r2:.2f}")
 
 **3. Modelo registrado**
 
-Serializa el modelo entrenado en disco y regrístralo en el workspace de Azure ML con un nombre versionado. Esto lo hace disponible para despliegue y recuperable de forma reproducible por nombre.
+> Serializa el modelo entrenado en disco y regrístralo en el workspace de Azure ML con un nombre versionado. Esto lo hace disponible para despliegue y recuperable de forma reproducible por nombre.
 
 ```python
 Model.register(workspace=ws, model_path="model.pkl", model_name="my_model_RegressionModel")

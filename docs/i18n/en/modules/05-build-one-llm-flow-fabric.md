@@ -2,7 +2,7 @@
 
 ## Create a Prompt Template
 
-Define the structure of the input that will be sent to the language model. The template accepts a `technology` variable and asks the model to produce a definition for it.
+> Define the structure of the input that will be sent to the language model. The template accepts a `technology` variable and asks the model to produce a definition for it.
 
 ```python
 from langchain.prompts import PromptTemplate
@@ -15,7 +15,7 @@ copy_prompt = PromptTemplate(
 
 ## Set Up an LLMChain
 
-Link the prompt template to the Azure OpenAI instance (`llm`). The chain handles sending each filled-in prompt to the model and returning the generated text.
+> Link the prompt template to the Azure OpenAI instance (`llm`). The chain handles sending each filled-in prompt to the model and returning the generated text.
 
 ```python
 from langchain.chains import LLMChain
@@ -25,7 +25,7 @@ chain = LLMChain(llm=llm, prompt=copy_prompt)
 
 ## Configure LangChain Transformer
 
-Wrap the chain in a SynapseML `LangchainTransformer` so it can run as a distributed Spark transformation. It reads from the `technology` column and writes generated definitions to a new `definition` column.
+> Wrap the chain in a SynapseML `LangchainTransformer` so it can run as a distributed Spark transformation. It reads from the `technology` column and writes generated definitions to a new `definition` column.
 
 ```python
 from synapse.ml.cognitive.langchain import LangchainTransformer
@@ -42,7 +42,7 @@ transformer = (
 
 ## Run on a Spark DataFrame
 
-Create a small Spark DataFrame with sample technology names, apply the transformer, and display the results. Each row is processed in parallel by the distributed Spark engine.
+> Create a small Spark DataFrame with sample technology names, apply the transformer, and display the results. Each row is processed in parallel by the distributed Spark engine.
 
 ```python
 from pyspark.sql import SparkSession
@@ -58,7 +58,7 @@ result.select("technology", "definition").show(truncate=False)
 
 ## Machine Learning Integration with Fabric
 
-Train a regression model and log it with MLflow directly inside Fabric. MLflow tracks parameters and registers the model artifact so it can be versioned and compared later.
+> Train a regression model and log it with MLflow directly inside Fabric. MLflow tracks parameters and registers the model artifact so it can be versioned and compared later.
 
 ```python
 import mlflow

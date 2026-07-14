@@ -7,7 +7,7 @@
 
 **2. Model trained and evaluated**
 
-Run predictions on the test set and print the key regression metrics to confirm the model is performing as expected before registration.
+> Run predictions on the test set and print the key regression metrics to confirm the model is performing as expected before registration.
 
 ```python
 predictions = model.predict(X_test)
@@ -16,7 +16,7 @@ print(f"MAE: {mae:.2f}  RMSE: {rmse:.2f}  R²: {r2:.2f}")
 
 **3. Model registered**
 
-Serialize the trained model to disk and register it in the Azure ML workspace with a versioned name. This makes it available for deployment and reproducible retrieval by name.
+> Serialize the trained model to disk and register it in the Azure ML workspace with a versioned name. This makes it available for deployment and reproducible retrieval by name.
 
 ```python
 Model.register(workspace=ws, model_path="model.pkl", model_name="my_model_RegressionModel")

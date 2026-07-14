@@ -35,7 +35,7 @@ dependencies:
 
 ## Configure Azure OpenAI
 
-Set the required environment variables for your Azure OpenAI deployment. These values are found in the Azure Portal under your OpenAI resource → **Keys and Endpoint**.
+> Set the required environment variables for your Azure OpenAI deployment. These values are found in the Azure Portal under your OpenAI resource → **Keys and Endpoint**.
 
 ```python
 import os
@@ -44,7 +44,7 @@ os.environ["AZURE_OPENAI_ENDPOINT"] = "https://your-resource-name.openai.azure.c
 os.environ["AZURE_OPENAI_API_KEY"] = "your-api-key"
 ```
 
-Create an `AzureChatOpenAI` instance that the LangChain chain will use to call your deployed model. `temperature` controls response randomness; `top_p` limits the token probability distribution.
+> Create an `AzureChatOpenAI` instance that the LangChain chain will use to call your deployed model. `temperature` controls response randomness; `top_p` limits the token probability distribution.
 
 ```python
 from langchain_openai import AzureChatOpenAI

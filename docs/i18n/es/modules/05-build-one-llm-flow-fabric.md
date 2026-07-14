@@ -2,7 +2,7 @@
 
 ## Crear una Plantilla de Prompt
 
-Define la estructura del input que se enviará al modelo de lenguaje. La plantilla acepta una variable `technology` y le pide al modelo que genere una definición.
+> Define la estructura del input que se enviará al modelo de lenguaje. La plantilla acepta una variable `technology` y le pide al modelo que genere una definición.
 
 ```python
 from langchain.prompts import PromptTemplate
@@ -15,7 +15,7 @@ copy_prompt = PromptTemplate(
 
 ## Configurar un LLMChain
 
-Vincula la plantilla de prompt a la instancia de Azure OpenAI (`llm`). La cadena se encarga de enviar cada prompt completo al modelo y devolver el texto generado.
+> Vincula la plantilla de prompt a la instancia de Azure OpenAI (`llm`). La cadena se encarga de enviar cada prompt completo al modelo y devolver el texto generado.
 
 ```python
 from langchain.chains import LLMChain
@@ -25,7 +25,7 @@ chain = LLMChain(llm=llm, prompt=copy_prompt)
 
 ## Configurar el LangChain Transformer
 
-Encapsula la cadena en un `LangchainTransformer` de SynapseML para que pueda ejecutarse como transformación distribuida de Spark. Lee de la columna `technology` y escribe las definiciones generadas en una nueva columna `definition`.
+> Encapsula la cadena en un `LangchainTransformer` de SynapseML para que pueda ejecutarse como transformación distribuida de Spark. Lee de la columna `technology` y escribe las definiciones generadas en una nueva columna `definition`.
 
 ```python
 from synapse.ml.cognitive.langchain import LangchainTransformer
@@ -42,7 +42,7 @@ transformer = (
 
 ## Ejecutar sobre un Spark DataFrame
 
-Crea un DataFrame de Spark con nombres de tecnologías de ejemplo, aplica el transformer y muestra los resultados. Cada fila es procesada en paralelo por el motor distribuido de Spark.
+> Crea un DataFrame de Spark con nombres de tecnologías de ejemplo, aplica el transformer y muestra los resultados. Cada fila es procesada en paralelo por el motor distribuido de Spark.
 
 ```python
 from pyspark.sql import SparkSession
@@ -58,7 +58,7 @@ result.select("technology", "definition").show(truncate=False)
 
 ## Integración de ML con Fabric
 
-Entrena un modelo de regresión y lo registra con MLflow directamente dentro de Fabric. MLflow rastrea los parámetros y registra el artefacto del modelo para que pueda ser versionado y comparado más adelante.
+> Entrena un modelo de regresión y lo registra con MLflow directamente dentro de Fabric. MLflow rastrea los parámetros y registra el artefacto del modelo para que pueda ser versionado y comparado más adelante.
 
 ```python
 import mlflow
