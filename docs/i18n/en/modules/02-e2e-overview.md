@@ -60,5 +60,3 @@ Leverage `score.py` style, but productionize it:
 - [ ] Model registered with lineage
 - [ ] Scoring contract validated with sample payloads
 
-![Azure portal snapshot 1](../assets/img/azure-portal-photo-1.jpg)
-![Azure portal snapshot 2](../assets/img/azure-portal-photo-2.jpg)

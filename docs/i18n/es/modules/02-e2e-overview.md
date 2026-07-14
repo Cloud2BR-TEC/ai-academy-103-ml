@@ -60,5 +60,3 @@ Aprovecha el estilo `score.py`, pero orientado a producción:
 - [ ] Modelo registrado con linaje
 - [ ] Contrato de scoring validado con payloads de prueba
 
-![Captura del portal Azure 1](../assets/img/azure-portal-photo-1.jpg)
-![Captura del portal Azure 2](../assets/img/azure-portal-photo-2.jpg)
