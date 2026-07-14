@@ -2,22 +2,36 @@
 
 ## Objetivo
 
-Dejar listo todo para ejecutar ambas rutas:
+Preparar la plataforma para ejecutar **una ruta completa de modelo** sin bloqueos.
 
-- Ruta de modelo en Azure ML Studio
-- Ruta LLM en notebooks de Fabric
+## A. Setup de Azure ML Studio
 
-## Pasos
+1. Abrir Azure Portal y crear/seleccionar el resource group.
+2. Crear **Machine Learning workspace** en la región objetivo.
+3. Abrir Azure ML Studio y confirmar acceso al workspace.
+4. Crear una compute instance para ejecución de notebooks.
+5. Activar controles de costo (auto-stop y convención de nombres).
 
-1. Confirmar suscripción Azure y permisos del grupo de recursos.
-2. Crear o seleccionar workspace de Azure ML.
-3. Crear compute instance en Azure ML Studio.
-4. Registrar dataset de `azML-modelcreation/data/sample_data.csv`.
-5. Validar capacidad Fabric y asignación de workspace.
-6. Confirmar instalación de dependencias en runtime de notebook.
+## B. Setup de dataset
 
-## Imágenes de Setup
+1. Ir a **Data** en Azure ML Studio.
+2. Subir `sample_data.csv`.
+3. Registrar como data asset versionado.
+4. Validar esquema y columna objetivo antes de entrenar.
 
-![Setup Azure 1](../assets/img/azure-portal-photo-1.jpg)
-![Setup Azure 2](../assets/img/azure-portal-photo-2.jpg)
-![Setup Azure 3](../assets/img/azure-portal-photo-3.jpg)
+## C. Setup de Fabric (si usarás ruta Fabric)
+
+1. Confirmar proveedor/capacidad de Fabric en Azure.
+2. Asignar capacidad al workspace de Fabric.
+3. Abrir notebook y validar instalación de dependencias.
+
+### Ejemplo: pantalla de configuración de capacidad Fabric
+
+![Configuración de capacidad Fabric](../assets/img/azure-fabric-capacity-setup.png)
+
+## Criterios de salida
+
+- [ ] Workspace y cómputo operativos
+- [ ] Dataset registrado y versionado
+- [ ] Asignación capacidad-workspace de Fabric confirmada
+- [ ] El equipo puede iniciar Módulo 02 o Módulo 04 inmediatamente

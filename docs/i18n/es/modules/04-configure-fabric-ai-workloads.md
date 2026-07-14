@@ -1,18 +1,22 @@
 ﻿# 04. Configurar Microsoft Fabric para Cargas de IA
 
-## Fuente Utilizada
+## Objetivo
 
-- `msFabric-AI_integration/README.md`
+Dejar Fabric listo para ejecutar el flujo de notebook y conectar resultados con operaciones en Azure ML.
 
-## Pasos
+## Configuración paso a paso
 
-1. Registrar proveedor Fabric y confirmar capacidad.
-2. Asignar workspace a capacidad Fabric.
-3. Abrir entorno de notebook de Data Science.
-4. Instalar dependencias requeridas (`synapseml`, `langchain`, `openai`).
-5. Configurar endpoint y key de Azure OpenAI con enfoque de secretos seguros.
+1. Registrar el proveedor de Fabric en la suscripción Azure.
+2. Crear capacidad Fabric con región/tamaño adecuados.
+3. Asignar capacidad al workspace objetivo de Fabric.
+4. Abrir notebook de Fabric en experiencia Data Science.
+5. Instalar dependencias fijadas:
 
-## Fragmento de Configuración
+```python
+%pip install synapseml==1.0.8 langchain==0.3.4 langchain_community==0.3.4 openai==1.53.0 langchain.openai==0.2.4
+```
+
+6. Configurar Azure OpenAI desde fuente segura de secretos.
 
 ```python
 import os
@@ -20,3 +24,14 @@ os.environ["OPENAI_API_VERSION"] = "2023-08-01-preview"
 os.environ["AZURE_OPENAI_ENDPOINT"] = "https://your-resource-name.openai.azure.com"
 os.environ["AZURE_OPENAI_API_KEY"] = "<from-secret-store>"
 ```
+
+## Validaciones
+
+- [ ] La sesión de notebook importa SynapseML y LangChain
+- [ ] El cliente de Azure OpenAI inicializa correctamente
+- [ ] Un prompt de prueba ejecuta con éxito
+- [ ] La salida puede persistirse para uso downstream en Azure ML
+
+### Imagen de setup
+
+![Configuración de capacidad Fabric](../assets/img/azure-fabric-capacity-setup.png)

@@ -1,23 +1,37 @@
 ﻿# 01. Environment and Access Setup
 
-## Objective
+## Goal
 
-Set up everything required to run both paths:
+Prepare the platform so you can run **one full model path** with no blockers.
 
-- Azure ML Studio model path
-- Fabric LLM notebook path
+## A. Azure ML Studio setup
 
-## Steps
+1. Open Azure Portal and create/select your resource group.
+2. Create **Machine Learning workspace** in your target region.
+3. Open Azure ML Studio and confirm workspace access.
+4. Create one compute instance for notebook execution.
+5. Enable cost controls (auto-stop and naming convention).
 
-1. Confirm Azure subscription and resource group permissions.
-2. Create or select Azure ML workspace.
-3. Create compute instance in Azure ML Studio.
-4. Register sample dataset from `azML-modelcreation/data/sample_data.csv`.
-5. Validate Fabric capacity and workspace assignment.
-6. Confirm notebook runtime can install required dependencies.
+## B. Dataset setup
 
-## Setup Images
+1. Go to **Data** in Azure ML Studio.
+2. Upload `sample_data.csv`.
+3. Register as a versioned data asset.
+4. Validate schema and target column before training.
 
-![Azure setup 1](../assets/img/azure-portal-photo-1.jpg)
-![Azure setup 2](../assets/img/azure-portal-photo-2.jpg)
-![Azure setup 3](../assets/img/azure-portal-photo-3.jpg)
+## C. Fabric setup (if using Fabric path)
+
+1. Confirm Fabric provider/capacity in Azure.
+2. Assign capacity to your Fabric workspace.
+3. Open a notebook and verify dependency install works.
+
+### Example: Fabric capacity configuration screen
+
+![Fabric capacity setup](../assets/img/azure-fabric-capacity-setup.png)
+
+## Exit criteria
+
+- [ ] Workspace and compute are operational
+- [ ] Dataset is registered and versioned
+- [ ] Fabric workspace-capacity assignment is confirmed
+- [ ] Team can start Module 02 or Module 04 immediately
