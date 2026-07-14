@@ -98,6 +98,17 @@ Azure Machine Learning organizes the end-to-end lifecycle:
 This is not a linear path. Production systems continuously loop from monitoring back to  
 data and training when model quality or data distributions change.
 
+## Included from your Fabric AI integration source
+
+This module also incorporates implementation elements from `msFabric-AI_integration`:
+
+- Fabric workspace and environment setup for AI workloads.
+- Azure OpenAI configuration flow in Fabric notebooks.
+- LangChain/SynapseML integration pattern for document workflows.
+- Practical bridge between Fabric data processing and Azure ML deployment lifecycle.
+
+![Azure portal snapshot 3](../assets/img/azure-portal-photo-3.jpg)
+
 ```mermaid
 flowchart LR
   A[Problem Framing] --> B[Data Preparation]

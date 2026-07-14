@@ -8,6 +8,18 @@ modelo en producción.
 Úsala como una referencia a la que puedas volver. Cada etapa de abajo enlaza con el módulo
 detallado que la cubre por completo.
 
+## Incluido desde tu fuente de creación de modelos
+
+Este módulo incorpora explícitamente el flujo de implementación de `azML-modelcreation`:
+
+- Configuración de workspace y cómputo.
+- Registro del dataset y verificación de esquema.
+- Entrenamiento y evaluación desde notebook.
+- Registro de modelo y patrón de script de scoring (`score.py`).
+
+![Captura del portal Azure 1](../assets/img/azure-portal-photo-1.jpg)
+![Captura del portal Azure 2](../assets/img/azure-portal-photo-2.jpg)
+
 ---
 
 ## El panorama general

@@ -8,6 +8,18 @@ model running in production.
 Use it as a reference you can return to. Each stage below links to the deep-dive module that
 covers it in full.
 
+## Included from your model-creation source
+
+This module explicitly incorporates the implementation flow from `azML-modelcreation`:
+
+- Workspace setup and compute instance preparation.
+- Dataset registration and schema verification.
+- Notebook-driven model training and evaluation.
+- Model registration plus endpoint-oriented scoring script pattern (`score.py`).
+
+![Azure portal snapshot 1](../assets/img/azure-portal-photo-1.jpg)
+![Azure portal snapshot 2](../assets/img/azure-portal-photo-2.jpg)
+
 ---
 
 ## The big picture

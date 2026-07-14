@@ -98,6 +98,17 @@ Azure Machine Learning organiza el ciclo de vida de extremo a extremo:
 Esto no es un camino lineal. Los sistemas de producción hacen un ciclo continuo desde el monitoreo de vuelta a  
 los datos y el entrenamiento cuando la calidad del modelo o las distribuciones de datos cambian.
 
+## Incluido desde tu fuente de integración Fabric AI
+
+Este módulo también incorpora elementos de implementación de `msFabric-AI_integration`:
+
+- Configuración de workspace y entorno en Fabric para cargas de IA.
+- Flujo de configuración de Azure OpenAI en notebooks de Fabric.
+- Patrón de integración con LangChain/SynapseML para flujos documentales.
+- Puente práctico entre procesamiento de datos en Fabric y ciclo de despliegue en Azure ML.
+
+![Captura del portal Azure 3](../assets/img/azure-portal-photo-3.jpg)
+
 ```mermaid
 flowchart LR
   A[Problem Framing] --> B[Data Preparation]
