@@ -2,12 +2,6 @@
 
 Machine Learning 103 es una ruta enfocada en implementación productiva sobre Azure ML y Microsoft Fabric.
 
-Este nivel es intencionalmente distinto de 101 y 102:
-
-- 101 se enfoca en fundamentos.
-- 102 se enfoca en arquitectura intermedia.
-- 103 se enfoca en implementación de plataforma, operación y gobernanza.
-
 ## Qué construyes en 103
 
 - Base de workspace y cómputo en Azure ML para equipos repetibles.

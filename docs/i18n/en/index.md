@@ -2,12 +2,6 @@
 
 Machine Learning 103 is an implementation-first track for production systems on Azure ML and Microsoft Fabric.
 
-This level is intentionally different from 101 and 102:
-
-- 101 focuses on fundamentals.
-- 102 focuses on intermediate architecture.
-- 103 focuses on platform implementation, operations, and governance.
-
 ## What You Build in 103
 
 - Azure ML workspace and compute foundations for repeatable teams.
