@@ -64,9 +64,11 @@ print(f"Model Version: {model_version.version}")
 
 ## Handover Package
 
-1. `model.pkl` — serialized regression model from Azure ML.
-2. `score.py` — scoring script with input validation and logs.
-3. `env.yaml` — pinned environment definition.
-4. Fabric notebook (`fabric-llms-overview_sample.ipynb`) with full LLM flow output.
-5. MLflow run ID and registered model version for traceability.
-6. Scoring URI documented for consumer integration.
+1. **`model.pkl`** — serialized regression model produced by `joblib.dump(model, 'model.pkl')` during training.
+2. [`score.py`](https://github.com/Cloud2BR-MSFTLearningHub/Azure-ML-Overview/blob/main/azML-modelcreation/src/score.py) — scoring script with input validation and logs.
+3. **`env.yaml`** — environment definition file created during the deployment setup step.
+4. [`fabric-llms-overview_sample.ipynb`](https://github.com/Cloud2BR-MSFTLearningHub/Azure-ML-Overview/blob/main/msFabric-AI_integration/src/fabric-llms-overview_sample.ipynb) — full Fabric LLM flow notebook with outputs.
+5. [`0_ml-model-creation.ipynb`](https://github.com/Cloud2BR-MSFTLearningHub/Azure-ML-Overview/blob/main/azML-modelcreation/src/0_ml-model-creation.ipynb) — full model training notebook.
+6. [`sample_data.csv`](https://github.com/Cloud2BR-MSFTLearningHub/Azure-ML-Overview/blob/main/azML-modelcreation/data/sample_data.csv) — training dataset.
+7. MLflow run ID and registered model version for traceability.
+8. Scoring URI documented for consumer integration.

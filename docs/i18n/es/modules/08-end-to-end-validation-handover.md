@@ -64,9 +64,11 @@ print(f"Model Version: {model_version.version}")
 
 ## Paquete de Entrega
 
-1. `model.pkl` — modelo de regresión serializado desde Azure ML.
-2. `score.py` — script de scoring con validación de entrada y logs.
-3. `env.yaml` — definición de entorno con versiones fijadas.
-4. Notebook de Fabric (`fabric-llms-overview_sample.ipynb`) con salida completa del flujo LLM.
-5. Run ID de MLflow y versión del modelo registrado para trazabilidad.
-6. Scoring URI documentado para integración por parte del consumidor.
+1. **`model.pkl`** — modelo de regresión serializado producido por `joblib.dump(model, 'model.pkl')` durante el entrenamiento.
+2. [`score.py`](https://github.com/Cloud2BR-MSFTLearningHub/Azure-ML-Overview/blob/main/azML-modelcreation/src/score.py) — script de scoring con validación de entrada y logs.
+3. **`env.yaml`** — archivo de definición de entorno creado durante el paso de configuración del despliegue.
+4. [`fabric-llms-overview_sample.ipynb`](https://github.com/Cloud2BR-MSFTLearningHub/Azure-ML-Overview/blob/main/msFabric-AI_integration/src/fabric-llms-overview_sample.ipynb) — notebook completo del flujo LLM en Fabric con salidas.
+5. [`0_ml-model-creation.ipynb`](https://github.com/Cloud2BR-MSFTLearningHub/Azure-ML-Overview/blob/main/azML-modelcreation/src/0_ml-model-creation.ipynb) — notebook completo de entrenamiento del modelo.
+6. [`sample_data.csv`](https://github.com/Cloud2BR-MSFTLearningHub/Azure-ML-Overview/blob/main/azML-modelcreation/data/sample_data.csv) — dataset de entrenamiento.
+7. Run ID de MLflow y versión del modelo registrado para trazabilidad.
+8. Scoring URI documentado para integración por parte del consumidor.

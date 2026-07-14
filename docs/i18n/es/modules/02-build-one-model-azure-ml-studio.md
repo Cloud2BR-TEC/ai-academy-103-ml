@@ -3,7 +3,7 @@
 ## Paso 1 — Preparar los Datos
 
 1. Ir a **Data > + Create > From local files** en Azure ML Studio.
-2. Subir `sample_data.csv`. Nombre: `employee_data`, Tipo: Tabular.
+2. Subir [`sample_data.csv`](https://github.com/Cloud2BR-MSFTLearningHub/Azure-ML-Overview/blob/main/azML-modelcreation/data/sample_data.csv). Nombre: `employee_data`, Tipo: Tabular.
 3. Hacer clic en **Next**, confirmar esquema, luego **Create** para registrar el dataset.
 
 <video width="100%" controls>
