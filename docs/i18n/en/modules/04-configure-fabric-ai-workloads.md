@@ -35,6 +35,8 @@ dependencies:
 
 ## Configure Azure OpenAI
 
+Set the required environment variables for your Azure OpenAI deployment. These values are found in the Azure Portal under your OpenAI resource → **Keys and Endpoint**.
+
 ```python
 import os
 os.environ["OPENAI_API_VERSION"] = "2023-08-01-preview"
@@ -42,7 +44,7 @@ os.environ["AZURE_OPENAI_ENDPOINT"] = "https://your-resource-name.openai.azure.c
 os.environ["AZURE_OPENAI_API_KEY"] = "your-api-key"
 ```
 
-![API keys setup](https://github.com/user-attachments/assets/a2eb24bf-7279-4f4e-be00-408dbbd82600)
+Create an `AzureChatOpenAI` instance that the LangChain chain will use to call your deployed model. `temperature` controls response randomness; `top_p` limits the token probability distribution.
 
 ```python
 from langchain_openai import AzureChatOpenAI
@@ -55,5 +57,3 @@ llm = AzureChatOpenAI(
     top_p=0.9
 )
 ```
-
-![Initialize LLM](https://github.com/user-attachments/assets/e9fad52c-5c64-4047-8f22-cef80ce33d6e)
