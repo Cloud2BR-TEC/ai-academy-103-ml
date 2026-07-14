@@ -17,7 +17,7 @@ Model.register(workspace=ws, model_path="model.pkl", model_name="my_model_Regres
 
 ## Paso 2 — Crear el Script de Scoring
 
-Usar [`score.py`](https://github.com/Cloud2BR-MSFTLearningHub/Azure-ML-Overview/blob/main/azML-modelcreation/src/score.py) con validación de entrada, salida determinística y logs.
+Usar [`score.py`](../reference/score-py.md) con validación de entrada, salida determinística y logs.
 
 <video width="100%" controls>
   <source src="https://github.com/user-attachments/assets/cdc64857-3bde-4ec9-957d-5399d9447813" type="video/mp4">

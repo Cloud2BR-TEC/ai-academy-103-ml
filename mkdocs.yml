@@ -50,6 +50,10 @@ plugins:
             Mathematical Model Deep Dive: "Análisis Matemático Profundo de Modelos"
             CLI Commands: "Comandos CLI"
             Glossary: Glosario
+            score.py: "score.py"
+            sample_data.csv: "sample_data.csv"
+            ML Creation Notebook: "Notebook de Creación de Modelos"
+            Fabric LLMs Notebook: "Notebook LLMs en Fabric"
 
 markdown_extensions:
   - admonition
@@ -98,3 +102,7 @@ nav:
       - Mathematical Model Deep Dive: reference/model-math-deep-dive.md
       - CLI Commands: reference/cli-commands.md
       - Glossary: reference/glossary.md
+      - score.py: reference/score-py.md
+      - sample_data.csv: reference/sample-data-csv.md
+      - ML Creation Notebook: reference/ml-creation-notebook.md
+      - Fabric LLMs Notebook: reference/fabric-llms-notebook.md

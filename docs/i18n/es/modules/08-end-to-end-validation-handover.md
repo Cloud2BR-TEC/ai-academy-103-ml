@@ -3,7 +3,7 @@
 ## Validación de la Ruta Azure ML
 
 **1. Dataset registrado**
-- Dataset `employee_data` registrado como Tabular desde [`sample_data.csv`](https://github.com/Cloud2BR-MSFTLearningHub/Azure-ML-Overview/blob/main/azML-modelcreation/data/sample_data.csv) en Azure ML.
+- Dataset `employee_data` registrado como Tabular desde [`sample_data.csv`](../reference/sample-data-csv.md) en Azure ML.
 
 **2. Modelo entrenado y evaluado**
 
@@ -65,10 +65,10 @@ print(f"Model Version: {model_version.version}")
 ## Paquete de Entrega
 
 1. **`model.pkl`** — modelo de regresión serializado producido por `joblib.dump(model, 'model.pkl')` durante el entrenamiento.
-2. [`score.py`](https://github.com/Cloud2BR-MSFTLearningHub/Azure-ML-Overview/blob/main/azML-modelcreation/src/score.py) — script de scoring con validación de entrada y logs.
+2. [`score.py`](../reference/score-py.md) — script de scoring con validación de entrada y logs.
 3. **`env.yaml`** — archivo de definición de entorno creado durante el paso de configuración del despliegue.
-4. [`fabric-llms-overview_sample.ipynb`](https://github.com/Cloud2BR-MSFTLearningHub/Azure-ML-Overview/blob/main/msFabric-AI_integration/src/fabric-llms-overview_sample.ipynb) — notebook completo del flujo LLM en Fabric con salidas.
-5. [`0_ml-model-creation.ipynb`](https://github.com/Cloud2BR-MSFTLearningHub/Azure-ML-Overview/blob/main/azML-modelcreation/src/0_ml-model-creation.ipynb) — notebook completo de entrenamiento del modelo.
-6. [`sample_data.csv`](https://github.com/Cloud2BR-MSFTLearningHub/Azure-ML-Overview/blob/main/azML-modelcreation/data/sample_data.csv) — dataset de entrenamiento.
+4. [`fabric-llms-overview_sample.ipynb`](../reference/fabric-llms-notebook.md) — notebook completo del flujo LLM en Fabric con salidas.
+5. [`0_ml-model-creation.ipynb`](../reference/ml-creation-notebook.md) — notebook completo de entrenamiento del modelo.
+6. [`sample_data.csv`](../reference/sample-data-csv.md) — dataset de entrenamiento.
 7. Run ID de MLflow y versión del modelo registrado para trazabilidad.
 8. Scoring URI documentado para integración por parte del consumidor.

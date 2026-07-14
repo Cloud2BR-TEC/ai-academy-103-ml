@@ -3,7 +3,7 @@
 ## Azure ML Path Validation
 
 **1. Dataset registered**
-- `employee_data` dataset registered as Tabular from [`sample_data.csv`](https://github.com/Cloud2BR-MSFTLearningHub/Azure-ML-Overview/blob/main/azML-modelcreation/data/sample_data.csv) in Azure ML.
+- `employee_data` dataset registered as Tabular from [`sample_data.csv`](../reference/sample-data-csv.md) in Azure ML.
 
 **2. Model trained and evaluated**
 
@@ -65,10 +65,10 @@ print(f"Model Version: {model_version.version}")
 ## Handover Package
 
 1. **`model.pkl`** — serialized regression model produced by `joblib.dump(model, 'model.pkl')` during training.
-2. [`score.py`](https://github.com/Cloud2BR-MSFTLearningHub/Azure-ML-Overview/blob/main/azML-modelcreation/src/score.py) — scoring script with input validation and logs.
+2. [`score.py`](../reference/score-py.md) — scoring script with input validation and logs.
 3. **`env.yaml`** — environment definition file created during the deployment setup step.
-4. [`fabric-llms-overview_sample.ipynb`](https://github.com/Cloud2BR-MSFTLearningHub/Azure-ML-Overview/blob/main/msFabric-AI_integration/src/fabric-llms-overview_sample.ipynb) — full Fabric LLM flow notebook with outputs.
-5. [`0_ml-model-creation.ipynb`](https://github.com/Cloud2BR-MSFTLearningHub/Azure-ML-Overview/blob/main/azML-modelcreation/src/0_ml-model-creation.ipynb) — full model training notebook.
-6. [`sample_data.csv`](https://github.com/Cloud2BR-MSFTLearningHub/Azure-ML-Overview/blob/main/azML-modelcreation/data/sample_data.csv) — training dataset.
+4. [`fabric-llms-overview_sample.ipynb`](../reference/fabric-llms-notebook.md) — full Fabric LLM flow notebook with outputs.
+5. [`0_ml-model-creation.ipynb`](../reference/ml-creation-notebook.md) — full model training notebook.
+6. [`sample_data.csv`](../reference/sample-data-csv.md) — training dataset.
 7. MLflow run ID and registered model version for traceability.
 8. Scoring URI documented for consumer integration.
