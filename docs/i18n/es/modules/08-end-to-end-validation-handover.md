@@ -20,7 +20,9 @@ print(f"MAE: {mae:.2f}  RMSE: {rmse:.2f}  R²: {r2:.2f}")
 Model.register(workspace=ws, model_path="model.pkl", model_name="my_model_RegressionModel")
 ```
 
-![Modelo registrado](https://github.com/user-attachments/assets/a82ff03e-437c-41bc-85fa-8b9903384a5b)
+<video width="100%" controls>
+  <source src="https://github.com/user-attachments/assets/a82ff03e-437c-41bc-85fa-8b9903384a5b" type="video/mp4">
+</video>
 
 **4. Endpoint desplegado y respondiendo**
 
@@ -33,7 +35,7 @@ print(f"Scoring URI: {service.scoring_uri}")
 
 **5. Capacidad de Fabric activa y clúster creado**
 
-![Crear capacidad Fabric](https://github.com/user-attachments/assets/a860911c-0ab8-469e-82d9-d0495268bd3b)
+![Capacidad Fabric activa en Azure Portal](https://github.com/user-attachments/assets/117d6902-cc8b-45b8-a104-9b54180565f2)
 
 **6. SynapseML y LangChain instalados**
 
