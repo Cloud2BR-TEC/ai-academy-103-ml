@@ -2,24 +2,6 @@
 
 Este centro se enfoca en patrones avanzados de implementación para Azure ML e integración con Fabric.
 
-## Contenido Reutilizado
-
-Esta capacitación reutiliza y consolida material de implementación desde tus repos locales:
-
-- `azML-modelcreation` (flujo de creación de modelos, notebook + script de scoring)
-- `infrastructure/azMachineLearning` (configuración Terraform para Azure ML)
-- `infrastructure/msFabric` (configuración de infraestructura para Fabric)
-- `msFabric-AI_integration` (notebook de integración Fabric + LLM)
-
-Estos frentes se reflejan de forma explícita en 103 mediante:
-
-- Configuración de plataforma Azure y preparación de workspaces.
-- Creación/registro de modelos con enfoque productivo.
-- Arquitectura de integración entre Fabric y Azure ML.
-- Despliegue y operación con Infraestructura como Código.
-
-![Asset de aprendizaje Cloud2BR](assets/img/org-logo.png)
-
 ## Ruta de Aprendizaje
 
 <div class="home-grid">
@@ -38,12 +20,6 @@ Estos frentes se reflejan de forma explícita en 103 mediante:
   <a class="home-card" href="modules/13-deployment/"><span class="card-badge">13</span><h3>Patrones de Despliegue de Endpoints</h3><p>Estrategias de despliegue y operación segura de endpoints.</p></a>
   <a class="home-card" href="modules/14-deployment-debug-k8s/"><span class="card-badge">14</span><h3>Depuración en Kubernetes y Respuesta a Incidentes</h3><p>Diagnóstico avanzado y resolución de fallas en producción.</p></a>
 </div>
-
-## Visuales Clave
-
-![Taxonomía de Azure ML](assets/img/azure-machine-learning-taxonomy.svg)
-![Taxonomía de entornos Azure ML](assets/img/azure-ml-environment-taxonomy.svg)
-![Flujo de despliegue](assets/img/ml_deployment_flow.svg)
 
 ## Capturas del Portal de Azure
 

@@ -2,24 +2,6 @@
 
 This hub focuses on production implementation patterns for Azure ML and Fabric integration.
 
-## Source Content Reused
-
-This training reuses and consolidates implementation material from your local source repositories:
-
-- `azML-modelcreation` (model creation flow, notebook + scoring script)
-- `infrastructure/azMachineLearning` (Terraform Azure ML setup)
-- `infrastructure/msFabric` (Fabric infrastructure setup)
-- `msFabric-AI_integration` (Fabric + LLM integration notebook)
-
-These source tracks are explicitly covered in this 103 flow through:
-
-- Azure platform setup and workspace readiness.
-- Production-grade model creation and registration.
-- Fabric + Azure ML integration architecture.
-- Infrastructure as Code deployment and operations.
-
-![Cloud2BR learning asset](assets/img/org-logo.png)
-
 ## Learning Path
 
 <div class="home-grid">
@@ -34,12 +16,6 @@ These source tracks are explicitly covered in this 103 flow through:
   <a class="home-card" href="modules/09-model-types/"><span class="card-badge">09</span><h3>Deployment Reliability and SRE</h3><p>Blue/green, canary, rollback, and endpoint incident response.</p></a>
   <a class="home-card" href="modules/10-training-automl/"><span class="card-badge">10</span><h3>Capstone Architecture and Governance</h3><p>End-to-end reference architecture and operating model.</p></a>
 </div>
-
-## Visual Anchors
-
-![Azure ML taxonomy](assets/img/azure-machine-learning-taxonomy.svg)
-![Azure ML environment taxonomy](assets/img/azure-ml-environment-taxonomy.svg)
-![Deployment flow](assets/img/ml_deployment_flow.svg)
 
 ## Azure Portal Snapshots
 
