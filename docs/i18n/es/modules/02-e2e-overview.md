@@ -1,62 +1,63 @@
-﻿# Pipeline de Creación de Modelos (Avanzado)
+﻿# Pipeline de Creación de Modelos (Ruta Azure ML Studio)
 
-Este módulo adapta tu flujo `azML-modelcreation` a un blueprint orientado a producción.
+Usa este módulo si tu objetivo es: **crear un modelo en Azure ML Studio y dejarlo listo para despliegue**.
 
-## Base de Implementación desde la Fuente
+## Assets Fuente Utilizados
 
-Fuentes reutilizadas:
-
-- `azML-modelcreation/README.md`
+- `azML-modelcreation/data/sample_data.csv`
 - `azML-modelcreation/src/0_ml-model-creation.ipynb`
 - `azML-modelcreation/src/score.py`
-- `azML-modelcreation/data/sample_data.csv`
 
-## Etapa 1 - Preparación de Plataforma
+## Paso 1 - Registrar Datos
 
-- Confirmar workspace, suscripción, región y modelo RBAC.
-- Definir estrategia de cómputo (interactivo vs clúster de entrenamiento).
-- Establecer convenciones de nombres/versiones para datos, jobs y modelos.
+1. Azure ML Studio -> **Data** -> **Create** -> From local files.
+2. Subir `sample_data.csv` (o tu dataset).
+3. Confirmar esquema y columna objetivo.
+4. Guardar como data asset versionado.
 
-## Etapa 2 - Contrato de Registro de Datos
+## Paso 2 - Preparar Runtime de Notebook
 
-Desde el flujo fuente, aplica un contrato más estricto antes de entrenar:
+1. Abrir notebook en compute instance.
+2. Instalar/importar librerías requeridas.
+3. Cargar dataset desde referencia de data asset, no desde ruta temporal local.
 
-- Registrar dataset con expectativas explícitas de esquema.
-- Validar nulos, riesgos de fuga de target e identificadores de alta cardinalidad.
-- Trazar versión de dataset y linaje en cada ejecución.
+## Paso 3 - Entrenar un Modelo Base
 
-## Etapa 3 - Promoción de Notebook a Pipeline
+1. Hacer split train/test.
+2. Entrenar baseline (ej., RandomForestRegressor).
+3. Registrar métricas: MAE, RMSE, R2.
+4. Guardar artefacto (`model.pkl`).
 
-Usa notebook para exploración y luego promueve a ejecución repetible:
+## Paso 4 - Evaluar y Decidir
 
-1. Entrenar/evaluar en notebook.
-2. Extraer lógica central a pasos reproducibles de script.
-3. Parametrizar split ratio, semilla y controles de features.
-4. Ejecutar como job rastreable para comparar resultados.
+Ejemplo de puerta mínima de calidad:
 
-## Etapa 4 - Puerta de Calidad para Registro de Modelo
+- RMSE por debajo del umbral acordado
+- Distribución de error estable
+- Sin fugas de features evidentes
 
-Antes de registrar:
+Si falla: iterar features/parámetros y reentrenar.
 
-- Definir umbrales mínimos de métricas.
-- Guardar artefactos de evaluación (gráficos + métricas JSON/CSV).
-- Registrar metadatos de entorno y versiones de dependencias.
-- Registrar solo modelos que superen la puerta.
+## Paso 5 - Registrar y Preparar Inferencia
 
-## Etapa 5 - Contrato de Scoring Listo para Despliegue
+1. Registrar modelo en model registry de Azure ML.
+2. Reutilizar patrón de `score.py`:
+   - validación de entrada
+   - esquema de salida determinístico
+   - manejo de errores + logs
 
-Aprovecha el estilo `score.py`, pero orientado a producción:
+## Paso 6 - Desplegar un Endpoint (Opcional recomendado)
 
-- Validación estricta del esquema de entrada.
-- Envelope de salida determinístico.
-- Logging estructurado para trazabilidad de requests.
-- Códigos de error claros para payloads inválidos.
+1. Crear environment/inference config.
+2. Desplegar a endpoint online.
+3. Probar con payload de muestra.
+4. Confirmar contrato de respuesta + latencia.
 
-## Checklist Práctico
+## Paso 7 - Checklist de Entrega
 
-- [ ] Versión de data asset fijada
-- [ ] Job de entrenamiento reproducible
-- [ ] Umbral de métricas documentado
-- [ ] Modelo registrado con linaje
-- [ ] Contrato de scoring validado con payloads de prueba
-
+- [ ] Versión de dataset documentada
+- [ ] Notebook de entrenamiento reproducible
+- [ ] Métricas guardadas con metadata de run
+- [ ] Modelo registrado
+- [ ] Contrato de scoring probado
+- [ ] Smoke test de endpoint aprobado

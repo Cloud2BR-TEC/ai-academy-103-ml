@@ -1,26 +1,32 @@
-﻿# Machine Learning 103 - Advanced Implementation Hub
+﻿# Machine Learning 103 - Setup and Build Guide
 
-Machine Learning 103 is an implementation-first track for production systems on Azure ML and Microsoft Fabric.
+Machine Learning 103 is now a practical, implementation-first guide.
 
-## What You Build in 103
+## What You Will Do
 
-- Azure ML workspace and compute foundations for repeatable teams.
-- Model creation pipeline from notebook to registered model and endpoint.
-- Fabric + Azure ML integration with Azure OpenAI and orchestration patterns.
-- Terraform-backed infrastructure for Azure ML and Fabric environments.
-- Deployment reliability and incident-response operating model.
+You will follow one of two complete paths:
 
-## Learning Path
+1. Build one model in Azure ML Studio.
+2. Build one model in Microsoft Fabric.
 
-<div class="home-grid">
-  <a class="home-card" href="modules/01-math-prerequisites/"><span class="card-badge">01</span><h3>Platform and Azure Setup</h3><p>Subscription/RBAC baseline, networking, workspace readiness, and governance prerequisites.</p></a>
-  <a class="home-card" href="modules/02-e2e-overview/"><span class="card-badge">02</span><h3>Model Creation Pipeline</h3><p>Use the model-creation flow as a production template: data, training, evaluation, register, deploy.</p></a>
-  <a class="home-card" href="modules/03-introduction/"><span class="card-badge">03</span><h3>Fabric and Azure ML Integration</h3><p>Integrate Fabric data/LLM workflows with Azure ML deployment lifecycle.</p></a>
-  <a class="home-card" href="modules/04-ml-foundations/"><span class="card-badge">04</span><h3>Azure ML Environment Strategy</h3><p>Runtime versioning, dependency pinning, and reproducibility controls.</p></a>
-  <a class="home-card" href="modules/05-neural-networks/"><span class="card-badge">05</span><h3>Advanced Data Preparation</h3><p>Leakage prevention, schema contracts, and feature robustness patterns.</p></a>
-  <a class="home-card" href="modules/06-azure-ml-environment/"><span class="card-badge">06</span><h3>Training and Experimentation at Scale</h3><p>Parallel training strategy, run tracking, and decision criteria for promotion.</p></a>
-  <a class="home-card" href="modules/07-environment-setup/"><span class="card-badge">07</span><h3>Terraform for Azure ML</h3><p>IaC setup for reproducible AML platform provisioning.</p></a>
-  <a class="home-card" href="modules/08-data-preparation/"><span class="card-badge">08</span><h3>Terraform for Fabric</h3><p>IaC setup for Fabric resources and operational consistency.</p></a>
-  <a class="home-card" href="modules/09-model-types/"><span class="card-badge">09</span><h3>Deployment Reliability and SRE</h3><p>Canary/blue-green, rollback policies, and production incident handling.</p></a>
-  <a class="home-card" href="modules/10-training-automl/"><span class="card-badge">10</span><h3>Capstone Architecture and Governance</h3><p>Reference architecture and controls for enterprise-scale ML operations.</p></a>
-</div>
+Both paths include setup, configuration, validation, and deployment-ready outputs.
+
+## Recommended Order
+
+1. `01. Platform and Azure Setup`
+2. `02. Model Creation Pipeline` (Azure ML Studio path)
+3. `03. Fabric and Azure ML Integration` (Fabric path)
+
+Continue to modules 04-14 after completing at least one end-to-end model path.
+
+## Quick Decision Guide
+
+- Choose **Azure ML Studio** if your target is classic ML lifecycle + endpoint deployment.
+- Choose **Fabric** if your target is data + LLM workflows in notebooks at scale.
+
+## Required Inputs
+
+- Azure subscription with permissions
+- Workspace and compute budget
+- Sample dataset (`sample_data.csv`) or equivalent
+- Secure key management for Azure OpenAI (Fabric path)

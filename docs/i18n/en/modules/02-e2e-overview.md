@@ -1,62 +1,63 @@
-﻿# Model Creation Pipeline (Advanced)
+﻿# Model Creation Pipeline (Azure ML Studio Path)
 
-This module adapts your `azML-modelcreation` workflow into a production-oriented blueprint.
+Use this module if your goal is: **create one model in Azure ML Studio and leave it deployment-ready**.
 
-## Implementation Baseline from Source
+## Source Assets Used
 
-Source reused:
-
-- `azML-modelcreation/README.md`
+- `azML-modelcreation/data/sample_data.csv`
 - `azML-modelcreation/src/0_ml-model-creation.ipynb`
 - `azML-modelcreation/src/score.py`
-- `azML-modelcreation/data/sample_data.csv`
 
-## Stage 1 - Platform Readiness
+## Step 1 - Register Data
 
-- Confirm workspace, subscription, region, and RBAC model.
-- Establish compute strategy (interactive vs training cluster).
-- Define naming/version conventions for data, jobs, and models.
+1. Azure ML Studio -> **Data** -> **Create** -> From local files.
+2. Upload `sample_data.csv` (or your own dataset).
+3. Confirm schema and target column.
+4. Save as versioned data asset.
 
-## Stage 2 - Data Registration Contract
+## Step 2 - Prepare Notebook Runtime
 
-From the source flow, enforce a stricter contract before training:
+1. Open a notebook on compute instance.
+2. Install/import required libraries.
+3. Load dataset from data asset reference, not local temporary path.
 
-- Register dataset with explicit schema expectations.
-- Validate nulls, target leakage risks, and high-cardinality identifiers.
-- Track dataset version and lineage for every run.
+## Step 3 - Train One Baseline Model
 
-## Stage 3 - Notebook-to-Pipeline Promotion
+1. Split train/test.
+2. Train baseline (e.g., RandomForestRegressor).
+3. Track metrics: MAE, RMSE, R2.
+4. Save artifact (`model.pkl`).
 
-Use notebook exploration, then promote to repeatable execution:
+## Step 4 - Evaluate and Decide
 
-1. Train/evaluate in notebook.
-2. Export core logic into reproducible script steps.
-3. Parameterize split ratio, seed, and feature controls.
-4. Run as tracked job for comparability.
+Minimum quality gate example:
 
-## Stage 4 - Model Registration Quality Gate
+- RMSE below agreed threshold
+- Stable error distribution
+- No obvious feature leakage
 
-Before registering:
+If gate fails: iterate features/params, retrain.
 
-- Define minimum metric thresholds.
-- Save evaluation artifacts (plots + metrics JSON/CSV).
-- Record environment metadata and dependency versions.
-- Register only models that pass the gate.
+## Step 5 - Register and Prepare Inference
 
-## Stage 5 - Deployment-Ready Scoring Contract
+1. Register model in Azure ML model registry.
+2. Reuse `score.py` pattern:
+   - input validation
+   - deterministic output schema
+   - error handling + logs
 
-Leverage `score.py` style, but productionize it:
+## Step 6 - Deploy One Endpoint (Optional but recommended)
 
-- Strict input schema validation.
-- Deterministic output envelope.
-- Structured logging for request tracing.
-- Clear error codes for invalid payloads.
+1. Create environment/inference config.
+2. Deploy to online endpoint.
+3. Test with sample payload.
+4. Confirm response contract + latency.
 
-## Practical Checklist
+## Step 7 - Handover Checklist
 
-- [ ] Data asset version pinned
-- [ ] Training job reproducible
-- [ ] Metrics threshold documented
-- [ ] Model registered with lineage
-- [ ] Scoring contract validated with sample payloads
-
+- [ ] Dataset version documented
+- [ ] Training notebook reproducible
+- [ ] Metrics stored with run metadata
+- [ ] Model registered
+- [ ] Scoring contract tested
+- [ ] Endpoint smoke test passed
