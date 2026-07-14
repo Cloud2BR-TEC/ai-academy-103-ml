@@ -1,12 +1,5 @@
 ﻿# Machine Learning 103 - Guía de Implementación
 
-Esta documentación fue reconstruida totalmente con tus fuentes:
-
-- `azML-modelcreation`
-- `msFabric-AI_integration`
-
-No se usa contenido genérico de ruta. Cada módulo está enfocado en setup y ejecución práctica.
-
 ## Ruta de Aprendizaje
 
 1. Setup de Entorno y Acceso

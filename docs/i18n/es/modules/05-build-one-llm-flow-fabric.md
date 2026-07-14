@@ -2,6 +2,8 @@
 
 ## Crear una Plantilla de Prompt
 
+Define la estructura del input que se enviará al modelo de lenguaje. La plantilla acepta una variable `technology` y le pide al modelo que genere una definición.
+
 ```python
 from langchain.prompts import PromptTemplate
 
@@ -11,9 +13,9 @@ copy_prompt = PromptTemplate(
 )
 ```
 
-![Plantilla de prompt](https://github.com/user-attachments/assets/f4a3dea8-d743-46e0-a6e9-279aae457bc8)
-
 ## Configurar un LLMChain
+
+Vincula la plantilla de prompt a la instancia de Azure OpenAI (`llm`). La cadena se encarga de enviar cada prompt completo al modelo y devolver el texto generado.
 
 ```python
 from langchain.chains import LLMChain
@@ -21,9 +23,9 @@ from langchain.chains import LLMChain
 chain = LLMChain(llm=llm, prompt=copy_prompt)
 ```
 
-![Config del LLMChain](https://github.com/user-attachments/assets/30a74226-7a02-4c81-a4b1-4039eb43fa9c)
-
 ## Configurar el LangChain Transformer
+
+Encapsula la cadena en un `LangchainTransformer` de SynapseML para que pueda ejecutarse como transformación distribuida de Spark. Lee de la columna `technology` y escribe las definiciones generadas en una nueva columna `definition`.
 
 ```python
 from synapse.ml.cognitive.langchain import LangchainTransformer
@@ -38,9 +40,9 @@ transformer = (
 )
 ```
 
-![Config del Transformer](https://github.com/user-attachments/assets/f7d6480a-b75e-449e-808d-ad5a51974af9)
-
 ## Ejecutar sobre un Spark DataFrame
+
+Crea un DataFrame de Spark con nombres de tecnologías de ejemplo, aplica el transformer y muestra los resultados. Cada fila es procesada en paralelo por el motor distribuido de Spark.
 
 ```python
 from pyspark.sql import SparkSession
@@ -54,11 +56,9 @@ result = transformer.transform(df)
 result.select("technology", "definition").show(truncate=False)
 ```
 
-![Resultado del DataFrame](https://github.com/user-attachments/assets/a2a8e208-6f1d-4cb0-9944-0d2457106b49)
-
 ## Integración de ML con Fabric
 
-Entrenar y registrar modelos con MLflow desde Fabric:
+Entrena un modelo de regresión y lo registra con MLflow directamente dentro de Fabric. MLflow rastrea los parámetros y registra el artefacto del modelo para que pueda ser versionado y comparado más adelante.
 
 ```python
 import mlflow
@@ -73,5 +73,3 @@ model.fit(X, y)
 mlflow.log_params(params)
 mlflow.sklearn.log_model(model, "model")
 ```
-
-![Integración ML con Fabric](https://github.com/user-attachments/assets/a6eebe61-bfde-48ce-88e7-9bd5dfb6d00a)

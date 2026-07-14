@@ -1,12 +1,5 @@
 ﻿# Machine Learning 103 - Implementation Guide
 
-This documentation is fully rebuilt from your source materials:
-
-- `azML-modelcreation`
-- `msFabric-AI_integration`
-
-No generic track content is used here. Every module is focused on practical setup and execution.
-
 ## Learning Path
 
 1. Environment and Access Setup

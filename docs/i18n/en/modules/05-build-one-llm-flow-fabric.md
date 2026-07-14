@@ -2,6 +2,8 @@
 
 ## Create a Prompt Template
 
+Define the structure of the input that will be sent to the language model. The template accepts a `technology` variable and asks the model to produce a definition for it.
+
 ```python
 from langchain.prompts import PromptTemplate
 
@@ -11,9 +13,9 @@ copy_prompt = PromptTemplate(
 )
 ```
 
-![Prompt template](https://github.com/user-attachments/assets/f4a3dea8-d743-46e0-a6e9-279aae457bc8)
-
 ## Set Up an LLMChain
+
+Link the prompt template to the Azure OpenAI instance (`llm`). The chain handles sending each filled-in prompt to the model and returning the generated text.
 
 ```python
 from langchain.chains import LLMChain
@@ -21,9 +23,9 @@ from langchain.chains import LLMChain
 chain = LLMChain(llm=llm, prompt=copy_prompt)
 ```
 
-![LLMChain setup](https://github.com/user-attachments/assets/30a74226-7a02-4c81-a4b1-4039eb43fa9c)
-
 ## Configure LangChain Transformer
+
+Wrap the chain in a SynapseML `LangchainTransformer` so it can run as a distributed Spark transformation. It reads from the `technology` column and writes generated definitions to a new `definition` column.
 
 ```python
 from synapse.ml.cognitive.langchain import LangchainTransformer
@@ -38,9 +40,9 @@ transformer = (
 )
 ```
 
-![Transformer config](https://github.com/user-attachments/assets/f7d6480a-b75e-449e-808d-ad5a51974af9)
-
 ## Run on a Spark DataFrame
+
+Create a small Spark DataFrame with sample technology names, apply the transformer, and display the results. Each row is processed in parallel by the distributed Spark engine.
 
 ```python
 from pyspark.sql import SparkSession
@@ -54,11 +56,9 @@ result = transformer.transform(df)
 result.select("technology", "definition").show(truncate=False)
 ```
 
-![DataFrame result](https://github.com/user-attachments/assets/a2a8e208-6f1d-4cb0-9944-0d2457106b49)
-
 ## Machine Learning Integration with Fabric
 
-Train and log models with MLflow inside Fabric:
+Train a regression model and log it with MLflow directly inside Fabric. MLflow tracks parameters and registers the model artifact so it can be versioned and compared later.
 
 ```python
 import mlflow
@@ -74,5 +74,3 @@ model.fit(X, y)
 mlflow.log_params(params)
 mlflow.sklearn.log_model(model, "model")
 ```
-
-![ML integration Fabric](https://github.com/user-attachments/assets/a6eebe61-bfde-48ce-88e7-9bd5dfb6d00a)
