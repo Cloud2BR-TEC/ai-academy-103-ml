@@ -1,37 +1,33 @@
 ﻿# 01. Setup de Entorno y Acceso
 
-## Objetivo
+## Configurar el Workspace de Azure ML
 
-Preparar la plataforma para ejecutar **una ruta completa de modelo** sin bloqueos.
+- Ir a [Azure Portal](https://portal.azure.com/)
+- Crear un **Machine Learning workspace** — definir resource group, nombre y región.
+- Abrir **Azure Machine Learning Studio**.
 
-## A. Setup de Azure ML Studio
+![Workspace setup](https://github.com/user-attachments/assets/c199156f-96cf-4ed0-a8b5-c88db3e7a552)
 
-1. Abrir Azure Portal y crear/seleccionar el resource group.
-2. Crear **Machine Learning workspace** en la región objetivo.
-3. Abrir Azure ML Studio y confirmar acceso al workspace.
-4. Crear una compute instance para ejecución de notebooks.
-5. Activar controles de costo (auto-stop y convención de nombres).
+## Crear una Compute Instance
 
-## B. Setup de dataset
+1. Abrir Azure ML Studio y acceder a **Compute**.
+2. Seleccionar la pestaña **Compute instances** y hacer clic en **New**.
+3. Ingresar nombre y tamaño de VM (ej. `Standard_DS3_v2`).
+4. Hacer clic en **Create** y esperar el aprovisionamiento.
 
-1. Ir a **Data** en Azure ML Studio.
-2. Subir `sample_data.csv`.
-3. Registrar como data asset versionado.
-4. Validar esquema y columna objetivo antes de entrenar.
+![Compute instance](https://github.com/user-attachments/assets/bd5f3ce6-7082-4741-8827-8b344cd249a4)
 
-## C. Setup de Fabric (si usarás ruta Fabric)
+## Configurar Capacidad de Microsoft Fabric
 
-1. Confirmar proveedor/capacidad de Fabric en Azure.
-2. Asignar capacidad al workspace de Fabric.
-3. Abrir notebook y validar instalación de dependencias.
+1. Registrar el proveedor de recursos `microsoft.fabric` en la suscripción.
+2. Crear un recurso **Microsoft Fabric** en Azure Portal — elegir suscripción, resource group, nombre de capacidad, región, tamaño y administrador.
 
-### Ejemplo: pantalla de configuración de capacidad Fabric
+![Crear capacidad Fabric](https://github.com/user-attachments/assets/a860911c-0ab8-469e-82d9-d0495268bd3b)
 
-![Configuración de capacidad Fabric](../assets/img/azure-fabric-capacity-setup.png)
+3. Habilitar la capacidad Fabric en el workspace de Power BI.
 
-## Criterios de salida
+![Habilitar capacidad en Power BI](https://github.com/user-attachments/assets/5dae8ea7-528d-4742-af51-b877d4610fa4)
 
-- [ ] Workspace y cómputo operativos
-- [ ] Dataset registrado y versionado
-- [ ] Asignación capacidad-workspace de Fabric confirmada
-- [ ] El equipo puede iniciar Módulo 02 o Módulo 04 inmediatamente
+4. **Pausar el cómputo de Fabric cuando no se use** para ahorrar costos.
+
+![Pausar Fabric](https://github.com/user-attachments/assets/117d6902-cc8b-45b8-a104-9b54180565f2)

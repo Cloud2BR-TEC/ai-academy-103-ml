@@ -1,37 +1,59 @@
 ﻿# 04. Configurar Microsoft Fabric para Cargas de IA
 
-## Objetivo
+## Instalar Librerías Requeridas
 
-Dejar Fabric listo para ejecutar el flujo de notebook y conectar resultados con operaciones en Azure ML.
+1. Abrir el portal de Fabric e iniciar sesión.
+2. Ir a **Data Science** y crear un nuevo clúster.
 
-## Configuración paso a paso
+    ![Crear clúster](https://github.com/user-attachments/assets/1763b8a0-e3ff-4ae7-adc9-413f0eb454f3)
 
-1. Registrar el proveedor de Fabric en la suscripción Azure.
-2. Crear capacidad Fabric con región/tamaño adecuados.
-3. Asignar capacidad al workspace objetivo de Fabric.
-4. Abrir notebook de Fabric en experiencia Data Science.
-5. Instalar dependencias fijadas:
+    ![Config del clúster](https://github.com/user-attachments/assets/6cf15794-27cb-4ee9-af66-ac236b14de1e)
+
+3. Instalar SynapseML en el clúster.
+
+    ![Instalar SynapseML](https://github.com/user-attachments/assets/a2243d3a-17f2-456b-829c-06c22f8ab7b7)
+
+4. Instalar LangChain y dependencias.
 
 ```python
-%pip install synapseml==1.0.8 langchain==0.3.4 langchain_community==0.3.4 openai==1.53.0 langchain.openai==0.2.4
+%pip install openai langchain_community
 ```
 
-6. Configurar Azure OpenAI desde fuente segura de secretos.
+O usar un archivo `.yml`:
+
+```yml
+dependencies:
+  - pip:
+      - synapseml==1.0.8
+      - langchain==0.3.4
+      - langchain_community==0.3.4
+      - openai==1.53.0
+      - langchain.openai==0.2.4
+```
+
+![Config de entorno](https://github.com/user-attachments/assets/b61d180c-d7e5-4aec-a4b9-8133b3a92250)
+
+## Configurar Azure OpenAI
 
 ```python
 import os
 os.environ["OPENAI_API_VERSION"] = "2023-08-01-preview"
 os.environ["AZURE_OPENAI_ENDPOINT"] = "https://your-resource-name.openai.azure.com"
-os.environ["AZURE_OPENAI_API_KEY"] = "<from-secret-store>"
+os.environ["AZURE_OPENAI_API_KEY"] = "your-api-key"
 ```
 
-## Validaciones
+![Setup de API keys](https://github.com/user-attachments/assets/a2eb24bf-7279-4f4e-be00-408dbbd82600)
 
-- [ ] La sesión de notebook importa SynapseML y LangChain
-- [ ] El cliente de Azure OpenAI inicializa correctamente
-- [ ] Un prompt de prueba ejecuta con éxito
-- [ ] La salida puede persistirse para uso downstream en Azure ML
+```python
+from langchain_openai import AzureChatOpenAI
 
-### Imagen de setup
+api_base = os.environ["AZURE_OPENAI_ENDPOINT"]
+llm = AzureChatOpenAI(
+    openai_api_key=os.environ["AZURE_OPENAI_API_KEY"],
+    temperature=0.7,
+    verbose=True,
+    top_p=0.9
+)
+```
 
-![Configuración de capacidad Fabric](../assets/img/azure-fabric-capacity-setup.png)
+![Inicializar LLM](https://github.com/user-attachments/assets/e9fad52c-5c64-4047-8f22-cef80ce33d6e)
