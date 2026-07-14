@@ -1,59 +1,146 @@
 ﻿# Fabric and Azure ML Integration (Advanced)
 
-This module is implementation-focused and built from your `msFabric-AI_integration` material.
+This module uses the implementation flow from your Fabric source material and turns it into a production-ready integration playbook.
 
-## Implementation Baseline from Source
-
-Source reused:
+## Source Material Used
 
 - `msFabric-AI_integration/README.md`
 - `msFabric-AI_integration/src/fabric-llms-overview_sample.ipynb`
 
-## Integration Goal
+## 1. Environment and Capacity Setup
 
-Define clear system boundaries:
+### 1.1 Register provider and create Fabric capacity
 
-- Fabric handles data engineering, notebook experimentation, and large-scale transformations.
-- Azure ML handles model lifecycle governance, deployment, and endpoint operations.
+Before running AI workloads, validate that Fabric capacity exists and is assigned to the correct workspace.
 
-## Setup Sequence (Production-Oriented)
+Checklist:
 
-1. Validate Fabric capacity and workspace assignment.
-2. Configure dependencies for SynapseML and LangChain components.
-3. Configure Azure OpenAI endpoint/key management via secure secrets.
-4. Establish notebook execution standards (inputs, outputs, logging).
+- Microsoft Fabric resource provider registered
+- Fabric capacity created in the intended region
+- Power BI/Fabric workspace linked to that capacity
+- Cost pause/resume process documented
 
-## LLM Workflow Pattern in Fabric
+### 1.2 Prepare runtime dependencies
 
-From your source notebook pattern:
+In Fabric notebooks, install only the packages you need and pin versions for repeatability.
 
-- Prompt template + chain composition.
-- Transformer execution over distributed data.
-- Optional PDF/content extraction workflow.
-- Output persistence to governed storage.
+```python
+%pip install synapseml==1.0.8 langchain==0.3.4 langchain_community==0.3.4 openai==1.53.0 langchain.openai==0.2.4
+```
 
-## Bridge to Azure ML Operations
+## 2. Azure OpenAI Configuration Pattern
 
-After Fabric processing:
+Use environment variables or secret scopes, never hardcoded secrets in notebook cells.
 
-- Persist processed/feature-ready assets with versioning.
-- Trigger Azure ML training or scoring pipelines.
-- Register model outputs and enforce deployment policies.
-- Monitor online/batch performance and drift in operations.
+```python
+import os
 
-## Operational Risks and Controls
+os.environ["OPENAI_API_VERSION"] = "2023-08-01-preview"
+os.environ["AZURE_OPENAI_ENDPOINT"] = "https://your-resource-name.openai.azure.com"
+os.environ["AZURE_OPENAI_API_KEY"] = "<from-secret-store>"
+```
 
-- Prompt/API key leakage -> use secret stores and no hardcoded keys.
-- Unbounded LLM cost -> set budget limits and execution quotas.
-- Non-reproducible notebooks -> pin dependencies and runtime images.
-- Weak lineage -> tag runs and assets across Fabric and Azure ML.
+Initialize the model client:
 
-## Advanced Integration Checklist
+```python
+from langchain_openai import AzureChatOpenAI
 
-- [ ] Fabric capacity and workspace validated
+llm = AzureChatOpenAI(
+    openai_api_key=os.environ["AZURE_OPENAI_API_KEY"],
+    temperature=0.2,
+    top_p=0.9,
+    verbose=True,
+)
+```
+
+## 3. LangChain + SynapseML Execution Flow
+
+### 3.1 Prompt and chain definition
+
+```python
+from langchain.prompts import PromptTemplate
+from langchain.chains import LLMChain
+
+prompt = PromptTemplate(
+    input_variables=["technology"],
+    template="Define the following technology term for an ML engineering audience: {technology}",
+)
+
+chain = LLMChain(llm=llm, prompt=prompt)
+```
+
+### 3.2 Distributed transformer execution
+
+```python
+from synapse.ml.cognitive.langchain import LangchainTransformer
+
+transformer = (
+    LangchainTransformer()
+    .setInputCol("technology")
+    .setOutputCol("definition")
+    .setChain(chain)
+    .setSubscriptionKey(os.environ["AZURE_OPENAI_API_KEY"])
+    .setUrl(os.environ["AZURE_OPENAI_ENDPOINT"])
+)
+```
+
+### 3.3 Minimal data frame test
+
+```python
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.appName("fabric-llm-demo").getOrCreate()
+
+df = spark.createDataFrame(
+    [(0, "docker"), (1, "spark"), (2, "feature store")],
+    ["id", "technology"],
+)
+
+result_df = transformer.transform(df)
+result_df.select("id", "technology", "definition").show(truncate=False)
+```
+
+## 4. Operational Bridge to Azure ML
+
+Fabric should not be the final stop. Use it as upstream processing for governed Azure ML operations.
+
+Recommended handoff pattern:
+
+1. Persist transformed/feature-ready output with version labels.
+2. Trigger Azure ML training or batch scoring job.
+3. Register model + metrics in Azure ML model registry.
+4. Promote only validated models to deployment stages.
+5. Monitor endpoint quality and trigger retraining when drift appears.
+
+## 5. Security, Cost, and Reliability Controls
+
+### Security
+
+- Keep API keys in managed secrets.
+- Apply least-privilege workspace and service principal roles.
+- Avoid logging raw sensitive payloads.
+
+### Cost
+
+- Cap notebook cluster size/time windows.
+- Track token usage and define budget alarms.
+- Pause Fabric capacity outside scheduled windows.
+
+### Reliability
+
+- Pin package versions.
+- Validate input schema before LLM calls.
+- Store run metadata (time, prompt version, model deployment, output location).
+
+## 6. Implementation Checklist
+
+- [ ] Fabric capacity assigned and validated
 - [ ] SynapseML/LangChain dependencies pinned
-- [ ] Azure OpenAI secrets configured securely
-- [ ] Artifact lineage defined across platforms
-- [ ] Monitoring + cost guardrails in place
+- [ ] Azure OpenAI secrets externalized
+- [ ] LLM transform tested on sample and batch data
+- [ ] Handoff to Azure ML training/scoring in place
+- [ ] Monitoring and cost guardrails active
 
-![Azure portal snapshot 3](../assets/img/azure-portal-photo-3.jpg)
+## 7. Next Step
+
+Continue to `07. Terraform for Azure ML` and `08. Terraform for Fabric` to operationalize this integration as reproducible infrastructure.
