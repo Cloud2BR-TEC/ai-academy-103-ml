@@ -1,0 +1,51 @@
+name: Clean GitHub Pages Deployments
+
+on:
+  workflow_run:
+    workflows: ["Deploy GitHub Pages"]
+    types:
+      - completed
+  workflow_dispatch:
+
+permissions:
+  deployments: write
+
+jobs:
+  clean-deployments:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Keep only the latest 2 GitHub Pages deployments
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const deployments = await github.rest.repos.listDeployments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              environment: 'github-pages',
+              per_page: 100
+            });
+
+            // Keep the 2 most recent, delete the rest
+            const toDelete = deployments.data.slice(2);
+
+            for (const deployment of toDelete) {
+              try {
+                // Must set inactive before deleting
+                await github.rest.repos.createDeploymentStatus({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  deployment_id: deployment.id,
+                  state: 'inactive'
+                });
+                await github.rest.repos.deleteDeployment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  deployment_id: deployment.id
+                });
+                console.log(`Deleted deployment ${deployment.id}`);
+              } catch (err) {
+                console.warn(`Could not delete deployment ${deployment.id}: ${err.message}`);
+              }
+            }
+
+            console.log(`Kept 2 latest deployments. Deleted ${toDelete.length} old deployment(s).`);
