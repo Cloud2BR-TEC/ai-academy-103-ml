@@ -47,6 +47,10 @@ plugins:
             08. Terraform for Fabric: "08. Terraform para Fabric"
             09. Deployment Reliability and SRE: "09. Confiabilidad de Despliegue y SRE"
             10. Capstone Architecture and Governance: "10. Arquitectura Final y Gobernanza"
+            11. Advanced Metrics and Drift: "11. Métricas Avanzadas y Drift"
+            12. Explainability and Validation in Production: "12. Explicabilidad y Validación en Producción"
+            13. Endpoint Deployment Patterns: "13. Patrones de Despliegue de Endpoints"
+            14. Kubernetes Debugging and Incident Response: "14. Depuración en Kubernetes y Respuesta a Incidentes"
             Reference: Referencia
             Overview: "Visión General"
             Mathematical Model Deep Dive: "Análisis Matemático Profundo de Modelos"
@@ -97,6 +101,10 @@ nav:
   - 08. Terraform for Fabric: modules/08-data-preparation.md
   - 09. Deployment Reliability and SRE: modules/09-model-types.md
   - 10. Capstone Architecture and Governance: modules/10-training-automl.md
+  - 11. Advanced Metrics and Drift: modules/11-performance-metrics.md
+  - 12. Explainability and Validation in Production: modules/12-results-explainability.md
+  - 13. Endpoint Deployment Patterns: modules/13-deployment.md
+  - 14. Kubernetes Debugging and Incident Response: modules/14-deployment-debug-k8s.md
   - Reference:
       - Overview: reference/index.md
       - Mathematical Model Deep Dive: reference/model-math-deep-dive.md
